@@ -1,0 +1,15 @@
+D:\Alexander\Emision\ServicioContract\bin\Debug\aspnet-Emision-20180404113138.mdf
+D:\Alexander\Emision\ServicioContract\bin\Debug\aspnet-Emision-20180404113138_log.ldf
+D:\Alexander\Emision\ServicioContract\bin\Debug\EntityFramework.dll
+D:\Alexander\Emision\ServicioContract\bin\Debug\EntityFramework.SqlServer.dll
+D:\Alexander\Emision\ServicioContract\bin\Debug\log4net.dll
+D:\Alexander\Emision\ServicioContract\bin\Debug\EntityFramework.xml
+D:\Alexander\Emision\ServicioContract\bin\Debug\EntityFramework.SqlServer.xml
+D:\Alexander\Emision\ServicioContract\obj\Debug\ServicioModelo.csproj.CoreCompileInputs.cache
+D:\Alexander\Emision\ServicioContract\obj\Debug\ServicioModelo.csproj.CopyComplete
+D:\Alexander\Emision\ServicioContract\bin\Debug\ServicioModelo.dll.config
+D:\Alexander\Emision\ServicioContract\bin\Debug\ServicioModelo.dll
+D:\Alexander\Emision\ServicioContract\bin\Debug\ServicioModelo.pdb
+D:\Alexander\Emision\ServicioContract\obj\Debug\ServicioModelo.dll
+D:\Alexander\Emision\ServicioContract\obj\Debug\ServicioModelo.pdb
+D:\Alexander\Emision\ServicioContract\obj\Debug\ServicioModelo.csprojAssemblyReference.cache

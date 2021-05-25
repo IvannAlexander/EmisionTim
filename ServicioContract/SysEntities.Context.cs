@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ServicioContract
+namespace ServicioModelo
 {
     using System;
     using System.Data.Entity;

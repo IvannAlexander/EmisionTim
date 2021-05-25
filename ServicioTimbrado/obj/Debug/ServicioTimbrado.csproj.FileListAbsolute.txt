@@ -12,3 +12,11 @@ D:\Alexander\Mega\Trabajo\Proyectos\Mvc\Emision\ServicioTimbrado\obj\Debug\Servi
 D:\Alexander\Mega\Trabajo\Proyectos\Mvc\Emision\ServicioTimbrado\obj\Debug\ServicioTimbrado.csproj.CopyComplete
 D:\Alexander\Mega\Trabajo\Proyectos\Mvc\Emision\ServicioTimbrado\obj\Debug\ServicioTimbrado.dll
 D:\Alexander\Mega\Trabajo\Proyectos\Mvc\Emision\ServicioTimbrado\obj\Debug\ServicioTimbrado.pdb
+D:\Alexander\Emision\ServicioTimbrado\bin\Debug\ServicioTimbrado.dll
+D:\Alexander\Emision\ServicioTimbrado\bin\Debug\ServicioTimbrado.pdb
+D:\Alexander\Emision\ServicioTimbrado\bin\Debug\log4net.dll
+D:\Alexander\Emision\ServicioTimbrado\obj\Debug\ServicioTimbrado.csprojAssemblyReference.cache
+D:\Alexander\Emision\ServicioTimbrado\obj\Debug\ServicioTimbrado.csproj.CoreCompileInputs.cache
+D:\Alexander\Emision\ServicioTimbrado\obj\Debug\ServicioTimbrado.csproj.CopyComplete
+D:\Alexander\Emision\ServicioTimbrado\obj\Debug\ServicioTimbrado.dll
+D:\Alexander\Emision\ServicioTimbrado\obj\Debug\ServicioTimbrado.pdb

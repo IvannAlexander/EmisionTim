@@ -1,0 +1,5 @@
+D:\Alexander\Emision\Contract\bin\Debug\Contract.dll
+D:\Alexander\Emision\Contract\bin\Debug\Contract.pdb
+D:\Alexander\Emision\Contract\obj\Debug\Contract.csproj.CoreCompileInputs.cache
+D:\Alexander\Emision\Contract\obj\Debug\Contract.dll
+D:\Alexander\Emision\Contract\obj\Debug\Contract.pdb

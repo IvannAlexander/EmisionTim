@@ -89,13 +89,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ServicioBussines\ServicioBussines.csproj">
+    <ProjectReference Include="..\ServicioBussines\Bussines.csproj">
       <Project>{18696238-27fe-4469-99ce-be0b1c0ac309}</Project>
-      <Name>ServicioBussines</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\ServicioContract\ServicioContract.csproj">
-      <Project>{d493f095-9547-4b0a-a294-7623f17abb8c}</Project>
-      <Name>ServicioContract</Name>
+      <Name>Bussines</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

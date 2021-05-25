@@ -4,9 +4,8 @@ using System.Configuration;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using ServicioContract;
 
-namespace ServicioBussines
+namespace Bussines
 {
     public class ContextFactory
     {

@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ServicioEmision.Pdf {
+namespace EmisionService.Pdf {
     using System;
     using System.ComponentModel;
     using CrystalDecisions.Shared;
@@ -41,7 +41,7 @@ namespace ServicioEmision.Pdf {
         
         public override string FullResourceName {
             get {
-                return "ServicioEmision.Pdf.GenericoCfdi.rpt";
+                return "EmisionService.Pdf.GenericoCfdi.rpt";
             }
             set {
                 // Do nothing

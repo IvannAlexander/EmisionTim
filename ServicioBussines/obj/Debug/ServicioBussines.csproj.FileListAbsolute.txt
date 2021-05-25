@@ -83,3 +83,7 @@ D:\Alexander\Mega\Trabajo\Proyectos\Mvc\Emision\ServicioBussines\obj\Debug\Servi
 D:\Alexander\Mega\Trabajo\Proyectos\Mvc\Emision\ServicioBussines\obj\Debug\ServicioBussines.csproj.CopyComplete
 D:\Alexander\Mega\Trabajo\Proyectos\Mvc\Emision\ServicioBussines\obj\Debug\ServicioBussines.dll
 D:\Alexander\Mega\Trabajo\Proyectos\Mvc\Emision\ServicioBussines\obj\Debug\ServicioBussines.pdb
+D:\Alexander\Emision\ServicioBussines\obj\Debug\ServicioBussines.csprojAssemblyReference.cache
+D:\Alexander\Emision\ServicioBussines\obj\Debug\ServicioBussines.csproj.CoreCompileInputs.cache
+D:\Alexander\Emision\ServicioBussines\obj\Debug\ServicioBussines.dll
+D:\Alexander\Emision\ServicioBussines\obj\Debug\ServicioBussines.pdb

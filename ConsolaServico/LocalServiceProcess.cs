@@ -4,8 +4,8 @@ using System.Linq;
 using System.ServiceModel;
 using System.Text;
 using System.Threading.Tasks;
-using ServicioBussines;
-using ServicioContract;
+using Bussines;
+using ServicioModelo;
 
 namespace ServicioConsola
 {
@@ -22,7 +22,7 @@ namespace ServicioConsola
         /// <returns></returns>
         public Sys_Usuario ValidaUsuario(string usuario, string pass)
         {
-            var operacionUsuario = new OperacionUsuario();
+            var operacionUsuario = new UserOperation();
             return operacionUsuario.ValidaUsuario(usuario, pass);
         }
 
@@ -34,7 +34,7 @@ namespace ServicioConsola
         /// <returns></returns>
         public Sys_Usuario ObtenerUsuario(string usuario, string rfc)
         {
-            var operacionUsuario = new OperacionUsuario();
+            var operacionUsuario = new UserOperation();
             var usr = operacionUsuario.ObtenerUsuario(usuario, rfc);
             return usr;
         }
@@ -45,7 +45,7 @@ namespace ServicioConsola
         /// <param name="usuario">Objeto usuario ya con información.</param>
         public void GuardarUsuario(Sys_Usuario usuario)
         {
-            var operacionUsuario = new OperacionUsuario();
+            var operacionUsuario = new UserOperation();
             operacionUsuario.GuardarUsuario(usuario);
         }
 
@@ -59,7 +59,7 @@ namespace ServicioConsola
         /// <param name="empresa">Objeto empresa ya con información.</param>
         public void GuardarEmpresa(Sys_Empresa empresa)
         {
-            var operacionEmpresa = new OperacionEmpresa();
+            var operacionEmpresa = new CompanyOperation();
             operacionEmpresa.GuardarEmpresa(empresa);
         }
 
@@ -69,7 +69,7 @@ namespace ServicioConsola
         /// <param name="empresa">Objeto de empresa ya con información.</param>
         public void NuevaEmpresa(Sys_Empresa empresa)
         {
-            var operacionEmpresa = new OperacionEmpresa();
+            var operacionEmpresa = new CompanyOperation();
             operacionEmpresa.NuevaEmpresa(empresa);
         }
 
@@ -80,7 +80,7 @@ namespace ServicioConsola
         /// <returns></returns>
         public Sys_Empresa ObtenerEmpresaPorRfc(string rfc)
         {
-            var operacionEmpresa = new OperacionEmpresa();
+            var operacionEmpresa = new CompanyOperation();
             var empresa = operacionEmpresa.ObtenerEmpresaPorRfc(rfc);
             return empresa;
         }
@@ -95,7 +95,7 @@ namespace ServicioConsola
         /// <returns>Regresa lista de menus completo.</returns>
         public List<Sys_Menu> ObtenerMenuCompleto()
         {
-            var operacionMenu = new OperacionMenu();
+            var operacionMenu = new MenuOperation();
             return operacionMenu.ObtenerMenuCompleto();
         }
 
@@ -107,7 +107,7 @@ namespace ServicioConsola
         /// <returns>Regresa lista de menus.</returns>
         public List<Sys_Menu> ObtenerMenuPorUsuario(string rfc, string usuario)
         {
-            var operacionMenu = new OperacionMenu();
+            var operacionMenu = new MenuOperation();
             return operacionMenu.ObtenerMenuPorUsuario(rfc, usuario);
         }
 
@@ -124,7 +124,7 @@ namespace ServicioConsola
         /// <returns>Regresa lista de certificados.</returns>
         public List<Sys_Certificado> ObtenerCertificadosPorRfc(string rfc, int numRegistros, int paginaActual)
         {
-            var operacionCertificado = new OperacionCertificados();
+            var operacionCertificado = new CretificateOperation();
             return operacionCertificado.ObtenerCertificadosPorRfc(rfc, numRegistros, paginaActual);
         }
 
@@ -135,7 +135,7 @@ namespace ServicioConsola
         /// <returns>Regresa numero total de certificados.</returns>
         public int CertificadosPorRfc(string rfc)
         {
-            var operacionCertificado = new OperacionCertificados();
+            var operacionCertificado = new CretificateOperation();
             return operacionCertificado.CertificadosPorRfc(rfc);
         }
 
@@ -148,7 +148,7 @@ namespace ServicioConsola
         /// <param name="rfcEmpresa">Rfc de la empresa logueada.</param>
         public void GuardaCertificados(byte[] archivoCer, byte[] archivoKey, string pass, string rfcEmpresa)
         {
-            var operacionCertificados = new OperacionCertificados();
+            var operacionCertificados = new CretificateOperation();
             operacionCertificados.GuardaCertificados(archivoCer, archivoKey, pass, rfcEmpresa);
         }
 
@@ -165,7 +165,7 @@ namespace ServicioConsola
         /// <returns>Regresa lista de clientes por filtro.</returns>
         public List<Sys_Cliente> ObtenerClientePorRfcNombre(string rfc, string razonSocial, string rfcEmpresa)
         {
-            var operacionCliente = new OperacionCliente();
+            var operacionCliente = new ClientOperation();
             return operacionCliente.ObtenerClientePorRfcNombre(rfc, razonSocial, rfcEmpresa);
         }
 
@@ -176,7 +176,7 @@ namespace ServicioConsola
         /// <returns>Regresa lista de clientes.</returns>
         public List<Sys_Cliente> ObtenerClientePorRfcEmpresa(string rfcEmpresa)
         {
-            var operacionCliente = new OperacionCliente();
+            var operacionCliente = new ClientOperation();
             return operacionCliente.ObtenerClientePorRfcEmpresa(rfcEmpresa);
         }
 
@@ -187,7 +187,7 @@ namespace ServicioConsola
         /// <returns>Regresa total de clientes.</returns>
         public int ObtenerTotalClientePorRfcEmpresa(string rfcEmpresa)
         {
-            var operacionCliente = new OperacionCliente();
+            var operacionCliente = new ClientOperation();
             return operacionCliente.ObtenerTotalClientePorRfcEmpresa(rfcEmpresa);
         }
 
@@ -197,7 +197,7 @@ namespace ServicioConsola
         /// <param name="cliente">Objeto con información del cliente.</param>
         public void GuardarClienteNuevo(Sys_Cliente cliente)
         {
-            var operacionCliente = new OperacionCliente();
+            var operacionCliente = new ClientOperation();
             operacionCliente.GuardarClienteNuevo(cliente);
         }
 
@@ -207,7 +207,7 @@ namespace ServicioConsola
         /// <param name="cliente">Objeto con información del cliente.</param>
         public void GuardarModificacionesDelCliente(Sys_Cliente cliente)
         {
-            var operacionCliente = new OperacionCliente();
+            var operacionCliente = new ClientOperation();
             operacionCliente.GuardarModificacionesDelCliente(cliente);
         }
 
@@ -220,7 +220,7 @@ namespace ServicioConsola
             var sys_Usuario = ValidaUsuario(usuario, pass);
             if (sys_Usuario != null)
             {
-                var operacionConvierteTxt = new OperacionConvierteTxt();
+                var operacionConvierteTxt = new ConvertTxtOperation();
                 operacionConvierteTxt.ConvierteTxtAti(archivoAti, sys_Usuario.Sys_Rfc);
             }
         }

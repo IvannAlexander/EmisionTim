@@ -9,7 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml;
 
-namespace ServicioContract
+namespace ServicioModelo
 {
     public static class ClientFactory
     {

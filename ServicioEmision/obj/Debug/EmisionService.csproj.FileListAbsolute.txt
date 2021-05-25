@@ -1,0 +1,13 @@
+D:\Alexander\Emision\ServicioEmision\bin\Debug\Xslt\cadenaoriginal_3_3.xslt
+D:\Alexander\Emision\ServicioEmision\bin\Debug\Xslt\cadenaoriginal_TFD_1_1.xslt
+D:\Alexander\Emision\ServicioEmision\bin\Debug\EmisionService.dll
+D:\Alexander\Emision\ServicioEmision\bin\Debug\EmisionService.pdb
+D:\Alexander\Emision\ServicioEmision\bin\Debug\log4net.dll
+D:\Alexander\Emision\ServicioEmision\bin\Debug\MessagingToolkit.QRCode.dll
+D:\Alexander\Emision\ServicioEmision\bin\Debug\TimbradoService.dll
+D:\Alexander\Emision\ServicioEmision\bin\Debug\TimbradoService.pdb
+D:\Alexander\Emision\ServicioEmision\obj\Debug\EmisionService.csprojAssemblyReference.cache
+D:\Alexander\Emision\ServicioEmision\obj\Debug\EmisionService.csproj.CoreCompileInputs.cache
+D:\Alexander\Emision\ServicioEmision\obj\Debug\EmisionService.csproj.CopyComplete
+D:\Alexander\Emision\ServicioEmision\obj\Debug\EmisionService.dll
+D:\Alexander\Emision\ServicioEmision\obj\Debug\EmisionService.pdb

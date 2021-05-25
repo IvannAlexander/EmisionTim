@@ -1,0 +1,435 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="Db_EmisionModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Sys_Certificate">
+          <Key>
+            <PropertyRef Name="Sys_Id" />
+          </Key>
+          <Property Name="Sys_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Sys_Rfc" Type="varchar" MaxLength="13" Nullable="false" />
+          <Property Name="Sys_Number" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Sys_Name" Type="varchar" MaxLength="250" Nullable="false" />
+          <Property Name="Sys_Certificate1" Type="varchar(max)" Nullable="false" />
+          <Property Name="Sys_Key" Type="varchar(max)" Nullable="false" />
+          <Property Name="Sys_Pwd" Type="varchar" MaxLength="250" Nullable="false" />
+          <Property Name="Sys_RegistrationDate" Type="datetime" Nullable="false" />
+          <Property Name="Sys_RegistrationDateCert" Type="datetime" Nullable="false" />
+          <Property Name="Sys_ExpirationDateCert" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Sys_Client">
+          <Key>
+            <PropertyRef Name="Sys_Id" />
+          </Key>
+          <Property Name="Sys_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Sys_Rfc" Type="varchar" MaxLength="13" Nullable="false" />
+          <Property Name="Sys_BusinessName" Type="varchar" MaxLength="255" />
+          <Property Name="Sys_Tradename" Type="varchar" MaxLength="255" />
+          <Property Name="Sys_Email" Type="varchar" MaxLength="255" />
+          <Property Name="Sys_Street" Type="varchar" MaxLength="255" />
+          <Property Name="Sys_ZipCode" Type="varchar" MaxLength="5" />
+          <Property Name="Sys_Municipality" Type="varchar" MaxLength="255" />
+          <Property Name="Sys_State" Type="varchar" MaxLength="255" />
+          <Property Name="Sys_Cologne" Type="varchar" MaxLength="255" />
+          <Property Name="Sys_Country" Type="varchar" MaxLength="50" />
+          <Property Name="Sys_RegistrationDate" Type="datetime" Nullable="false" />
+          <Property Name="Sys_ModificationDate" Type="datetime" Nullable="false" />
+          <Property Name="Sys_UserId" Type="int" Nullable="false" />
+          <Property Name="Sys_RfcCompany" Type="varchar" MaxLength="13" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Sys_Company">
+          <Key>
+            <PropertyRef Name="Sys_Rfc" />
+          </Key>
+          <Property Name="Sys_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Sys_Rfc" Type="varchar" MaxLength="13" Nullable="false" />
+          <Property Name="Sys_Name" Type="varchar" MaxLength="250" Nullable="false" />
+          <Property Name="Sys_FiscalRegime" Type="varchar" MaxLength="250" />
+          <Property Name="Sys_Curp" Type="varchar" MaxLength="18" />
+          <Property Name="Sys_Page" Type="varchar" MaxLength="100" />
+          <Property Name="Sys_Email" Type="varchar" MaxLength="100" />
+          <Property Name="Sys_Phone" Type="varchar" MaxLength="25" />
+          <Property Name="Sys_UserModified" Type="varchar" MaxLength="20" />
+          <Property Name="Sys_RegistrationDate" Type="datetime" Nullable="false" />
+          <Property Name="Sys_ModificationDate" Type="datetime" />
+          <Property Name="Sys_Status" Type="bit" />
+          <Property Name="Sys_Balance" Type="int" />
+        </EntityType>
+        <EntityType Name="Sys_CompanyAddress">
+          <Key>
+            <PropertyRef Name="Sys_Id" />
+          </Key>
+          <Property Name="Sys_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Sys_Rfc" Type="varchar" MaxLength="13" Nullable="false" />
+          <Property Name="Sys_ZipCode" Type="varchar" MaxLength="5" Nullable="false" />
+          <Property Name="Sys_Street" Type="varchar" MaxLength="250" />
+          <Property Name="Sys_ExternalNumber" Type="varchar" MaxLength="10" />
+          <Property Name="Sys_InternalNumber" Type="varchar" MaxLength="10" />
+          <Property Name="Sys_Cologne" Type="varchar" MaxLength="250" />
+          <Property Name="Sys_Municipality" Type="varchar" MaxLength="250" />
+          <Property Name="Sys_Reference" Type="varchar" MaxLength="250" />
+          <Property Name="Sys_State" Type="varchar" MaxLength="50" />
+          <Property Name="Sys_Country" Type="varchar" MaxLength="50" />
+          <Property Name="Sys_User" Type="varchar" MaxLength="20" />
+          <Property Name="Sys_RegistrationDate" Type="datetime" Nullable="false" />
+          <Property Name="Sys_ModificationDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Sys_Complements">
+          <Key>
+            <PropertyRef Name="Sys_Id" />
+          </Key>
+          <Property Name="Sys_Id" Type="int" Nullable="false" />
+          <Property Name="Sys_Name" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Sys_Menu">
+          <Key>
+            <PropertyRef Name="Sys_Id" />
+          </Key>
+          <Property Name="Sys_Id" Type="int" Nullable="false" />
+          <Property Name="Sys_Name" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Sys_Controller" Type="varchar" MaxLength="100" />
+          <Property Name="Sys_Action" Type="varchar" MaxLength="100" />
+          <Property Name="Sys_Parent" Type="int" />
+        </EntityType>
+        <EntityType Name="Sys_Menu_Profile">
+          <Key>
+            <PropertyRef Name="Sys_Id" />
+          </Key>
+          <Property Name="Sys_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Sys_Menu_Id" Type="int" Nullable="false" />
+          <Property Name="Sys_Profile_Id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Sys_Profile">
+          <Key>
+            <PropertyRef Name="Sys_Id" />
+          </Key>
+          <Property Name="Sys_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Sys_Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Sys_Rfc" Type="varchar" MaxLength="13" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Sys_User">
+          <Key>
+            <PropertyRef Name="Sys_Id" />
+          </Key>
+          <Property Name="Sys_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Sys_Rfc" Type="varchar" MaxLength="13" Nullable="false" />
+          <Property Name="Sys_Usr" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="Sys_Pass" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="Sys_Email" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="Sys_AccessAttempts" Type="int" />
+          <Property Name="Sys_LockDate" Type="datetime" />
+          <Property Name="Sys_CreationDate" Type="datetime" Nullable="false" />
+          <Property Name="Sys_LastLoggin" Type="datetime" />
+          <Property Name="Sys_Status" Type="int" />
+          <Property Name="Sys_Profile_Id" Type="int" />
+        </EntityType>
+        <EntityContainer Name="Db_EmisionModelStoreContainer">
+          <EntitySet Name="Sys_Certificate" EntityType="Self.Sys_Certificate" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Sys_Client" EntityType="Self.Sys_Client" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Sys_Company" EntityType="Self.Sys_Company" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Sys_CompanyAddress" EntityType="Self.Sys_CompanyAddress" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Sys_Complements" EntityType="Self.Sys_Complements" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Sys_Menu" EntityType="Self.Sys_Menu" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Sys_Menu_Profile" EntityType="Self.Sys_Menu_Profile" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Sys_Profile" EntityType="Self.Sys_Profile" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Sys_User" EntityType="Self.Sys_User" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Db_EmisionModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="Db_EmisionEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Sys_Certificate" EntityType="Db_EmisionModel.Sys_Certificate" />
+          <EntitySet Name="Sys_Client" EntityType="Db_EmisionModel.Sys_Client" />
+          <EntitySet Name="Sys_Company" EntityType="Db_EmisionModel.Sys_Company" />
+          <EntitySet Name="Sys_CompanyAddress" EntityType="Db_EmisionModel.Sys_CompanyAddress" />
+          <EntitySet Name="Sys_Complements" EntityType="Db_EmisionModel.Sys_Complements" />
+          <EntitySet Name="Sys_Menu_Profile" EntityType="Db_EmisionModel.Sys_Menu_Profile" />
+          <EntitySet Name="Sys_Profile" EntityType="Db_EmisionModel.Sys_Profile" />
+          <EntitySet Name="Sys_User" EntityType="Db_EmisionModel.Sys_User" />
+          <EntitySet Name="Sys_Menu" EntityType="Db_EmisionModel.Sys_Menu" />
+        </EntityContainer>
+        <EntityType Name="Sys_Certificate">
+          <Key>
+            <PropertyRef Name="Sys_Id" />
+          </Key>
+          <Property Name="Sys_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Sys_Rfc" Type="String" Nullable="false" MaxLength="13" FixedLength="false" Unicode="false" />
+          <Property Name="Sys_Number" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Sys_Name" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="Sys_Certificate1" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Sys_Key" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Sys_Pwd" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="Sys_RegistrationDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Sys_RegistrationDateCert" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Sys_ExpirationDateCert" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="Sys_Client">
+          <Key>
+            <PropertyRef Name="Sys_Id" />
+          </Key>
+          <Property Name="Sys_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Sys_Rfc" Type="String" Nullable="false" MaxLength="13" FixedLength="false" Unicode="false" />
+          <Property Name="Sys_BusinessName" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Sys_Tradename" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Sys_Email" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Sys_Street" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Sys_ZipCode" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="Sys_Municipality" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Sys_State" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Sys_Cologne" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Sys_Country" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Sys_RegistrationDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Sys_ModificationDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Sys_UserId" Type="Int32" Nullable="false" />
+          <Property Name="Sys_RfcCompany" Type="String" Nullable="false" MaxLength="13" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Sys_Company">
+          <Key>
+            <PropertyRef Name="Sys_Rfc" />
+          </Key>
+          <Property Name="Sys_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Sys_Rfc" Type="String" Nullable="false" MaxLength="13" FixedLength="false" Unicode="false" />
+          <Property Name="Sys_Name" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="Sys_FiscalRegime" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="Sys_Curp" Type="String" MaxLength="18" FixedLength="false" Unicode="false" />
+          <Property Name="Sys_Page" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Sys_Email" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Sys_Phone" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="Sys_UserModified" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Sys_RegistrationDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Sys_ModificationDate" Type="DateTime" Precision="3" />
+          <Property Name="Sys_Status" Type="Boolean" />
+          <Property Name="Sys_Balance" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Sys_CompanyAddress">
+          <Key>
+            <PropertyRef Name="Sys_Id" />
+          </Key>
+          <Property Name="Sys_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Sys_Rfc" Type="String" Nullable="false" MaxLength="13" FixedLength="false" Unicode="false" />
+          <Property Name="Sys_ZipCode" Type="String" Nullable="false" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="Sys_Street" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="Sys_ExternalNumber" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Sys_InternalNumber" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Sys_Cologne" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="Sys_Municipality" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="Sys_Reference" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="Sys_State" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Sys_Country" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Sys_User" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Sys_RegistrationDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Sys_ModificationDate" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="Sys_Complements">
+          <Key>
+            <PropertyRef Name="Sys_Id" />
+          </Key>
+          <Property Name="Sys_Id" Type="Int32" Nullable="false" />
+          <Property Name="Sys_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Sys_Menu_Profile">
+          <Key>
+            <PropertyRef Name="Sys_Id" />
+          </Key>
+          <Property Name="Sys_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Sys_Menu_Id" Type="Int32" Nullable="false" />
+          <Property Name="Sys_Profile_Id" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Sys_Profile">
+          <Key>
+            <PropertyRef Name="Sys_Id" />
+          </Key>
+          <Property Name="Sys_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Sys_Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Sys_Rfc" Type="String" Nullable="false" MaxLength="13" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Sys_User">
+          <Key>
+            <PropertyRef Name="Sys_Id" />
+          </Key>
+          <Property Name="Sys_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Sys_Rfc" Type="String" Nullable="false" MaxLength="13" FixedLength="false" Unicode="false" />
+          <Property Name="Sys_Usr" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Sys_Pass" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Sys_Email" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="Sys_AccessAttempts" Type="Int32" />
+          <Property Name="Sys_LockDate" Type="DateTime" Precision="3" />
+          <Property Name="Sys_CreationDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Sys_LastLoggin" Type="DateTime" Precision="3" />
+          <Property Name="Sys_Status" Type="Int32" />
+          <Property Name="Sys_Profile_Id" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Sys_Menu">
+          <Key>
+            <PropertyRef Name="Sys_Id" />
+          </Key>
+          <Property Name="Sys_Id" Type="Int32" Nullable="false" />
+          <Property Name="Sys_Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Sys_Controller" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Sys_Action" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Sys_Parent" Type="Int32" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Db_EmisionModelStoreContainer" CdmEntityContainer="Db_EmisionEntities">
+          <EntitySetMapping Name="Sys_Certificate">
+            <EntityTypeMapping TypeName="Db_EmisionModel.Sys_Certificate">
+              <MappingFragment StoreEntitySet="Sys_Certificate">
+                <ScalarProperty Name="Sys_ExpirationDateCert" ColumnName="Sys_ExpirationDateCert" />
+                <ScalarProperty Name="Sys_RegistrationDateCert" ColumnName="Sys_RegistrationDateCert" />
+                <ScalarProperty Name="Sys_RegistrationDate" ColumnName="Sys_RegistrationDate" />
+                <ScalarProperty Name="Sys_Pwd" ColumnName="Sys_Pwd" />
+                <ScalarProperty Name="Sys_Key" ColumnName="Sys_Key" />
+                <ScalarProperty Name="Sys_Certificate1" ColumnName="Sys_Certificate1" />
+                <ScalarProperty Name="Sys_Name" ColumnName="Sys_Name" />
+                <ScalarProperty Name="Sys_Number" ColumnName="Sys_Number" />
+                <ScalarProperty Name="Sys_Rfc" ColumnName="Sys_Rfc" />
+                <ScalarProperty Name="Sys_Id" ColumnName="Sys_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Sys_Client">
+            <EntityTypeMapping TypeName="Db_EmisionModel.Sys_Client">
+              <MappingFragment StoreEntitySet="Sys_Client">
+                <ScalarProperty Name="Sys_RfcCompany" ColumnName="Sys_RfcCompany" />
+                <ScalarProperty Name="Sys_UserId" ColumnName="Sys_UserId" />
+                <ScalarProperty Name="Sys_ModificationDate" ColumnName="Sys_ModificationDate" />
+                <ScalarProperty Name="Sys_RegistrationDate" ColumnName="Sys_RegistrationDate" />
+                <ScalarProperty Name="Sys_Country" ColumnName="Sys_Country" />
+                <ScalarProperty Name="Sys_Cologne" ColumnName="Sys_Cologne" />
+                <ScalarProperty Name="Sys_State" ColumnName="Sys_State" />
+                <ScalarProperty Name="Sys_Municipality" ColumnName="Sys_Municipality" />
+                <ScalarProperty Name="Sys_ZipCode" ColumnName="Sys_ZipCode" />
+                <ScalarProperty Name="Sys_Street" ColumnName="Sys_Street" />
+                <ScalarProperty Name="Sys_Email" ColumnName="Sys_Email" />
+                <ScalarProperty Name="Sys_Tradename" ColumnName="Sys_Tradename" />
+                <ScalarProperty Name="Sys_BusinessName" ColumnName="Sys_BusinessName" />
+                <ScalarProperty Name="Sys_Rfc" ColumnName="Sys_Rfc" />
+                <ScalarProperty Name="Sys_Id" ColumnName="Sys_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Sys_Company">
+            <EntityTypeMapping TypeName="Db_EmisionModel.Sys_Company">
+              <MappingFragment StoreEntitySet="Sys_Company">
+                <ScalarProperty Name="Sys_Balance" ColumnName="Sys_Balance" />
+                <ScalarProperty Name="Sys_Status" ColumnName="Sys_Status" />
+                <ScalarProperty Name="Sys_ModificationDate" ColumnName="Sys_ModificationDate" />
+                <ScalarProperty Name="Sys_RegistrationDate" ColumnName="Sys_RegistrationDate" />
+                <ScalarProperty Name="Sys_UserModified" ColumnName="Sys_UserModified" />
+                <ScalarProperty Name="Sys_Phone" ColumnName="Sys_Phone" />
+                <ScalarProperty Name="Sys_Email" ColumnName="Sys_Email" />
+                <ScalarProperty Name="Sys_Page" ColumnName="Sys_Page" />
+                <ScalarProperty Name="Sys_Curp" ColumnName="Sys_Curp" />
+                <ScalarProperty Name="Sys_FiscalRegime" ColumnName="Sys_FiscalRegime" />
+                <ScalarProperty Name="Sys_Name" ColumnName="Sys_Name" />
+                <ScalarProperty Name="Sys_Rfc" ColumnName="Sys_Rfc" />
+                <ScalarProperty Name="Sys_Id" ColumnName="Sys_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Sys_CompanyAddress">
+            <EntityTypeMapping TypeName="Db_EmisionModel.Sys_CompanyAddress">
+              <MappingFragment StoreEntitySet="Sys_CompanyAddress">
+                <ScalarProperty Name="Sys_ModificationDate" ColumnName="Sys_ModificationDate" />
+                <ScalarProperty Name="Sys_RegistrationDate" ColumnName="Sys_RegistrationDate" />
+                <ScalarProperty Name="Sys_User" ColumnName="Sys_User" />
+                <ScalarProperty Name="Sys_Country" ColumnName="Sys_Country" />
+                <ScalarProperty Name="Sys_State" ColumnName="Sys_State" />
+                <ScalarProperty Name="Sys_Reference" ColumnName="Sys_Reference" />
+                <ScalarProperty Name="Sys_Municipality" ColumnName="Sys_Municipality" />
+                <ScalarProperty Name="Sys_Cologne" ColumnName="Sys_Cologne" />
+                <ScalarProperty Name="Sys_InternalNumber" ColumnName="Sys_InternalNumber" />
+                <ScalarProperty Name="Sys_ExternalNumber" ColumnName="Sys_ExternalNumber" />
+                <ScalarProperty Name="Sys_Street" ColumnName="Sys_Street" />
+                <ScalarProperty Name="Sys_ZipCode" ColumnName="Sys_ZipCode" />
+                <ScalarProperty Name="Sys_Rfc" ColumnName="Sys_Rfc" />
+                <ScalarProperty Name="Sys_Id" ColumnName="Sys_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Sys_Complements">
+            <EntityTypeMapping TypeName="Db_EmisionModel.Sys_Complements">
+              <MappingFragment StoreEntitySet="Sys_Complements">
+                <ScalarProperty Name="Sys_Name" ColumnName="Sys_Name" />
+                <ScalarProperty Name="Sys_Id" ColumnName="Sys_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Sys_Menu_Profile">
+            <EntityTypeMapping TypeName="Db_EmisionModel.Sys_Menu_Profile">
+              <MappingFragment StoreEntitySet="Sys_Menu_Profile">
+                <ScalarProperty Name="Sys_Profile_Id" ColumnName="Sys_Profile_Id" />
+                <ScalarProperty Name="Sys_Menu_Id" ColumnName="Sys_Menu_Id" />
+                <ScalarProperty Name="Sys_Id" ColumnName="Sys_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Sys_Profile">
+            <EntityTypeMapping TypeName="Db_EmisionModel.Sys_Profile">
+              <MappingFragment StoreEntitySet="Sys_Profile">
+                <ScalarProperty Name="Sys_Rfc" ColumnName="Sys_Rfc" />
+                <ScalarProperty Name="Sys_Name" ColumnName="Sys_Name" />
+                <ScalarProperty Name="Sys_Id" ColumnName="Sys_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Sys_User">
+            <EntityTypeMapping TypeName="Db_EmisionModel.Sys_User">
+              <MappingFragment StoreEntitySet="Sys_User">
+                <ScalarProperty Name="Sys_Profile_Id" ColumnName="Sys_Profile_Id" />
+                <ScalarProperty Name="Sys_Status" ColumnName="Sys_Status" />
+                <ScalarProperty Name="Sys_LastLoggin" ColumnName="Sys_LastLoggin" />
+                <ScalarProperty Name="Sys_CreationDate" ColumnName="Sys_CreationDate" />
+                <ScalarProperty Name="Sys_LockDate" ColumnName="Sys_LockDate" />
+                <ScalarProperty Name="Sys_AccessAttempts" ColumnName="Sys_AccessAttempts" />
+                <ScalarProperty Name="Sys_Email" ColumnName="Sys_Email" />
+                <ScalarProperty Name="Sys_Pass" ColumnName="Sys_Pass" />
+                <ScalarProperty Name="Sys_Usr" ColumnName="Sys_Usr" />
+                <ScalarProperty Name="Sys_Rfc" ColumnName="Sys_Rfc" />
+                <ScalarProperty Name="Sys_Id" ColumnName="Sys_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Sys_Menu">
+            <EntityTypeMapping TypeName="Db_EmisionModel.Sys_Menu">
+              <MappingFragment StoreEntitySet="Sys_Menu">
+                <ScalarProperty Name="Sys_Parent" ColumnName="Sys_Parent" />
+                <ScalarProperty Name="Sys_Action" ColumnName="Sys_Action" />
+                <ScalarProperty Name="Sys_Controller" ColumnName="Sys_Controller" />
+                <ScalarProperty Name="Sys_Name" ColumnName="Sys_Name" />
+                <ScalarProperty Name="Sys_Id" ColumnName="Sys_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

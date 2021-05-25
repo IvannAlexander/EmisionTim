@@ -50,13 +50,13 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ServicioBussines\ServicioBussines.csproj">
+    <ProjectReference Include="..\ServicioBussines\Bussines.csproj">
       <Project>{18696238-27fe-4469-99ce-be0b1c0ac309}</Project>
-      <Name>ServicioBussines</Name>
+      <Name>Bussines</Name>
     </ProjectReference>
-    <ProjectReference Include="..\ServicioEmision\ServicioEmision.csproj">
+    <ProjectReference Include="..\ServicioEmision\EmisionService.csproj">
       <Project>{8b00796f-06f5-4765-b18a-bacf28343a73}</Project>
-      <Name>ServicioEmision</Name>
+      <Name>EmisionService</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
