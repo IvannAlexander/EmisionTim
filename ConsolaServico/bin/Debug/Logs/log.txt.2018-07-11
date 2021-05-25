@@ -1,0 +1,58 @@
+﻿2018-07-11 11:00:23,661-1-DEBUG-ServicioConsola.Program.Main.25: Iniciando servicio
+2018-07-11 11:00:24,128-1-INFO-ServicioConsola.Program.Main.47: Uri:net.tcp://localhost:8083/Emision
+2018-07-11 11:09:05,757-1-DEBUG-ServicioConsola.Program.Main.25: Iniciando servicio
+2018-07-11 11:09:06,658-1-INFO-ServicioConsola.Program.Main.47: Uri:net.tcp://localhost:8083/Emision
+2018-07-11 11:15:02,137-1-DEBUG-ServicioConsola.Program.Main.25: Iniciando servicio
+2018-07-11 11:15:02,375-1-INFO-ServicioConsola.Program.Main.47: Uri:net.tcp://localhost:8083/Emision
+2018-07-11 11:17:47,803-1-DEBUG-ServicioConsola.Program.Main.25: Iniciando servicio
+2018-07-11 11:17:47,929-1-INFO-ServicioConsola.Program.Main.47: Uri:net.tcp://localhost:8083/Emision
+2018-07-11 11:20:11,689-7-ERROR-ServicioBussines.OperacionCertificados.GuardaCertificados.60: System.Exception: El RFC AAA010101AAA del certificado no corredponde al RFC de la empresa. Favor de validar.
+   at ServicioBussines.OperacionCertificados.GuardaCertificados(Byte[] archivoCer, Byte[] archivoKey, String pass, String rfcEmpresa) in Z:\Alexander\Mega\Personal\Trabajo\Proyectos\Mvc\Emision\ServicioBussines\OperacionCertificados.cs:line 31
+2018-07-11 11:26:05,172-1-DEBUG-ServicioConsola.Program.Main.25: Iniciando servicio
+2018-07-11 11:26:05,570-1-INFO-ServicioConsola.Program.Main.47: Uri:net.tcp://localhost:8083/Emision
+2018-07-11 12:49:40,171-1-DEBUG-ServicioConsola.Program.Main.25: Iniciando servicio
+2018-07-11 12:49:41,885-1-INFO-ServicioConsola.Program.Main.47: Uri:net.tcp://localhost:8083/Emision
+2018-07-11 13:57:47,670-1-DEBUG-ServicioConsola.Program.Main.25: Iniciando servicio
+2018-07-11 13:57:49,157-1-INFO-ServicioConsola.Program.Main.47: Uri:net.tcp://localhost:8083/Emision
+2018-07-11 16:37:18,230-1-DEBUG-ServicioConsola.Program.Main.25: Iniciando servicio
+2018-07-11 16:37:18,612-1-INFO-ServicioConsola.Program.Main.47: Uri:net.tcp://localhost:8083/Emision
+2018-07-11 16:41:40,871-1-DEBUG-ServicioConsola.Program.Main.25: Iniciando servicio
+2018-07-11 16:41:41,387-1-INFO-ServicioConsola.Program.Main.47: Uri:net.tcp://localhost:8083/Emision
+2018-07-11 16:54:57,166-1-DEBUG-ServicioConsola.Program.Main.25: Iniciando servicio
+2018-07-11 16:54:58,041-1-INFO-ServicioConsola.Program.Main.47: Uri:net.tcp://localhost:8083/Emision
+2018-07-11 16:59:22,091-4-ERROR-ServicioBussines.OperacionCliente.GuardarClienteNuevo.77: System.Data.Entity.Validation.DbEntityValidationException: Validation failed for one or more entities. See 'EntityValidationErrors' property for more details.
+   at System.Data.Entity.Internal.InternalContext.SaveChanges()
+   at System.Data.Entity.Internal.LazyInternalContext.SaveChanges()
+   at System.Data.Entity.DbContext.SaveChanges()
+   at ServicioBussines.OperacionCliente.GuardarClienteNuevo(Sys_Cliente cliente) in Z:\Alexander\Mega\Personal\Trabajo\Proyectos\Mvc\Emision\ServicioBussines\OperacionCliente.cs:line 72
+2018-07-11 17:01:30,463-4-ERROR-ServicioBussines.OperacionCliente.GuardarClienteNuevo.77: System.Data.Entity.Validation.DbEntityValidationException: Validation failed for one or more entities. See 'EntityValidationErrors' property for more details.
+   at System.Data.Entity.Internal.InternalContext.SaveChanges()
+   at System.Data.Entity.Internal.LazyInternalContext.SaveChanges()
+   at System.Data.Entity.DbContext.SaveChanges()
+   at ServicioBussines.OperacionCliente.GuardarClienteNuevo(Sys_Cliente cliente) in Z:\Alexander\Mega\Personal\Trabajo\Proyectos\Mvc\Emision\ServicioBussines\OperacionCliente.cs:line 72
+2018-07-11 17:20:24,896-13-ERROR-ServicioBussines.OperacionCliente.GuardarClienteNuevo.77: System.Data.Entity.Validation.DbEntityValidationException: Validation failed for one or more entities. See 'EntityValidationErrors' property for more details.
+   at System.Data.Entity.Internal.InternalContext.SaveChanges()
+   at System.Data.Entity.Internal.LazyInternalContext.SaveChanges()
+   at System.Data.Entity.DbContext.SaveChanges()
+   at ServicioBussines.OperacionCliente.GuardarClienteNuevo(Sys_Cliente cliente) in Z:\Alexander\Mega\Personal\Trabajo\Proyectos\Mvc\Emision\ServicioBussines\OperacionCliente.cs:line 72
+2018-07-11 17:21:17,666-15-ERROR-ServicioBussines.OperacionCliente.GuardarClienteNuevo.77: System.Data.Entity.Validation.DbEntityValidationException: Validation failed for one or more entities. See 'EntityValidationErrors' property for more details.
+   at System.Data.Entity.Internal.InternalContext.SaveChanges()
+   at System.Data.Entity.Internal.LazyInternalContext.SaveChanges()
+   at System.Data.Entity.DbContext.SaveChanges()
+   at ServicioBussines.OperacionCliente.GuardarClienteNuevo(Sys_Cliente cliente) in Z:\Alexander\Mega\Personal\Trabajo\Proyectos\Mvc\Emision\ServicioBussines\OperacionCliente.cs:line 72
+2018-07-11 17:21:56,668-6-ERROR-ServicioBussines.OperacionCliente.GuardarClienteNuevo.77: System.Data.Entity.Validation.DbEntityValidationException: Validation failed for one or more entities. See 'EntityValidationErrors' property for more details.
+   at System.Data.Entity.Internal.InternalContext.SaveChanges()
+   at System.Data.Entity.Internal.LazyInternalContext.SaveChanges()
+   at System.Data.Entity.DbContext.SaveChanges()
+   at ServicioBussines.OperacionCliente.GuardarClienteNuevo(Sys_Cliente cliente) in Z:\Alexander\Mega\Personal\Trabajo\Proyectos\Mvc\Emision\ServicioBussines\OperacionCliente.cs:line 72
+2018-07-11 17:48:12,018-1-DEBUG-ServicioConsola.Program.Main.25: Iniciando servicio
+2018-07-11 17:48:12,250-1-INFO-ServicioConsola.Program.Main.47: Uri:net.tcp://localhost:8083/Emision
+2018-07-11 17:57:55,449-21-ERROR-ServicioBussines.OperacionCliente.GuardarClienteNuevo.77: System.Data.Entity.Validation.DbEntityValidationException: Validation failed for one or more entities. See 'EntityValidationErrors' property for more details.
+   at System.Data.Entity.Internal.InternalContext.SaveChanges()
+   at System.Data.Entity.Internal.LazyInternalContext.SaveChanges()
+   at System.Data.Entity.DbContext.SaveChanges()
+   at ServicioBussines.OperacionCliente.GuardarClienteNuevo(Sys_Cliente cliente) in Z:\Alexander\Mega\Personal\Trabajo\Proyectos\Mvc\Emision\ServicioBussines\OperacionCliente.cs:line 72
+2018-07-11 18:24:08,112-1-DEBUG-ServicioConsola.Program.Main.25: Iniciando servicio
+2018-07-11 18:24:08,345-1-INFO-ServicioConsola.Program.Main.47: Uri:net.tcp://localhost:8083/Emision
+2018-07-11 18:36:18,929-1-DEBUG-ServicioConsola.Program.Main.25: Iniciando servicio
+2018-07-11 18:36:19,597-1-INFO-ServicioConsola.Program.Main.47: Uri:net.tcp://localhost:8083/Emision

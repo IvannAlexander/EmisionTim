@@ -1,0 +1,101 @@
+﻿2018-05-08 15:52:13,970-10-DEBUG-ServicioConsola.Program.Main.23: Iniciando servicio
+2018-05-08 15:52:14,520-10-INFO-ServicioConsola.Program.Main.44: Uri:net.tcp://localhost:8088/CmService
+2018-05-08 15:59:17,337-9-DEBUG-ServicioConsola.Program.Main.23: Iniciando servicio
+2018-05-08 15:59:17,783-9-INFO-ServicioConsola.Program.Main.44: Uri:net.tcp://localhost:8088/CmService
+2018-05-08 16:01:34,765-9-DEBUG-ServicioConsola.Program.Main.23: Iniciando servicio
+2018-05-08 16:01:35,364-9-INFO-ServicioConsola.Program.Main.44: Uri:net.tcp://localhost:8088/CmService
+2018-05-08 16:10:15,515-10-DEBUG-ServicioConsola.Program.Main.23: Iniciando servicio
+2018-05-08 16:10:17,437-10-INFO-ServicioConsola.Program.Main.44: Uri:net.tcp://localhost:8088/CmService
+2018-05-08 16:57:09,212-10-DEBUG-ServicioConsola.Program.Main.23: Iniciando servicio
+2018-05-08 16:57:09,867-10-INFO-ServicioConsola.Program.Main.44: Uri:net.tcp://localhost:8088/CmService
+2018-05-08 16:57:38,014-4-ERROR-ServicioBussines.OperacionUsuario.ObtenerUsuario.67: System.Data.Entity.Core.EntityCommandCompilationException: An error occurred while preparing the command definition. See the inner exception for details. ---> System.Data.Entity.Core.MappingException: 
+SysEntities.msl(89,6) : error 3007: Problem in mapping fragments starting at lines 58, 89:Column(s) [Sys_Rfc] are being mapped in both fragments to different conceptual side properties.
+
+   at System.Data.Entity.Core.Mapping.StorageMappingItemCollection.ViewDictionary.SerializedGenerateViews(EntityContainerMapping entityContainerMap, Dictionary`2 resultDictionary)
+   at System.Data.Entity.Core.Mapping.StorageMappingItemCollection.ViewDictionary.SerializedGetGeneratedViews(EntityContainer container)
+   at System.Data.Entity.Core.Common.Utils.Memoizer`2.<>c__DisplayClass2.<Evaluate>b__0()
+   at System.Data.Entity.Core.Common.Utils.Memoizer`2.Result.GetValue()
+   at System.Data.Entity.Core.Common.Utils.Memoizer`2.Evaluate(TArg arg)
+   at System.Data.Entity.Core.Mapping.StorageMappingItemCollection.ViewDictionary.GetGeneratedView(EntitySetBase extent, MetadataWorkspace workspace, StorageMappingItemCollection storageMappingItemCollection)
+   at System.Data.Entity.Core.Metadata.Edm.MetadataWorkspace.GetGeneratedView(EntitySetBase extent)
+   at System.Data.Entity.Core.Query.PlanCompiler.PreProcessor.ExpandView(ScanTableOp scanTableOp, IsOfOp& typeFilter)
+   at System.Data.Entity.Core.Query.PlanCompiler.PreProcessor.ProcessScanTable(Node scanTableNode, ScanTableOp scanTableOp, IsOfOp& typeFilter)
+   at System.Data.Entity.Core.Query.PlanCompiler.PreProcessor.Visit(ScanTableOp op, Node n)
+   at System.Data.Entity.Core.Query.InternalTrees.ScanTableOp.Accept[TResultType](BasicOpVisitorOfT`1 v, Node n)
+   at System.Data.Entity.Core.Query.InternalTrees.BasicOpVisitorOfT`1.VisitNode(Node n)
+   at System.Data.Entity.Core.Query.PlanCompiler.SubqueryTrackingVisitor.VisitChildren(Node n)
+   at System.Data.Entity.Core.Query.PlanCompiler.SubqueryTrackingVisitor.VisitRelOpDefault(RelOp op, Node n)
+   at System.Data.Entity.Core.Query.PlanCompiler.PreProcessor.Visit(FilterOp op, Node n)
+   at System.Data.Entity.Core.Query.InternalTrees.FilterOp.Accept[TResultType](BasicOpVisitorOfT`1 v, Node n)
+   at System.Data.Entity.Core.Query.InternalTrees.BasicOpVisitorOfT`1.VisitNode(Node n)
+   at System.Data.Entity.Core.Query.PlanCompiler.SubqueryTrackingVisitor.VisitChildren(Node n)
+   at System.Data.Entity.Core.Query.PlanCompiler.SubqueryTrackingVisitor.VisitRelOpDefault(RelOp op, Node n)
+   at System.Data.Entity.Core.Query.PlanCompiler.PreProcessor.Visit(ProjectOp op, Node n)
+   at System.Data.Entity.Core.Query.InternalTrees.ProjectOp.Accept[TResultType](BasicOpVisitorOfT`1 v, Node n)
+   at System.Data.Entity.Core.Query.InternalTrees.BasicOpVisitorOfT`1.VisitNode(Node n)
+   at System.Data.Entity.Core.Query.PlanCompiler.SubqueryTrackingVisitor.VisitChildren(Node n)
+   at System.Data.Entity.Core.Query.PlanCompiler.SubqueryTrackingVisitor.VisitRelOpDefault(RelOp op, Node n)
+   at System.Data.Entity.Core.Query.InternalTrees.BasicOpVisitorOfT`1.VisitSortOp(SortBaseOp op, Node n)
+   at System.Data.Entity.Core.Query.InternalTrees.BasicOpVisitorOfT`1.Visit(ConstrainedSortOp op, Node n)
+   at System.Data.Entity.Core.Query.InternalTrees.ConstrainedSortOp.Accept[TResultType](BasicOpVisitorOfT`1 v, Node n)
+   at System.Data.Entity.Core.Query.InternalTrees.BasicOpVisitorOfT`1.VisitNode(Node n)
+   at System.Data.Entity.Core.Query.PlanCompiler.SubqueryTrackingVisitor.VisitChildren(Node n)
+   at System.Data.Entity.Core.Query.InternalTrees.BasicOpVisitorOfNode.VisitDefault(Node n)
+   at System.Data.Entity.Core.Query.InternalTrees.BasicOpVisitorOfNode.VisitPhysicalOpDefault(PhysicalOp op, Node n)
+   at System.Data.Entity.Core.Query.InternalTrees.BasicOpVisitorOfT`1.Visit(PhysicalProjectOp op, Node n)
+   at System.Data.Entity.Core.Query.InternalTrees.PhysicalProjectOp.Accept[TResultType](BasicOpVisitorOfT`1 v, Node n)
+   at System.Data.Entity.Core.Query.InternalTrees.BasicOpVisitorOfT`1.VisitNode(Node n)
+   at System.Data.Entity.Core.Query.PlanCompiler.PreProcessor.Process(Dictionary`2& tvfResultKeys)
+   at System.Data.Entity.Core.Query.PlanCompiler.PreProcessor.Process(PlanCompiler planCompilerState, StructuredTypeInfo& typeInfo, Dictionary`2& tvfResultKeys)
+   at System.Data.Entity.Core.Query.PlanCompiler.PlanCompiler.Compile(List`1& providerCommands, ColumnMap& resultColumnMap, Int32& columnCount, Set`1& entitySets)
+   at System.Data.Entity.Core.Query.PlanCompiler.PlanCompiler.Compile(DbCommandTree ctree, List`1& providerCommands, ColumnMap& resultColumnMap, Int32& columnCount, Set`1& entitySets)
+   at System.Data.Entity.Core.EntityClient.Internal.EntityCommandDefinition..ctor(DbProviderFactory storeProviderFactory, DbCommandTree commandTree, DbInterceptionContext interceptionContext, IDbDependencyResolver resolver, BridgeDataReaderFactory bridgeDataReaderFactory, ColumnMapFactory columnMapFactory)
+   --- End of inner exception stack trace ---
+   at System.Data.Entity.Core.EntityClient.Internal.EntityCommandDefinition..ctor(DbProviderFactory storeProviderFactory, DbCommandTree commandTree, DbInterceptionContext interceptionContext, IDbDependencyResolver resolver, BridgeDataReaderFactory bridgeDataReaderFactory, ColumnMapFactory columnMapFactory)
+   at System.Data.Entity.Core.EntityClient.Internal.EntityProviderServices.CreateDbCommandDefinition(DbProviderManifest providerManifest, DbCommandTree commandTree, DbInterceptionContext interceptionContext)
+   at System.Data.Entity.Core.Common.DbProviderServices.CreateCommandDefinition(DbCommandTree commandTree, DbInterceptionContext interceptionContext)
+   at System.Data.Entity.Core.Objects.Internal.ObjectQueryExecutionPlanFactory.CreateCommandDefinition(ObjectContext context, DbQueryCommandTree tree)
+   at System.Data.Entity.Core.Objects.Internal.ObjectQueryExecutionPlanFactory.Prepare(ObjectContext context, DbQueryCommandTree tree, Type elementType, MergeOption mergeOption, Boolean streaming, Span span, IEnumerable`1 compiledQueryParameters, AliasGenerator aliasGenerator)
+   at System.Data.Entity.Core.Objects.ELinq.ELinqQueryState.GetExecutionPlan(Nullable`1 forMergeOption)
+   at System.Data.Entity.Core.Objects.ObjectQuery`1.<>c__DisplayClass7.<GetResults>b__6()
+   at System.Data.Entity.Core.Objects.ObjectContext.ExecuteInTransaction[T](Func`1 func, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction, Boolean releaseConnectionOnSuccess)
+   at System.Data.Entity.Core.Objects.ObjectQuery`1.<>c__DisplayClass7.<GetResults>b__5()
+   at System.Data.Entity.SqlServer.DefaultSqlExecutionStrategy.Execute[TResult](Func`1 operation)
+   at System.Data.Entity.Core.Objects.ObjectQuery`1.GetResults(Nullable`1 forMergeOption)
+   at System.Data.Entity.Core.Objects.ObjectQuery`1.<System.Collections.Generic.IEnumerable<T>.GetEnumerator>b__0()
+   at System.Data.Entity.Internal.LazyEnumerator`1.MoveNext()
+   at System.Linq.Enumerable.FirstOrDefault[TSource](IEnumerable`1 source)
+   at System.Data.Entity.Core.Objects.ELinq.ObjectQueryProvider.<GetElementFunction>b__1[TResult](IEnumerable`1 sequence)
+   at System.Data.Entity.Core.Objects.ELinq.ObjectQueryProvider.ExecuteSingle[TResult](IEnumerable`1 query, Expression queryRoot)
+   at System.Data.Entity.Core.Objects.ELinq.ObjectQueryProvider.System.Linq.IQueryProvider.Execute[TResult](Expression expression)
+   at System.Data.Entity.Internal.Linq.DbQueryProvider.Execute[TResult](Expression expression)
+   at System.Linq.Queryable.FirstOrDefault[TSource](IQueryable`1 source, Expression`1 predicate)
+   at ServicioBussines.OperacionUsuario.ObtenerUsuario(String usuario, String rfc) in Z:\Alexander\Mega\Personal\Trabajo\Proyectos\Mvc\Emision\ServicioBussines\OperacionUsuario.cs:line 62
+2018-05-08 17:06:34,387-9-DEBUG-ServicioConsola.Program.Main.23: Iniciando servicio
+2018-05-08 17:06:35,179-9-INFO-ServicioConsola.Program.Main.44: Uri:net.tcp://localhost:8088/CmService
+2018-05-08 17:15:02,231-9-DEBUG-ServicioConsola.Program.Main.23: Iniciando servicio
+2018-05-08 17:15:04,772-9-INFO-ServicioConsola.Program.Main.44: Uri:net.tcp://localhost:8088/CmService
+2018-05-08 17:21:44,056-9-DEBUG-ServicioConsola.Program.Main.23: Iniciando servicio
+2018-05-08 17:21:44,779-9-INFO-ServicioConsola.Program.Main.44: Uri:net.tcp://localhost:8088/CmService
+2018-05-08 17:24:30,735-8-DEBUG-ServicioConsola.Program.Main.23: Iniciando servicio
+2018-05-08 17:24:30,953-8-INFO-ServicioConsola.Program.Main.44: Uri:net.tcp://localhost:8088/CmService
+2018-05-08 17:43:22,524-10-DEBUG-ServicioConsola.Program.Main.23: Iniciando servicio
+2018-05-08 17:43:22,775-10-INFO-ServicioConsola.Program.Main.44: Uri:net.tcp://localhost:8088/CmService
+2018-05-08 17:45:46,364-8-DEBUG-ServicioConsola.Program.Main.23: Iniciando servicio
+2018-05-08 17:45:46,642-8-INFO-ServicioConsola.Program.Main.44: Uri:net.tcp://localhost:8088/CmService
+2018-05-08 17:48:21,122-9-DEBUG-ServicioConsola.Program.Main.23: Iniciando servicio
+2018-05-08 17:48:21,678-9-INFO-ServicioConsola.Program.Main.44: Uri:net.tcp://localhost:8088/CmService
+2018-05-08 18:00:24,597-9-DEBUG-ServicioConsola.Program.Main.23: Iniciando servicio
+2018-05-08 18:00:25,732-9-INFO-ServicioConsola.Program.Main.44: Uri:net.tcp://localhost:8088/CmService
+2018-05-08 18:03:17,578-9-DEBUG-ServicioConsola.Program.Main.23: Iniciando servicio
+2018-05-08 18:03:17,840-9-INFO-ServicioConsola.Program.Main.44: Uri:net.tcp://localhost:8088/CmService
+2018-05-08 18:09:37,150-9-DEBUG-ServicioConsola.Program.Main.23: Iniciando servicio
+2018-05-08 18:09:40,542-9-INFO-ServicioConsola.Program.Main.44: Uri:net.tcp://localhost:8088/CmService
+2018-05-08 18:38:10,436-9-DEBUG-ServicioConsola.Program.Main.23: Iniciando servicio
+2018-05-08 18:38:10,927-9-INFO-ServicioConsola.Program.Main.44: Uri:net.tcp://localhost:8088/CmService
+2018-05-08 18:48:26,481-9-DEBUG-ServicioConsola.Program.Main.23: Iniciando servicio
+2018-05-08 18:48:26,826-9-INFO-ServicioConsola.Program.Main.44: Uri:net.tcp://localhost:8088/CmService
+2018-05-08 18:50:13,584-9-DEBUG-ServicioConsola.Program.Main.23: Iniciando servicio
+2018-05-08 18:50:14,012-9-INFO-ServicioConsola.Program.Main.44: Uri:net.tcp://localhost:8088/CmService
+2018-05-08 19:12:31,463-9-DEBUG-ServicioConsola.Program.Main.23: Iniciando servicio
+2018-05-08 19:12:31,768-9-INFO-ServicioConsola.Program.Main.44: Uri:net.tcp://localhost:8088/CmService

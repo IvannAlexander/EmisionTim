@@ -1,0 +1,19 @@
+﻿2018-04-25 17:40:35,468-9-DEBUG-ServicioConsola.Program.Main.23: Iniciando servicio
+2018-04-25 17:40:35,950-9-INFO-ServicioConsola.Program.Main.44: Uri:net.tcp://localhost:8088/CmService
+2018-04-25 17:42:07,763-10-DEBUG-ServicioConsola.Program.Main.23: Iniciando servicio
+2018-04-25 17:42:08,038-10-INFO-ServicioConsola.Program.Main.44: Uri:net.tcp://localhost:8088/CmService
+2018-04-25 17:43:55,647-10-DEBUG-ServicioConsola.Program.Main.23: Iniciando servicio
+2018-04-25 17:43:56,010-10-INFO-ServicioConsola.Program.Main.44: Uri:net.tcp://localhost:8088/CmService
+2018-04-25 17:46:21,644-10-DEBUG-ServicioConsola.Program.Main.23: Iniciando servicio
+2018-04-25 17:46:21,849-10-INFO-ServicioConsola.Program.Main.44: Uri:net.tcp://localhost:8088/CmService
+2018-04-25 17:52:44,095-9-DEBUG-ServicioConsola.Program.Main.23: Iniciando servicio
+2018-04-25 17:52:47,478-9-INFO-ServicioConsola.Program.Main.44: Uri:net.tcp://localhost:8088/CmService
+2018-04-25 18:01:40,774-10-DEBUG-ServicioConsola.Program.Main.23: Iniciando servicio
+2018-04-25 18:01:41,010-10-INFO-ServicioConsola.Program.Main.44: Uri:net.tcp://localhost:8088/CmService
+2018-04-25 18:02:37,154-16-ERROR-ServicioBussines.OperacionEmpresa.GuardarEmpresa.33: El RFC: AAA010101AAB no cumplecon el formato correcto.
+2018-04-25 18:39:21,994-10-DEBUG-ServicioConsola.Program.Main.23: Iniciando servicio
+2018-04-25 18:39:25,761-10-INFO-ServicioConsola.Program.Main.44: Uri:net.tcp://localhost:8088/CmService
+2018-04-25 18:45:55,390-9-DEBUG-ServicioConsola.Program.Main.23: Iniciando servicio
+2018-04-25 18:45:55,605-9-INFO-ServicioConsola.Program.Main.44: Uri:net.tcp://localhost:8088/CmService
+2018-04-25 18:51:10,015-10-DEBUG-ServicioConsola.Program.Main.23: Iniciando servicio
+2018-04-25 18:51:10,260-10-INFO-ServicioConsola.Program.Main.44: Uri:net.tcp://localhost:8088/CmService

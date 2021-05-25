@@ -1,0 +1,49 @@
+﻿@model ServicioContract.Sys_Usuario
+
+@{
+
+    ViewBag.Title = "Acceso";
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Login</title>
+</head>
+<body>
+    <div class="container"> 
+        @using (Html.BeginForm())
+        {
+            @*@Html.ValidationSummary(true, "Error en el login");*@
+
+            <div class="row">
+                <div class="col-md-5"></div>
+                <div class="col-md-2 editor-label">
+                    @Html.LabelFor(p => p.Sys_Usr);
+                </div>
+                <div class="col-md-5"></div>
+            </div>
+                    <div class="editor-field">
+                        @Html.TextBoxFor(p => p.Sys_Usr);
+                        @Html.ValidationMessageFor(p => p.Sys_Usr);
+                    </div>
+                    <div class="editor-label">
+                        @Html.LabelFor(p => p.Sys_Pass);
+                    </div>
+                    <div class="editor-field">
+                        @Html.PasswordFor(p => p.Sys_Pass);
+                        @Html.ValidationMessageFor(p => p.Sys_Pass);
+                    </div>
+                    <div><input type="submit" value="Login" /></div>
+                    <div>
+<span style="color:green">@ViewBag.Message</span>
+                    </div>
+            
+            
+        }
+    </div>
+</body>
+</html>

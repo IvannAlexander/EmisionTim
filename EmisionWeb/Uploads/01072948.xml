@@ -1,0 +1,620 @@
+<cfdi:Comprobante xmlns:cfdi="http://www.sat.gob.mx/cfd/3" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sat.gob.mx/cfd/3 http://www.sat.gob.mx/sitio_internet/cfd/3/cfdv33.xsd" Version="3.3" Folio="01072948" Fecha="2018-03-20T10:32:53" Sello="hdLM1b02Pv5KUoW8wCNdA7Hjz66wiePHTf2lR0GvE6uDSMVu95AMY8xqqSne3lt2dLNulo5YNQW9MxD3jaKi697xpGeVFCGA30sAXcQ8uiFYu0CXY1puIfBU1AZPtgzy6HDtiHoG5WiHpLACgplyIUI+2qd4GV5mfKhmDgtyyxaVTE7AIODc6bEzdFikd6mmrP/aTWVogztjkaMJQSjuYnfTGVxYhizi7HwRs6EXpBM89dbHORa5iunCT8X39G7ZC9S2UDr2wfupk+48vd8El2r7eG5IBVctiVY8jCsQ0aA+gfLFRPLXWUopXfRtGgHepuj7HGB/r6msjYzUmIT6Uw==" FormaPago="99" NoCertificado="00001000000403452781" Certificado="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" CondicionesDePago="20 dias sin DPP" SubTotal="9098.30" Moneda="MXN" Total="9098.30" TipoDeComprobante="I" MetodoPago="PPD" LugarExpedicion="54180">
+	<cfdi:Emisor Rfc="FGI9905286T0" Nombre="FARMACIAS GI, S.A. de C.V." RegimenFiscal="601" />
+	<cfdi:Receptor Rfc="DMC090528S88" Nombre="DISTRIBUIDORA DE MEDICAMENTOS CAMPECHE, S.A. DE C.V." UsoCFDI="G01" />
+	<cfdi:Conceptos>
+		<cfdi:Concepto ClaveProdServ="51102301" NoIdentificacion="550005" Cantidad="3.000" ClaveUnidad="H87" Unidad="PZA" Descripcion="LESACLOR 200 MG C/125 ML SUSP" ValorUnitario="31.50" Importe="94.50">
+			<cfdi:Impuestos>
+				<cfdi:Traslados>
+					<cfdi:Traslado Base="94.50" Impuesto="002" TipoFactor="Tasa" TasaOCuota="0.000000" Importe="0" />
+				</cfdi:Traslados>
+			</cfdi:Impuestos>
+		</cfdi:Concepto>
+		<cfdi:Concepto ClaveProdServ="51142000" NoIdentificacion="550006" Cantidad="6.000" ClaveUnidad="H87" Unidad="PZA" Descripcion="MIDOLEN INFANTIL 100 MG C/30 TAB" ValorUnitario="5.50" Importe="33.00">
+			<cfdi:Impuestos>
+				<cfdi:Traslados>
+					<cfdi:Traslado Base="33.00" Impuesto="002" TipoFactor="Tasa" TasaOCuota="0.000000" Importe="0" />
+				</cfdi:Traslados>
+			</cfdi:Impuestos>
+		</cfdi:Concepto>
+		<cfdi:Concepto ClaveProdServ="01010101" NoIdentificacion="550028" Cantidad="6.000" ClaveUnidad="H87" Unidad="PZA" Descripcion="ROSEL-T C/15 TAB" ValorUnitario="16.00" Importe="96.00">
+			<cfdi:Impuestos>
+				<cfdi:Traslados>
+					<cfdi:Traslado Base="96.00" Impuesto="002" TipoFactor="Tasa" TasaOCuota="0.000000" Importe="0" />
+				</cfdi:Traslados>
+			</cfdi:Impuestos>
+		</cfdi:Concepto>
+		<cfdi:Concepto ClaveProdServ="51161800" NoIdentificacion="550029" Cantidad="8.000" ClaveUnidad="H87" Unidad="PZA" Descripcion="OXOLBRUL ADTO C/120 ML SOL" ValorUnitario="10.50" Importe="84.00">
+			<cfdi:Impuestos>
+				<cfdi:Traslados>
+					<cfdi:Traslado Base="84.00" Impuesto="002" TipoFactor="Tasa" TasaOCuota="0.000000" Importe="0" />
+				</cfdi:Traslados>
+			</cfdi:Impuestos>
+		</cfdi:Concepto>
+		<cfdi:Concepto ClaveProdServ="51161800" NoIdentificacion="550030" Cantidad="8.000" ClaveUnidad="H87" Unidad="PZA" Descripcion="OXOLBRUL INF C/120 ML SOL" ValorUnitario="10.59" Importe="84.72">
+			<cfdi:Impuestos>
+				<cfdi:Traslados>
+					<cfdi:Traslado Base="84.72" Impuesto="002" TipoFactor="Tasa" TasaOCuota="0.000000" Importe="0" />
+				</cfdi:Traslados>
+			</cfdi:Impuestos>
+		</cfdi:Concepto>
+		<cfdi:Concepto ClaveProdServ="51101511" NoIdentificacion="550043" Cantidad="8.000" ClaveUnidad="H87" Unidad="PZA" Descripcion="AMOXICILINA 500 MG C/12 CAP (DIMOPEN)" ValorUnitario="12.30" Importe="98.40">
+			<cfdi:Impuestos>
+				<cfdi:Traslados>
+					<cfdi:Traslado Base="98.40" Impuesto="002" TipoFactor="Tasa" TasaOCuota="0.000000" Importe="0" />
+				</cfdi:Traslados>
+			</cfdi:Impuestos>
+		</cfdi:Concepto>
+		<cfdi:Concepto ClaveProdServ="51101567" NoIdentificacion="555380" Cantidad="8.000" ClaveUnidad="H87" Unidad="PZA" Descripcion="MEXAPIN 500 MG C/20 CAPSULAS" ValorUnitario="14.55" Importe="116.40">
+			<cfdi:Impuestos>
+				<cfdi:Traslados>
+					<cfdi:Traslado Base="116.40" Impuesto="002" TipoFactor="Tasa" TasaOCuota="0.000000" Importe="0" />
+				</cfdi:Traslados>
+			</cfdi:Impuestos>
+		</cfdi:Concepto>
+		<cfdi:Concepto ClaveProdServ="51101500" NoIdentificacion="550079" Cantidad="10.000" ClaveUnidad="H87" Unidad="PZA" Descripcion="LUGAXIL 400,000 U C/1 AMP" ValorUnitario="5.50" Importe="55.00">
+			<cfdi:Impuestos>
+				<cfdi:Traslados>
+					<cfdi:Traslado Base="55.00" Impuesto="002" TipoFactor="Tasa" TasaOCuota="0.000000" Importe="0" />
+				</cfdi:Traslados>
+			</cfdi:Impuestos>
+		</cfdi:Concepto>
+		<cfdi:Concepto ClaveProdServ="51101551" NoIdentificacion="550115" Cantidad="25.000" ClaveUnidad="H87" Unidad="PZA" Descripcion="TRIXONA 1 G INTRAMUSCULAR C/1 AMP" ValorUnitario="19.70" Importe="492.50">
+			<cfdi:Impuestos>
+				<cfdi:Traslados>
+					<cfdi:Traslado Base="492.50" Impuesto="002" TipoFactor="Tasa" TasaOCuota="0.000000" Importe="0" />
+				</cfdi:Traslados>
+			</cfdi:Impuestos>
+		</cfdi:Concepto>
+		<cfdi:Concepto ClaveProdServ="51101522" NoIdentificacion="550139" Cantidad="4.000" ClaveUnidad="H87" Unidad="PZA" Descripcion="KROBICIN 250 MG C/60 ML SUSP" ValorUnitario="75.80" Importe="303.20">
+			<cfdi:Impuestos>
+				<cfdi:Traslados>
+					<cfdi:Traslado Base="303.20" Impuesto="002" TipoFactor="Tasa" TasaOCuota="0.000000" Importe="0" />
+				</cfdi:Traslados>
+			</cfdi:Impuestos>
+		</cfdi:Concepto>
+		<cfdi:Concepto ClaveProdServ="51101500" NoIdentificacion="554079" Cantidad="8.000" ClaveUnidad="H87" Unidad="PZA" Descripcion="AMPICILINA 1 G C/10 TAB" ValorUnitario="18.60" Importe="148.80">
+			<cfdi:Impuestos>
+				<cfdi:Traslados>
+					<cfdi:Traslado Base="148.80" Impuesto="002" TipoFactor="Tasa" TasaOCuota="0.000000" Importe="0" />
+				</cfdi:Traslados>
+			</cfdi:Impuestos>
+		</cfdi:Concepto>
+		<cfdi:Concepto ClaveProdServ="51101542" NoIdentificacion="550133" Cantidad="10.000" ClaveUnidad="H87" Unidad="PZA" Descripcion="BRUBIOL 500 MG C/10 TAB" ValorUnitario="11.00" Importe="110.00">
+			<cfdi:Impuestos>
+				<cfdi:Traslados>
+					<cfdi:Traslado Base="110.00" Impuesto="002" TipoFactor="Tasa" TasaOCuota="0.000000" Importe="0" />
+				</cfdi:Traslados>
+			</cfdi:Impuestos>
+		</cfdi:Concepto>
+		<cfdi:Concepto ClaveProdServ="51101522" NoIdentificacion="554177" Cantidad="3.000" ClaveUnidad="H87" Unidad="PZA" Descripcion="KLARIX 500MG C/10 TAB" ValorUnitario="48.60" Importe="145.80">
+			<cfdi:Impuestos>
+				<cfdi:Traslados>
+					<cfdi:Traslado Base="145.80" Impuesto="002" TipoFactor="Tasa" TasaOCuota="0.000000" Importe="0" />
+				</cfdi:Traslados>
+			</cfdi:Impuestos>
+		</cfdi:Concepto>
+		<cfdi:Concepto ClaveProdServ="01010101" NoIdentificacion="554409" Cantidad="8.000" ClaveUnidad="H87" Unidad="PZA" Descripcion="CHARYN 500 MG C/3 TAB" ValorUnitario="22.75" Importe="182.00">
+			<cfdi:Impuestos>
+				<cfdi:Traslados>
+					<cfdi:Traslado Base="182.00" Impuesto="002" TipoFactor="Tasa" TasaOCuota="0.000000" Importe="0" />
+				</cfdi:Traslados>
+			</cfdi:Impuestos>
+		</cfdi:Concepto>
+		<cfdi:Concepto ClaveProdServ="51172107" NoIdentificacion="554764" Cantidad="10.000" ClaveUnidad="H87" Unidad="PZA" Descripcion="BRUPACIL 10MG C/10 GRAGEAS" ValorUnitario="14.50" Importe="145.00">
+			<cfdi:Impuestos>
+				<cfdi:Traslados>
+					<cfdi:Traslado Base="145.00" Impuesto="002" TipoFactor="Tasa" TasaOCuota="0.000000" Importe="0" />
+				</cfdi:Traslados>
+			</cfdi:Impuestos>
+		</cfdi:Concepto>
+		<cfdi:Concepto ClaveProdServ="51101500" NoIdentificacion="554832" Cantidad="6.000" ClaveUnidad="H87" Unidad="PZA" Descripcion="AMIKACINA 500MG SOL INY C/2 AMP" ValorUnitario="17.50" Importe="105.00">
+			<cfdi:Impuestos>
+				<cfdi:Traslados>
+					<cfdi:Traslado Base="105.00" Impuesto="002" TipoFactor="Tasa" TasaOCuota="0.000000" Importe="0" />
+				</cfdi:Traslados>
+			</cfdi:Impuestos>
+		</cfdi:Concepto>
+		<cfdi:Concepto ClaveProdServ="51161600" NoIdentificacion="555021" Cantidad="6.000" ClaveUnidad="H87" Unidad="PZA" Descripcion="AMTASIV C/30 ML SOL GOTAS PED" ValorUnitario="12.00" Importe="72.00">
+			<cfdi:Impuestos>
+				<cfdi:Traslados>
+					<cfdi:Traslado Base="72.00" Impuesto="002" TipoFactor="Tasa" TasaOCuota="0.000000" Importe="0" />
+				</cfdi:Traslados>
+			</cfdi:Impuestos>
+		</cfdi:Concepto>
+		<cfdi:Concepto ClaveProdServ="51101511" NoIdentificacion="555453" Cantidad="6.000" ClaveUnidad="H87" Unidad="PZA" Descripcion="VANDIX 500 MG SUSPENSION" ValorUnitario="16.00" Importe="96.00">
+			<cfdi:Impuestos>
+				<cfdi:Traslados>
+					<cfdi:Traslado Base="96.00" Impuesto="002" TipoFactor="Tasa" TasaOCuota="0.000000" Importe="0" />
+				</cfdi:Traslados>
+			</cfdi:Impuestos>
+		</cfdi:Concepto>
+		<cfdi:Concepto ClaveProdServ="51101550" NoIdentificacion="555513" Cantidad="6.000" ClaveUnidad="H87" Unidad="PZA" Descripcion="FACELIT 250MG SUSP" ValorUnitario="22.16" Importe="132.96">
+			<cfdi:Impuestos>
+				<cfdi:Traslados>
+					<cfdi:Traslado Base="132.96" Impuesto="002" TipoFactor="Tasa" TasaOCuota="0.000000" Importe="0" />
+				</cfdi:Traslados>
+			</cfdi:Impuestos>
+		</cfdi:Concepto>
+		<cfdi:Concepto ClaveProdServ="51101511" NoIdentificacion="555521" Cantidad="8.000" ClaveUnidad="H87" Unidad="PZA" Descripcion="GIMACLAV 125MG SUSP C/60ML" ValorUnitario="17.70" Importe="141.60">
+			<cfdi:Impuestos>
+				<cfdi:Traslados>
+					<cfdi:Traslado Base="141.60" Impuesto="002" TipoFactor="Tasa" TasaOCuota="0.000000" Importe="0" />
+				</cfdi:Traslados>
+			</cfdi:Impuestos>
+		</cfdi:Concepto>
+		<cfdi:Concepto ClaveProdServ="51212400" NoIdentificacion="550425" Cantidad="10.000" ClaveUnidad="H87" Unidad="PZA" Descripcion="MAXIFORT ZIMAX 50 MG C/1 TAB" ValorUnitario="11.50" Importe="115.00">
+			<cfdi:Impuestos>
+				<cfdi:Traslados>
+					<cfdi:Traslado Base="115.00" Impuesto="002" TipoFactor="Tasa" TasaOCuota="0.000000" Importe="0" />
+				</cfdi:Traslados>
+			</cfdi:Impuestos>
+		</cfdi:Concepto>
+		<cfdi:Concepto ClaveProdServ="51212400" NoIdentificacion="550426" Cantidad="3.000" ClaveUnidad="H87" Unidad="PZA" Descripcion="MAXIFORT 50 MG C/4 TAB" ValorUnitario="34.73" Importe="104.19">
+			<cfdi:Impuestos>
+				<cfdi:Traslados>
+					<cfdi:Traslado Base="104.19" Impuesto="002" TipoFactor="Tasa" TasaOCuota="0.000000" Importe="0" />
+				</cfdi:Traslados>
+			</cfdi:Impuestos>
+		</cfdi:Concepto>
+		<cfdi:Concepto ClaveProdServ="01010101" NoIdentificacion="554807" Cantidad="6.000" ClaveUnidad="H87" Unidad="PZA" Descripcion="LEVONORGESTREL 1.5 MG C/1 TABLETA" ValorUnitario="21.50" Importe="129.00">
+			<cfdi:Impuestos>
+				<cfdi:Traslados>
+					<cfdi:Traslado Base="129.00" Impuesto="002" TipoFactor="Tasa" TasaOCuota="0.000000" Importe="0" />
+				</cfdi:Traslados>
+			</cfdi:Impuestos>
+		</cfdi:Concepto>
+		<cfdi:Concepto ClaveProdServ="51161800" NoIdentificacion="550179" Cantidad="6.000" ClaveUnidad="H87" Unidad="PZA" Descripcion="DEBEQUIN-C INFANTIL JBE" ValorUnitario="11.50" Importe="69.00">
+			<cfdi:Impuestos>
+				<cfdi:Traslados>
+					<cfdi:Traslado Base="69.00" Impuesto="002" TipoFactor="Tasa" TasaOCuota="0.000000" Importe="0" />
+				</cfdi:Traslados>
+			</cfdi:Impuestos>
+		</cfdi:Concepto>
+		<cfdi:Concepto ClaveProdServ="51101554" NoIdentificacion="550193" Cantidad="5.000" ClaveUnidad="H87" Unidad="PZA" Descripcion="DICLOXACILINA 500 MG C/20 CAP" ValorUnitario="21.10" Importe="105.50">
+			<cfdi:Impuestos>
+				<cfdi:Traslados>
+					<cfdi:Traslado Base="105.50" Impuesto="002" TipoFactor="Tasa" TasaOCuota="0.000000" Importe="0" />
+				</cfdi:Traslados>
+			</cfdi:Impuestos>
+		</cfdi:Concepto>
+		<cfdi:Concepto ClaveProdServ="51101567" NoIdentificacion="550204" Cantidad="3.000" ClaveUnidad="H87" Unidad="PZA" Descripcion="AMPIGRIN INFANTIL C/3 AMP" ValorUnitario="53.00" Importe="159.00">
+			<cfdi:Impuestos>
+				<cfdi:Traslados>
+					<cfdi:Traslado Base="159.00" Impuesto="002" TipoFactor="Tasa" TasaOCuota="0.000000" Importe="0" />
+				</cfdi:Traslados>
+			</cfdi:Impuestos>
+		</cfdi:Concepto>
+		<cfdi:Concepto ClaveProdServ="51101567" NoIdentificacion="550205" Cantidad="3.000" ClaveUnidad="H87" Unidad="PZA" Descripcion="AMPIGRIN ADULTO C/3 AMP" ValorUnitario="59.10" Importe="177.30">
+			<cfdi:Impuestos>
+				<cfdi:Traslados>
+					<cfdi:Traslado Base="177.30" Impuesto="002" TipoFactor="Tasa" TasaOCuota="0.000000" Importe="0" />
+				</cfdi:Traslados>
+			</cfdi:Impuestos>
+		</cfdi:Concepto>
+		<cfdi:Concepto ClaveProdServ="51121800" NoIdentificacion="550234" Cantidad="6.000" ClaveUnidad="H87" Unidad="PZA" Descripcion="RAYPID 600 MG C/14 TAB" ValorUnitario="48.00" Importe="288.00">
+			<cfdi:Impuestos>
+				<cfdi:Traslados>
+					<cfdi:Traslado Base="288.00" Impuesto="002" TipoFactor="Tasa" TasaOCuota="0.000000" Importe="0" />
+				</cfdi:Traslados>
+			</cfdi:Impuestos>
+		</cfdi:Concepto>
+		<cfdi:Concepto ClaveProdServ="51142100" NoIdentificacion="554568" Cantidad="10.000" ClaveUnidad="H87" Unidad="PZA" Descripcion="DOLPRIN 120 ML SUSP" ValorUnitario="13.00" Importe="130.00">
+			<cfdi:Impuestos>
+				<cfdi:Traslados>
+					<cfdi:Traslado Base="130.00" Impuesto="002" TipoFactor="Tasa" TasaOCuota="0.000000" Importe="0" />
+				</cfdi:Traslados>
+			</cfdi:Impuestos>
+		</cfdi:Concepto>
+		<cfdi:Concepto ClaveProdServ="51171702" NoIdentificacion="550289" Cantidad="10.000" ClaveUnidad="H87" Unidad="PZA" Descripcion="TARMIN 2 MG C/12 TAB" ValorUnitario="4.40" Importe="44.00">
+			<cfdi:Impuestos>
+				<cfdi:Traslados>
+					<cfdi:Traslado Base="44.00" Impuesto="002" TipoFactor="Tasa" TasaOCuota="0.000000" Importe="0" />
+				</cfdi:Traslados>
+			</cfdi:Impuestos>
+		</cfdi:Concepto>
+		<cfdi:Concepto ClaveProdServ="51161800" NoIdentificacion="550822" Cantidad="5.000" ClaveUnidad="H87" Unidad="PZA" Descripcion="EXALVER PED GTS C/30 ML" ValorUnitario="15.00" Importe="75.00">
+			<cfdi:Impuestos>
+				<cfdi:Traslados>
+					<cfdi:Traslado Base="75.00" Impuesto="002" TipoFactor="Tasa" TasaOCuota="0.000000" Importe="0" />
+				</cfdi:Traslados>
+			</cfdi:Impuestos>
+		</cfdi:Concepto>
+		<cfdi:Concepto ClaveProdServ="51161800" NoIdentificacion="550823" Cantidad="5.000" ClaveUnidad="H87" Unidad="PZA" Descripcion="EXALVER JBE INF 120ML" ValorUnitario="20.50" Importe="102.50">
+			<cfdi:Impuestos>
+				<cfdi:Traslados>
+					<cfdi:Traslado Base="102.50" Impuesto="002" TipoFactor="Tasa" TasaOCuota="0.000000" Importe="0" />
+				</cfdi:Traslados>
+			</cfdi:Impuestos>
+		</cfdi:Concepto>
+		<cfdi:Concepto ClaveProdServ="51181704" NoIdentificacion="551207" Cantidad="10.000" ClaveUnidad="H87" Unidad="PZA" Descripcion="BRULIN 8 C/2ML C/1 AMP" ValorUnitario="4.50" Importe="45.00">
+			<cfdi:Impuestos>
+				<cfdi:Traslados>
+					<cfdi:Traslado Base="45.00" Impuesto="002" TipoFactor="Tasa" TasaOCuota="0.000000" Importe="0" />
+				</cfdi:Traslados>
+			</cfdi:Impuestos>
+		</cfdi:Concepto>
+		<cfdi:Concepto ClaveProdServ="51161808" NoIdentificacion="552797" Cantidad="6.000" ClaveUnidad="H87" Unidad="PZA" Descripcion="BENCIEFEDRIL SOL FCO C/120ML" ValorUnitario="10.95" Importe="65.70">
+			<cfdi:Impuestos>
+				<cfdi:Traslados>
+					<cfdi:Traslado Base="65.70" Impuesto="002" TipoFactor="Tasa" TasaOCuota="0.000000" Importe="0" />
+				</cfdi:Traslados>
+			</cfdi:Impuestos>
+		</cfdi:Concepto>
+		<cfdi:Concepto ClaveProdServ="51161606" NoIdentificacion="553627" Cantidad="8.000" ClaveUnidad="H87" Unidad="PZA" Descripcion="LOVARIN 10 MG 10 TAB" ValorUnitario="6.00" Importe="48.00">
+			<cfdi:Impuestos>
+				<cfdi:Traslados>
+					<cfdi:Traslado Base="48.00" Impuesto="002" TipoFactor="Tasa" TasaOCuota="0.000000" Importe="0" />
+				</cfdi:Traslados>
+			</cfdi:Impuestos>
+		</cfdi:Concepto>
+		<cfdi:Concepto ClaveProdServ="51101500" NoIdentificacion="553648" Cantidad="6.000" ClaveUnidad="H87" Unidad="PZA" Descripcion="GOTADEX SOL OFT GTS C/5 ML" ValorUnitario="11.80" Importe="70.80">
+			<cfdi:Impuestos>
+				<cfdi:Traslados>
+					<cfdi:Traslado Base="70.80" Impuesto="002" TipoFactor="Tasa" TasaOCuota="0.000000" Importe="0" />
+				</cfdi:Traslados>
+			</cfdi:Impuestos>
+		</cfdi:Concepto>
+		<cfdi:Concepto ClaveProdServ="51142121" NoIdentificacion="553998" Cantidad="5.000" ClaveUnidad="H87" Unidad="PZA" Descripcion="VOLFENAC GEL TUBO C/60 GR" ValorUnitario="13.85" Importe="69.25">
+			<cfdi:Impuestos>
+				<cfdi:Traslados>
+					<cfdi:Traslado Base="69.25" Impuesto="002" TipoFactor="Tasa" TasaOCuota="0.000000" Importe="0" />
+				</cfdi:Traslados>
+			</cfdi:Impuestos>
+		</cfdi:Concepto>
+		<cfdi:Concepto ClaveProdServ="51101811" NoIdentificacion="554041" Cantidad="5.000" ClaveUnidad="H87" Unidad="PZA" Descripcion="LIZOVAG 2 G C/30 GR CREMA" ValorUnitario="9.70" Importe="48.50">
+			<cfdi:Impuestos>
+				<cfdi:Traslados>
+					<cfdi:Traslado Base="48.50" Impuesto="002" TipoFactor="Tasa" TasaOCuota="0.000000" Importe="0" />
+				</cfdi:Traslados>
+			</cfdi:Impuestos>
+		</cfdi:Concepto>
+		<cfdi:Concepto ClaveProdServ="01010101" NoIdentificacion="554055" Cantidad="5.000" ClaveUnidad="H87" Unidad="PZA" Descripcion="FENAZOPIRIDINA 100MG C/20 TABLETAS" ValorUnitario="16.75" Importe="83.75">
+			<cfdi:Impuestos>
+				<cfdi:Traslados>
+					<cfdi:Traslado Base="83.75" Impuesto="002" TipoFactor="Tasa" TasaOCuota="0.000000" Importe="0" />
+				</cfdi:Traslados>
+			</cfdi:Impuestos>
+		</cfdi:Concepto>
+		<cfdi:Concepto ClaveProdServ="51101500" NoIdentificacion="554068" Cantidad="4.000" ClaveUnidad="H87" Unidad="PZA" Descripcion="LEVOFLOXACINO 500 MG C/7 TAB" ValorUnitario="31.50" Importe="126.00">
+			<cfdi:Impuestos>
+				<cfdi:Traslados>
+					<cfdi:Traslado Base="126.00" Impuesto="002" TipoFactor="Tasa" TasaOCuota="0.000000" Importe="0" />
+				</cfdi:Traslados>
+			</cfdi:Impuestos>
+		</cfdi:Concepto>
+		<cfdi:Concepto ClaveProdServ="51161606" NoIdentificacion="550296" Cantidad="8.000" ClaveUnidad="H87" Unidad="PZA" Descripcion="DOTAGIL 100 MG C/60 ML SUSP" ValorUnitario="12.00" Importe="96.00">
+			<cfdi:Impuestos>
+				<cfdi:Traslados>
+					<cfdi:Traslado Base="96.00" Impuesto="002" TipoFactor="Tasa" TasaOCuota="0.000000" Importe="0" />
+				</cfdi:Traslados>
+			</cfdi:Impuestos>
+		</cfdi:Concepto>
+		<cfdi:Concepto ClaveProdServ="51161606" NoIdentificacion="554712" Cantidad="8.000" ClaveUnidad="H87" Unidad="PZA" Descripcion="COBEDINA NS C/10 TAB" ValorUnitario="20.00" Importe="160.00">
+			<cfdi:Impuestos>
+				<cfdi:Traslados>
+					<cfdi:Traslado Base="160.00" Impuesto="002" TipoFactor="Tasa" TasaOCuota="0.000000" Importe="0" />
+				</cfdi:Traslados>
+			</cfdi:Impuestos>
+		</cfdi:Concepto>
+		<cfdi:Concepto ClaveProdServ="51142123" NoIdentificacion="554758" Cantidad="6.000" ClaveUnidad="H87" Unidad="PZA" Descripcion="ORDEGAN 10MG/25MG C/10 CAP" ValorUnitario="35.00" Importe="210.00">
+			<cfdi:Impuestos>
+				<cfdi:Traslados>
+					<cfdi:Traslado Base="210.00" Impuesto="002" TipoFactor="Tasa" TasaOCuota="0.000000" Importe="0" />
+				</cfdi:Traslados>
+			</cfdi:Impuestos>
+		</cfdi:Concepto>
+		<cfdi:Concepto ClaveProdServ="51142100" NoIdentificacion="554766" Cantidad="20.000" ClaveUnidad="H87" Unidad="PZA" Descripcion="KETOROLACO TROMETAMINA 30 MG C/3 AMP" ValorUnitario="12.50" Importe="250.00">
+			<cfdi:Impuestos>
+				<cfdi:Traslados>
+					<cfdi:Traslado Base="250.00" Impuesto="002" TipoFactor="Tasa" TasaOCuota="0.000000" Importe="0" />
+				</cfdi:Traslados>
+			</cfdi:Impuestos>
+		</cfdi:Concepto>
+		<cfdi:Concepto ClaveProdServ="51191602" NoIdentificacion="555331" Cantidad="8.000" ClaveUnidad="H87" Unidad="PZA" Descripcion="SOLUCIÓN DE CLORURO DE SODIO 100ML .9%" ValorUnitario="9.50" Importe="76.00">
+			<cfdi:Impuestos>
+				<cfdi:Traslados>
+					<cfdi:Traslado Base="76.00" Impuesto="002" TipoFactor="Tasa" TasaOCuota="0.000000" Importe="0" />
+				</cfdi:Traslados>
+			</cfdi:Impuestos>
+		</cfdi:Concepto>
+		<cfdi:Concepto ClaveProdServ="51142123" NoIdentificacion="555555" Cantidad="10.000" ClaveUnidad="H87" Unidad="PZA" Descripcion="DOLIKAN 10 MG C/10 TAB" ValorUnitario="7.00" Importe="70.00">
+			<cfdi:Impuestos>
+				<cfdi:Traslados>
+					<cfdi:Traslado Base="70.00" Impuesto="002" TipoFactor="Tasa" TasaOCuota="0.000000" Importe="0" />
+				</cfdi:Traslados>
+			</cfdi:Impuestos>
+		</cfdi:Concepto>
+		<cfdi:Concepto ClaveProdServ="51101807" NoIdentificacion="554852" Cantidad="6.000" ClaveUnidad="H87" Unidad="PZA" Descripcion="TERPLEX 100 MG C /10 TAB" ValorUnitario="22.00" Importe="132.00">
+			<cfdi:Impuestos>
+				<cfdi:Traslados>
+					<cfdi:Traslado Base="132.00" Impuesto="002" TipoFactor="Tasa" TasaOCuota="0.000000" Importe="0" />
+				</cfdi:Traslados>
+			</cfdi:Impuestos>
+		</cfdi:Concepto>
+		<cfdi:Concepto ClaveProdServ="51142100" NoIdentificacion="550335" Cantidad="6.000" ClaveUnidad="H87" Unidad="PZA" Descripcion="PROXALIN-S SUSP" ValorUnitario="10.50" Importe="63.00">
+			<cfdi:Impuestos>
+				<cfdi:Traslados>
+					<cfdi:Traslado Base="63.00" Impuesto="002" TipoFactor="Tasa" TasaOCuota="0.000000" Importe="0" />
+				</cfdi:Traslados>
+			</cfdi:Impuestos>
+		</cfdi:Concepto>
+		<cfdi:Concepto ClaveProdServ="51142118" NoIdentificacion="550346" Cantidad="6.000" ClaveUnidad="H87" Unidad="PZA" Descripcion="FLAMOZIN SUSP" ValorUnitario="10.55" Importe="63.30">
+			<cfdi:Impuestos>
+				<cfdi:Traslados>
+					<cfdi:Traslado Base="63.30" Impuesto="002" TipoFactor="Tasa" TasaOCuota="0.000000" Importe="0" />
+				</cfdi:Traslados>
+			</cfdi:Impuestos>
+		</cfdi:Concepto>
+		<cfdi:Concepto ClaveProdServ="51142000" NoIdentificacion="550385" Cantidad="8.000" ClaveUnidad="H87" Unidad="PZA" Descripcion="ADINOL 120 ML JBE" ValorUnitario="11.30" Importe="90.40">
+			<cfdi:Impuestos>
+				<cfdi:Traslados>
+					<cfdi:Traslado Base="90.40" Impuesto="002" TipoFactor="Tasa" TasaOCuota="0.000000" Importe="0" />
+				</cfdi:Traslados>
+			</cfdi:Impuestos>
+		</cfdi:Concepto>
+		<cfdi:Concepto ClaveProdServ="51171600" NoIdentificacion="550393" Cantidad="5.000" ClaveUnidad="H87" Unidad="PZA" Descripcion="MOTILAXIL GOTAS" ValorUnitario="14.50" Importe="72.50">
+			<cfdi:Impuestos>
+				<cfdi:Traslados>
+					<cfdi:Traslado Base="72.50" Impuesto="002" TipoFactor="Tasa" TasaOCuota="0.000000" Importe="0" />
+				</cfdi:Traslados>
+			</cfdi:Impuestos>
+		</cfdi:Concepto>
+		<cfdi:Concepto ClaveProdServ="01010101" NoIdentificacion="550436" Cantidad="3.000" ClaveUnidad="H87" Unidad="PZA" Descripcion="GUAYATETRA ADTO C/3 AMP" ValorUnitario="57.50" Importe="172.50">
+			<cfdi:Impuestos>
+				<cfdi:Traslados>
+					<cfdi:Traslado Base="172.50" Impuesto="002" TipoFactor="Tasa" TasaOCuota="0.000000" Importe="0" />
+				</cfdi:Traslados>
+			</cfdi:Impuestos>
+		</cfdi:Concepto>
+		<cfdi:Concepto ClaveProdServ="51101530" NoIdentificacion="550450" Cantidad="8.000" ClaveUnidad="H87" Unidad="PZA" Descripcion="SOLTRIM SUSP FCO C/120 ML" ValorUnitario="9.55" Importe="76.40">
+			<cfdi:Impuestos>
+				<cfdi:Traslados>
+					<cfdi:Traslado Base="76.40" Impuesto="002" TipoFactor="Tasa" TasaOCuota="0.000000" Importe="0" />
+				</cfdi:Traslados>
+			</cfdi:Impuestos>
+		</cfdi:Concepto>
+		<cfdi:Concepto ClaveProdServ="51101603" NoIdentificacion="550840" Cantidad="6.000" ClaveUnidad="H87" Unidad="PZA" Descripcion="STOMFFLER PLUS FCO 120 ML" ValorUnitario="22.50" Importe="135.00">
+			<cfdi:Impuestos>
+				<cfdi:Traslados>
+					<cfdi:Traslado Base="135.00" Impuesto="002" TipoFactor="Tasa" TasaOCuota="0.000000" Importe="0" />
+				</cfdi:Traslados>
+			</cfdi:Impuestos>
+		</cfdi:Concepto>
+		<cfdi:Concepto ClaveProdServ="51101600" NoIdentificacion="552172" Cantidad="6.000" ClaveUnidad="H87" Unidad="PZA" Descripcion="MITAFAR C/6 TAB" ValorUnitario="34.50" Importe="207.00">
+			<cfdi:Impuestos>
+				<cfdi:Traslados>
+					<cfdi:Traslado Base="207.00" Impuesto="002" TipoFactor="Tasa" TasaOCuota="0.000000" Importe="0" />
+				</cfdi:Traslados>
+			</cfdi:Impuestos>
+		</cfdi:Concepto>
+		<cfdi:Concepto ClaveProdServ="51142100" NoIdentificacion="552651" Cantidad="10.000" ClaveUnidad="H87" Unidad="PZA" Descripcion="PROXALIN PLUS SUSP. C/100 ML" ValorUnitario="14.50" Importe="145.00">
+			<cfdi:Impuestos>
+				<cfdi:Traslados>
+					<cfdi:Traslado Base="145.00" Impuesto="002" TipoFactor="Tasa" TasaOCuota="0.000000" Importe="0" />
+				</cfdi:Traslados>
+			</cfdi:Impuestos>
+		</cfdi:Concepto>
+		<cfdi:Concepto ClaveProdServ="51181713" NoIdentificacion="553649" Cantidad="5.000" ClaveUnidad="H87" Unidad="PZA" Descripcion="PLUS GEL C/50 TAB" ValorUnitario="23.65" Importe="118.25">
+			<cfdi:Impuestos>
+				<cfdi:Traslados>
+					<cfdi:Traslado Base="118.25" Impuesto="002" TipoFactor="Tasa" TasaOCuota="0.000000" Importe="0" />
+				</cfdi:Traslados>
+			</cfdi:Impuestos>
+		</cfdi:Concepto>
+		<cfdi:Concepto ClaveProdServ="51101603" NoIdentificacion="554052" Cantidad="6.000" ClaveUnidad="H87" Unidad="PZA" Descripcion="LAMBLIQUIN 600 MG C/30 TABS" ValorUnitario="18.55" Importe="111.30">
+			<cfdi:Impuestos>
+				<cfdi:Traslados>
+					<cfdi:Traslado Base="111.30" Impuesto="002" TipoFactor="Tasa" TasaOCuota="0.000000" Importe="0" />
+				</cfdi:Traslados>
+			</cfdi:Impuestos>
+		</cfdi:Concepto>
+		<cfdi:Concepto ClaveProdServ="01010101" NoIdentificacion="555311" Cantidad="6.000" ClaveUnidad="H87" Unidad="PZA" Descripcion="SEPTILISIN SOLUCION OFT 15 ML" ValorUnitario="26.50" Importe="159.00">
+			<cfdi:Impuestos>
+				<cfdi:Traslados>
+					<cfdi:Traslado Base="159.00" Impuesto="002" TipoFactor="Tasa" TasaOCuota="0.000000" Importe="0" />
+				</cfdi:Traslados>
+			</cfdi:Impuestos>
+		</cfdi:Concepto>
+		<cfdi:Concepto ClaveProdServ="51101800" NoIdentificacion="555335" Cantidad="3.000" ClaveUnidad="H87" Unidad="PZA" Descripcion="SILKA-MEDIC GEL TUBO C/30 G" ValorUnitario="56.00" Importe="168.00">
+			<cfdi:Impuestos>
+				<cfdi:Traslados>
+					<cfdi:Traslado Base="168.00" Impuesto="002" TipoFactor="Tasa" TasaOCuota="0.000000" Importe="0" />
+				</cfdi:Traslados>
+			</cfdi:Impuestos>
+		</cfdi:Concepto>
+		<cfdi:Concepto ClaveProdServ="51151817" NoIdentificacion="554652" Cantidad="3.000" ClaveUnidad="H87" Unidad="PZA" Descripcion="HIPEBE 0.4 MG C/20 CAPSULAS" ValorUnitario="59.00" Importe="177.00">
+			<cfdi:Impuestos>
+				<cfdi:Traslados>
+					<cfdi:Traslado Base="177.00" Impuesto="002" TipoFactor="Tasa" TasaOCuota="0.000000" Importe="0" />
+				</cfdi:Traslados>
+			</cfdi:Impuestos>
+		</cfdi:Concepto>
+		<cfdi:Concepto ClaveProdServ="01010101" NoIdentificacion="555422" Cantidad="5.000" ClaveUnidad="H87" Unidad="PZA" Descripcion="RASPISONS UNG" ValorUnitario="14.50" Importe="72.50">
+			<cfdi:Impuestos>
+				<cfdi:Traslados>
+					<cfdi:Traslado Base="72.50" Impuesto="002" TipoFactor="Tasa" TasaOCuota="0.000000" Importe="0" />
+				</cfdi:Traslados>
+			</cfdi:Impuestos>
+		</cfdi:Concepto>
+		<cfdi:Concepto ClaveProdServ="51142000" NoIdentificacion="555558" Cantidad="10.000" ClaveUnidad="H87" Unidad="PZA" Descripcion="SON´S PIRAL 100MG 15ML GOTAS" ValorUnitario="9.44" Importe="94.40">
+			<cfdi:Impuestos>
+				<cfdi:Traslados>
+					<cfdi:Traslado Base="94.40" Impuesto="002" TipoFactor="Tasa" TasaOCuota="0.000000" Importe="0" />
+				</cfdi:Traslados>
+			</cfdi:Impuestos>
+		</cfdi:Concepto>
+		<cfdi:Concepto ClaveProdServ="53131613" NoIdentificacion="555574" Cantidad="6.000" ClaveUnidad="H87" Unidad="PZA" Descripcion="VITACILINA UNGÜENTO TUBO C/16 G" ValorUnitario="13.94" Importe="83.64">
+			<cfdi:Impuestos>
+				<cfdi:Traslados>
+					<cfdi:Traslado Base="83.64" Impuesto="002" TipoFactor="Tasa" TasaOCuota="0.000000" Importe="0" />
+				</cfdi:Traslados>
+			</cfdi:Impuestos>
+		</cfdi:Concepto>
+		<cfdi:Concepto ClaveProdServ="51191600" NoIdentificacion="550159" Cantidad="6.000" ClaveUnidad="H87" Unidad="PZA" Descripcion="SOLURAL SABOR MANZANA" ValorUnitario="11.00" Importe="66.00">
+			<cfdi:Impuestos>
+				<cfdi:Traslados>
+					<cfdi:Traslado Base="66.00" Impuesto="002" TipoFactor="Tasa" TasaOCuota="0.000000" Importe="0" />
+				</cfdi:Traslados>
+			</cfdi:Impuestos>
+		</cfdi:Concepto>
+		<cfdi:Concepto ClaveProdServ="51191600" NoIdentificacion="550160" Cantidad="6.000" ClaveUnidad="H87" Unidad="PZA" Descripcion="SOLURAL SABOR FRESA" ValorUnitario="11.00" Importe="66.00">
+			<cfdi:Impuestos>
+				<cfdi:Traslados>
+					<cfdi:Traslado Base="66.00" Impuesto="002" TipoFactor="Tasa" TasaOCuota="0.000000" Importe="0" />
+				</cfdi:Traslados>
+			</cfdi:Impuestos>
+		</cfdi:Concepto>
+		<cfdi:Concepto ClaveProdServ="51191600" NoIdentificacion="550162" Cantidad="6.000" ClaveUnidad="H87" Unidad="PZA" Descripcion="SOLURAL SABOR COCO" ValorUnitario="11.00" Importe="66.00">
+			<cfdi:Impuestos>
+				<cfdi:Traslados>
+					<cfdi:Traslado Base="66.00" Impuesto="002" TipoFactor="Tasa" TasaOCuota="0.000000" Importe="0" />
+				</cfdi:Traslados>
+			</cfdi:Impuestos>
+		</cfdi:Concepto>
+		<cfdi:Concepto ClaveProdServ="51131500" NoIdentificacion="550489" Cantidad="5.000" ClaveUnidad="H87" Unidad="PZA" Descripcion="CONVIFER SOL" ValorUnitario="9.50" Importe="47.50">
+			<cfdi:Impuestos>
+				<cfdi:Traslados>
+					<cfdi:Traslado Base="47.50" Impuesto="002" TipoFactor="Tasa" TasaOCuota="0.000000" Importe="0" />
+				</cfdi:Traslados>
+			</cfdi:Impuestos>
+		</cfdi:Concepto>
+		<cfdi:Concepto ClaveProdServ="51102729" NoIdentificacion="550726" Cantidad="10.000" ClaveUnidad="H87" Unidad="PZA" Descripcion="TROCILETAS S/CEREZA C/10 TAB" ValorUnitario="9.50" Importe="95.00">
+			<cfdi:Impuestos>
+				<cfdi:Traslados>
+					<cfdi:Traslado Base="95.00" Impuesto="002" TipoFactor="Tasa" TasaOCuota="0.000000" Importe="0" />
+				</cfdi:Traslados>
+			</cfdi:Impuestos>
+		</cfdi:Concepto>
+		<cfdi:Concepto ClaveProdServ="51191600" NoIdentificacion="551029" Cantidad="6.000" ClaveUnidad="H87" Unidad="PZA" Descripcion="SOLURAL SABOR NARANJA MANDARINA" ValorUnitario="11.00" Importe="66.00">
+			<cfdi:Impuestos>
+				<cfdi:Traslados>
+					<cfdi:Traslado Base="66.00" Impuesto="002" TipoFactor="Tasa" TasaOCuota="0.000000" Importe="0" />
+				</cfdi:Traslados>
+			</cfdi:Impuestos>
+		</cfdi:Concepto>
+		<cfdi:Concepto ClaveProdServ="51101500" NoIdentificacion="552441" Cantidad="6.000" ClaveUnidad="H87" Unidad="PZA" Descripcion="OTILIN SOL GOTAS C/20 ML" ValorUnitario="12.50" Importe="75.00">
+			<cfdi:Impuestos>
+				<cfdi:Traslados>
+					<cfdi:Traslado Base="75.00" Impuesto="002" TipoFactor="Tasa" TasaOCuota="0.000000" Importe="0" />
+				</cfdi:Traslados>
+			</cfdi:Impuestos>
+		</cfdi:Concepto>
+		<cfdi:Concepto ClaveProdServ="51161800" NoIdentificacion="552706" Cantidad="24.000" ClaveUnidad="H87" Unidad="PZA" Descripcion="VAPORUB UNG TOPICO 12 GRS" ValorUnitario="12.80" Importe="307.20">
+			<cfdi:Impuestos>
+				<cfdi:Traslados>
+					<cfdi:Traslado Base="307.20" Impuesto="002" TipoFactor="Tasa" TasaOCuota="0.000000" Importe="0" />
+				</cfdi:Traslados>
+			</cfdi:Impuestos>
+		</cfdi:Concepto>
+		<cfdi:Concepto ClaveProdServ="51191600" NoIdentificacion="552712" Cantidad="6.000" ClaveUnidad="H87" Unidad="PZA" Descripcion="SOLURAL PEDIATRICO SABOR UVA C/300ML" ValorUnitario="9.92" Importe="59.52">
+			<cfdi:Impuestos>
+				<cfdi:Traslados>
+					<cfdi:Traslado Base="59.52" Impuesto="002" TipoFactor="Tasa" TasaOCuota="0.000000" Importe="0" />
+				</cfdi:Traslados>
+			</cfdi:Impuestos>
+		</cfdi:Concepto>
+		<cfdi:Concepto ClaveProdServ="51191600" NoIdentificacion="552716" Cantidad="6.000" ClaveUnidad="H87" Unidad="PZA" Descripcion="SOLURAL PEDIATRICO SABOR FRESA C/300ML" ValorUnitario="9.92" Importe="59.52">
+			<cfdi:Impuestos>
+				<cfdi:Traslados>
+					<cfdi:Traslado Base="59.52" Impuesto="002" TipoFactor="Tasa" TasaOCuota="0.000000" Importe="0" />
+				</cfdi:Traslados>
+			</cfdi:Impuestos>
+		</cfdi:Concepto>
+		<cfdi:Concepto ClaveProdServ="51101599" NoIdentificacion="554885" Cantidad="3.000" ClaveUnidad="H87" Unidad="PZA" Descripcion="BENEVENTOL 100 MG SUSP C/50 ML" ValorUnitario="87.50" Importe="262.50">
+			<cfdi:Impuestos>
+				<cfdi:Traslados>
+					<cfdi:Traslado Base="262.50" Impuesto="002" TipoFactor="Tasa" TasaOCuota="0.000000" Importe="0" />
+				</cfdi:Traslados>
+			</cfdi:Impuestos>
+		</cfdi:Concepto>
+		<cfdi:Concepto ClaveProdServ="50171500" NoIdentificacion="552357" Cantidad="5.000" ClaveUnidad="H87" Unidad="PZA" Descripcion="EUCALIN JBE C/240 ML" ValorUnitario="26.50" Importe="132.50">
+			<cfdi:Impuestos>
+				<cfdi:Traslados>
+					<cfdi:Traslado Base="132.50" Impuesto="002" TipoFactor="Tasa" TasaOCuota="0.000000" Importe="0" />
+				</cfdi:Traslados>
+			</cfdi:Impuestos>
+		</cfdi:Concepto>
+	</cfdi:Conceptos>
+	<cfdi:Impuestos/>
+	<cfdi:Complemento>
+		<tfd:TimbreFiscalDigital Version="1.1" UUID="F8F85223-2BC4-49F5-8E72-499EF8F847D3" FechaTimbrado="2018-03-20T10:38:57" RfcProvCertif="FEL100622S88" SelloCFD="hdLM1b02Pv5KUoW8wCNdA7Hjz66wiePHTf2lR0GvE6uDSMVu95AMY8xqqSne3lt2dLNulo5YNQW9MxD3jaKi697xpGeVFCGA30sAXcQ8uiFYu0CXY1puIfBU1AZPtgzy6HDtiHoG5WiHpLACgplyIUI+2qd4GV5mfKhmDgtyyxaVTE7AIODc6bEzdFikd6mmrP/aTWVogztjkaMJQSjuYnfTGVxYhizi7HwRs6EXpBM89dbHORa5iunCT8X39G7ZC9S2UDr2wfupk+48vd8El2r7eG5IBVctiVY8jCsQ0aA+gfLFRPLXWUopXfRtGgHepuj7HGB/r6msjYzUmIT6Uw==" NoCertificadoSAT="00001000000408441752" xmlns:tfd="http://www.sat.gob.mx/TimbreFiscalDigital" SelloSAT="WvllXiz5ZST6oU9YevJDHhmjAzuMe+BAD0kRFMX9lu7XIBruJstQTJSmrJfLYxklrSVGx/QB4ozR9X2YkyRTcpb97ESHcnfswn6wMsa1XyKj4J89Ag5xf45mC3IHHaXWdHnQ2/cFZEOZp7Uqmw7PCsIu/+FAg+8gpJ9gNfHdSOtJ4jNvaj4uqw64Jcb1JaAL4TmUgiM3uFuv649vGDNVH0E7CY7rSLfz7dvbzNG0FagSqeIvfudNEDyrTC4Lmv2MsNbpiaYDCl25xZOSlDxjxmmHri1iHGsgpR8RKetiVkRxnBgXPsPHcKV7XbATciLeA0eXQ7MMsguDYwEaX1MRVw==" xsi:schemaLocation="http://www.sat.gob.mx/TimbreFiscalDigital http://www.sat.gob.mx/sitio_internet/cfd/TimbreFiscalDigital/TimbreFiscalDigitalv11.xsd" />
+	</cfdi:Complemento>
+	<cfdi:Addenda>
+		<MATERIAL CodigoSAP="550005" Lote="7H1228" Caducidad="31.08.2019" CBarra="785118753528" SActiva="ACICLOVIR 200MG 4G SUSP" Cantidad="3.000" />
+		<MATERIAL CodigoSAP="550006" Lote="520L" Caducidad="31.07.2019" CBarra="7501825300601" SActiva="ACIDO ACETILSALICILICO 100 MG" Cantidad="6.000" />
+		<MATERIAL CodigoSAP="550028" Lote="170885" Caducidad="30.11.2019" CBarra="7503003738879" SActiva="AMANTADINA/CLORFENAM/PARACET50" Cantidad="6.000" />
+		<MATERIAL CodigoSAP="550029" Lote="8020386" Caducidad="12.02.2020" CBarra="7501537165475" SActiva="AMBROXOL/DEXTROMETORFANO 225/2" Cantidad="8.000" />
+		<MATERIAL CodigoSAP="550030" Lote="7122560" Caducidad="11.12.2019" CBarra="7501537105471" SActiva="AMBROXOL/DEXTROMETORFANO 150/1" Cantidad="8.000" />
+		<MATERIAL CodigoSAP="550043" Lote="712971" Caducidad="30.11.2019" CBarra="7502208892232" SActiva="GI AMOXICILINA 500 MG C/12 CAP" Cantidad="8.000" />
+		<MATERIAL CodigoSAP="555380" Lote="C7644" Caducidad="31.12.2019" CBarra="7503001007168" SActiva="" Cantidad="8.000" />
+		<MATERIAL CodigoSAP="550079" Lote="610322" Caducidad="31.08.2019" CBarra="7502208892249" SActiva="BENCILPENICILINA PROCAINICA 40" Cantidad="10.000" />
+		<MATERIAL CodigoSAP="550115" Lote="711699" Caducidad="30.11.2019" CBarra="7502208891228" SActiva="CEFTRIAXONA 1GR C/LIDOCAINA3.5" Cantidad="25.000" />
+		<MATERIAL CodigoSAP="550139" Lote="7C463" Caducidad="31.03.2019" CBarra="785118752347" SActiva="CLARITROMICINA 250MG C/JER DOS" Cantidad="4.000" />
+		<MATERIAL CodigoSAP="554079" Lote="Q087501" Caducidad="31.08.2019" CBarra="7501349022027" SActiva="" Cantidad="8.000" />
+		<MATERIAL CodigoSAP="550133" Lote="8020279" Caducidad="11.02.2020" CBarra="7501537161163" SActiva="CIPROFLOXACINO 500 MG C/10 TAB" Cantidad="10.000" />
+		<MATERIAL CodigoSAP="554177" Lote="180604" Caducidad="31.01.2020" CBarra="7502009740510" SActiva="CLARITROMICINA 500MG C/10 TABS" Cantidad="3.000" />
+		<MATERIAL CodigoSAP="554409" Lote="180049" Caducidad="31.01.2020" CBarra="7502240450018" SActiva="AZITROMICINA 500 MG C/3 TABS" Cantidad="8.000" />
+		<MATERIAL CodigoSAP="554764" Lote="8020258" Caducidad="21.02.2020" CBarra="7501537102920" SActiva="BUTILBROMURO DE HIOSCINA 10MG" Cantidad="10.000" />
+		<MATERIAL CodigoSAP="554832" Lote="17S964" Caducidad="30.09.2019" CBarra="7501349021488" SActiva="AMIKACINA 500 MG SOL INY C/2 A" Cantidad="6.000" />
+		<MATERIAL CodigoSAP="555021" Lote="7020178" Caducidad="27.02.2019" CBarra="7501537102951" SActiva="AMBROXOL 600MG / 100MG" Cantidad="6.000" />
+		<MATERIAL CodigoSAP="555453" Lote="S8052" Caducidad="31.01.2020" CBarra="7503001007076" SActiva="" Cantidad="6.000" />
+		<MATERIAL CodigoSAP="555513" Lote="17240609" Caducidad="30.09.2019" CBarra="780083141653" SActiva="" Cantidad="6.000" />
+		<MATERIAL CodigoSAP="555521" Lote="17240432" Caducidad="30.06.2019" CBarra="780083148164" SActiva="" Cantidad="8.000" />
+		<MATERIAL CodigoSAP="550425" Lote="419L" Caducidad="30.06.2019" CBarra="7501825301967" SActiva="SILDENAFIL CITRATO DE 50MG C/1" Cantidad="10.000" />
+		<MATERIAL CodigoSAP="550426" Lote="185L" Caducidad="31.05.2019" CBarra="7501825300052" SActiva="SILDENAFIL CITRATO DE 50MG C/4" Cantidad="3.000" />
+		<MATERIAL CodigoSAP="554807" Lote="1709533" Caducidad="30.09.2019" CBarra="7501249601759" SActiva="" Cantidad="6.000" />
+		<MATERIAL CodigoSAP="550179" Lote="110L" Caducidad="30.06.2019" CBarra="7501825301004" SActiva="DEXTROMETORFANO/GUAIFENESINA0." Cantidad="6.000" />
+		<MATERIAL CodigoSAP="550193" Lote="712919" Caducidad="30.11.2019" CBarra="7502208892737" SActiva="DICLOXACILINA 500 MG C/20 CAP" Cantidad="5.000" />
+		<MATERIAL CodigoSAP="550204" Lote="17240442" Caducidad="30.06.2020" CBarra="780083140939" SActiva="DIPIRONA/CLORFEN/GUAYACOL/LIDO" Cantidad="3.000" />
+		<MATERIAL CodigoSAP="550205" Lote="17240494" Caducidad="30.06.2020" CBarra="780083140922" SActiva="DIPIRONA/CLORFEN/GUAYACOL/LIDO" Cantidad="3.000" />
+		<MATERIAL CodigoSAP="550234" Lote="7353" Caducidad="31.07.2019" CBarra="7502003386547" SActiva="GEMFIBROZILO 600 MG C/14 TAB" Cantidad="6.000" />
+		<MATERIAL CodigoSAP="554568" Lote="18140537" Caducidad="28.02.2020" CBarra="780083141929" SActiva="IBUPROFENO 2 G SUSP 1200 ML" Cantidad="10.000" />
+		<MATERIAL CodigoSAP="550289" Lote="712819" Caducidad="30.11.2019" CBarra="7502208891549" SActiva="LOPERAMIDA CLORHIDRATO DE 2 MG" Cantidad="10.000" />
+		<MATERIAL CodigoSAP="550822" Lote="171365" Caducidad="31.03.2019" CBarra="7502009742149" SActiva="GUAIFEN/FENILEFRINA/DEXTROME G" Cantidad="5.000" />
+		<MATERIAL CodigoSAP="550823" Lote="176440" Caducidad="31.12.2019" CBarra="7502009742132" SActiva="GUAIFEN/FENILEFRINA/DEXTR INF" Cantidad="5.000" />
+		<MATERIAL CodigoSAP="551207" Lote="8010151" Caducidad="15.01.2020" CBarra="7501537102579" SActiva="DEXAMETASONA 8 MG C/2ML C/1 AM" Cantidad="10.000" />
+		<MATERIAL CodigoSAP="552797" Lote="70097" Caducidad="31.10.2019" CBarra="7501075710465" SActiva="DEXTROMETORFANO/GUAIFENESINA 0" Cantidad="6.000" />
+		<MATERIAL CodigoSAP="553627" Lote="17142660" Caducidad="31.08.2019" CBarra="780083141981" SActiva="LORATADINA 10 MG 10 TABS" Cantidad="8.000" />
+		<MATERIAL CodigoSAP="553648" Lote="17342664" Caducidad="31.12.2019" CBarra="780083139889" SActiva="DEXAMET/NEOMICINA100/350MG C/5" Cantidad="6.000" />
+		<MATERIAL CodigoSAP="553998" Lote="17143373" Caducidad="31.10.2019" CBarra="780083141066" SActiva="DICLOFENACO DIETILAMONIO 1.16" Cantidad="5.000" />
+		<MATERIAL CodigoSAP="554041" Lote="350177" Caducidad="31.07.2019" CBarra="7501075713190" SActiva="KETOCONAZOL 2 G C/30 G CREMA" Cantidad="5.000" />
+		<MATERIAL CodigoSAP="554055" Lote="7MXA008" Caducidad="30.11.2020" CBarra="7501165005662" SActiva="" Cantidad="5.000" />
+		<MATERIAL CodigoSAP="554068" Lote="172145" Caducidad="31.12.2019" CBarra="7501258203104" SActiva="" Cantidad="4.000" />
+		<MATERIAL CodigoSAP="550296" Lote="R1705476A" Caducidad="30.06.2019" CBarra="7502211780915" SActiva="LORATADINA 100 MG SUSP" Cantidad="8.000" />
+		<MATERIAL CodigoSAP="554712" Lote="17144367" Caducidad="31.12.2019" CBarra="780083148645" SActiva="LORATADI 5MG/BETAMETASO 0.25MG" Cantidad="8.000" />
+		<MATERIAL CodigoSAP="554758" Lote="RRG025" Caducidad="31.03.2019" CBarra="7502227874202" SActiva="KETOROLACO 10MG/TRAMADOL 25MG" Cantidad="6.000" />
+		<MATERIAL CodigoSAP="554766" Lote="17J861" Caducidad="30.06.2019" CBarra="7501349024458" SActiva="" Cantidad="20.000" />
+		<MATERIAL CodigoSAP="555331" Lote="1711029" Caducidad="30.11.2019" CBarra="7506022303516" SActiva="" Cantidad="8.000" />
+		<MATERIAL CodigoSAP="555555" Lote="17143463" Caducidad="31.10.2019" CBarra="780083148683" SActiva="KETOROLACO 10 MG C/10 TAB" Cantidad="10.000" />
+		<MATERIAL CodigoSAP="554852" Lote="SH1749" Caducidad="31.08.2019" CBarra="7501573900191" SActiva="FLUCONAZOL 100 MG C /10 TAB" Cantidad="6.000" />
+		<MATERIAL CodigoSAP="550335" Lote="225M" Caducidad="31.12.2020" CBarra="7501825300731" SActiva="NAPROXENO 125MG/5 ML FCO C/100" Cantidad="6.000" />
+		<MATERIAL CodigoSAP="550346" Lote="R1710063" Caducidad="31.10.2019" CBarra="7502211780830" SActiva="NIMESULIDA 1.00 G C/60 ML SUSP" Cantidad="6.000" />
+		<MATERIAL CodigoSAP="550385" Lote="8010081" Caducidad="10.01.2020" CBarra="7501537100612" SActiva="PARACETAMOL 3.2 G JBE" Cantidad="8.000" />
+		<MATERIAL CodigoSAP="550393" Lote="7J910" Caducidad="31.10.2019" CBarra="7502006922711" SActiva="PICOSULFATO DE SODIO 7.5 MG GO" Cantidad="5.000" />
+		<MATERIAL CodigoSAP="550436" Lote="217R074" Caducidad="31.12.2019" CBarra="7501711641788" SActiva="ASC/DIPIRO/CLORFENAM/TETRAC/GU" Cantidad="3.000" />
+		<MATERIAL CodigoSAP="550450" Lote="8010097" Caducidad="26.01.2020" CBarra="7501537102067" SActiva="TRIMET/SULFAMETOXAZOL 40/200MG" Cantidad="8.000" />
+		<MATERIAL CodigoSAP="550840" Lote="R1707717" Caducidad="31.07.2019" CBarra="7502211780069" SActiva="METRON/DIYODOHIDRO" Cantidad="6.000" />
+		<MATERIAL CodigoSAP="552172" Lote="17GT06" Caducidad="31.07.2019" CBarra="7502223111028" SActiva="NITAZOXANIDA 500MG TABS C/6" Cantidad="6.000" />
+		<MATERIAL CodigoSAP="552651" Lote="311M" Caducidad="31.01.2021" CBarra="7501825300717" SActiva="NAPROXENO 125MG/PARACETAMOL 10" Cantidad="10.000" />
+		<MATERIAL CodigoSAP="553649" Lote="17143821" Caducidad="31.12.2019" CBarra="780083140588" SActiva="ALUMINIO/MAGNESIO/DIMETICONA 2" Cantidad="5.000" />
+		<MATERIAL CodigoSAP="554052" Lote="310217" Caducidad="31.07.2019" CBarra="7501075717044" SActiva="METRONIDAZOL/DIYODOHIDROXIQUIN" Cantidad="6.000" />
+		<MATERIAL CodigoSAP="555311" Lote="X701726" Caducidad="30.11.2019" CBarra="8400007018" SActiva="NEOMI,POLIMIXI B,GRAMICI SOL O" Cantidad="6.000" />
+		<MATERIAL CodigoSAP="555335" Lote="17C219" Caducidad="31.03.2019" CBarra="650240005398" SActiva="TERBINAFINA" Cantidad="3.000" />
+		<MATERIAL CodigoSAP="554652" Lote="L17J1703" Caducidad="30.11.2019" CBarra="7502225094275" SActiva="TAMSULOSINA 0.4 MG" Cantidad="3.000" />
+		<MATERIAL CodigoSAP="555422" Lote="17123120" Caducidad="31.12.2019" CBarra="7502001165724" SActiva="NEOMICINA/RETINOL 0.350G/10000" Cantidad="5.000" />
+		<MATERIAL CodigoSAP="555558" Lote="18010377" Caducidad="31.01.2020" CBarra="7502001165755" SActiva="" Cantidad="10.000" />
+		<MATERIAL CodigoSAP="555574" Lote="046J17" Caducidad="17.10.2019" CBarra="354312225140" SActiva="" Cantidad="6.000" />
+		<MATERIAL CodigoSAP="550159" Lote="H17M881" Caducidad="31.03.2019" CBarra="7501349011649" SActiva="CLODESODIO/POT/CAL/MAG/LACTSUE" Cantidad="6.000" />
+		<MATERIAL CodigoSAP="550160" Lote="H17Y205" Caducidad="31.05.2019" CBarra="7501349011625" SActiva="CLODESODIO/POT/CAL/MAG/LACTSUE" Cantidad="6.000" />
+		<MATERIAL CodigoSAP="550162" Lote="H17T748" Caducidad="31.10.2019" CBarra="7501349011601" SActiva="CLODESODIO/POT/CAL/MAG/LACTSUE" Cantidad="6.000" />
+		<MATERIAL CodigoSAP="550489" Lote="822L" Caducidad="30.09.2019" CBarra="7501825300175" SActiva="VITAMINICO C/ HIERRO C/110 ML" Cantidad="5.000" />
+		<MATERIAL CodigoSAP="550726" Lote="HZ1IN" Caducidad="31.03.2021" CBarra="7501547522220" SActiva="CETILPIRIDINIO 1.45 MG C/10 TA" Cantidad="10.000" />
+		<MATERIAL CodigoSAP="551029" Lote="H17M924" Caducidad="31.03.2019" CBarra="7501349011922" SActiva="CLODESODIO/POT/CAL/MAG/LACTSUE" Cantidad="6.000" />
+		<MATERIAL CodigoSAP="552441" Lote="18140527" Caducidad="28.02.2020" CBarra="780083140021" SActiva="NEOMICINA" Cantidad="6.000" />
+		<MATERIAL CodigoSAP="552706" Lote="72024354L1" Caducidad="30.06.2019" CBarra="75916565" SActiva="ALCANFOR MENTOL EUCALIPTO UNG" Cantidad="24.000" />
+		<MATERIAL CodigoSAP="552712" Lote="H17G546" Caducidad="31.08.2019" CBarra="7501349012370" SActiva="ELECTROLITOS ORALES" Cantidad="6.000" />
+		<MATERIAL CodigoSAP="552716" Lote="H17T772" Caducidad="31.10.2019" CBarra="7501349012394" SActiva="ELECTROLITOS ORALES" Cantidad="6.000" />
+		<MATERIAL CodigoSAP="554885" Lote="176356" Caducidad="31.12.2019" CBarra="7502009745737" SActiva="CEFIXIMA 100 MG SUSPENSION" Cantidad="3.000" />
+		<MATERIAL CodigoSAP="552357" Lote="17441346" Caducidad="30.11.2020" CBarra="714908100051" SActiva="" Cantidad="5.000" />
+	</cfdi:Addenda>
+</cfdi:Comprobante>

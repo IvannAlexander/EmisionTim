@@ -1,0 +1,58 @@
+﻿2018-07-10 11:29:01,319-1-DEBUG-ServicioConsola.Program.Main.25: Iniciando servicio
+2018-07-10 11:29:02,018-1-INFO-ServicioConsola.Program.Main.47: Uri:net.tcp://localhost:8083/Emision
+2018-07-10 11:59:49,529-1-DEBUG-ServicioConsola.Program.Main.25: Iniciando servicio
+2018-07-10 11:59:50,069-1-INFO-ServicioConsola.Program.Main.47: Uri:net.tcp://localhost:8083/Emision
+2018-07-10 12:04:36,717-1-DEBUG-ServicioConsola.Program.Main.25: Iniciando servicio
+2018-07-10 12:04:36,867-1-INFO-ServicioConsola.Program.Main.47: Uri:net.tcp://localhost:8083/Emision
+2018-07-10 12:15:44,391-1-DEBUG-ServicioConsola.Program.Main.25: Iniciando servicio
+2018-07-10 12:15:45,146-1-INFO-ServicioConsola.Program.Main.47: Uri:net.tcp://localhost:8083/Emision
+2018-07-10 12:22:26,085-1-DEBUG-ServicioConsola.Program.Main.25: Iniciando servicio
+2018-07-10 12:22:26,471-1-INFO-ServicioConsola.Program.Main.47: Uri:net.tcp://localhost:8083/Emision
+2018-07-10 12:34:04,976-1-DEBUG-ServicioConsola.Program.Main.25: Iniciando servicio
+2018-07-10 12:34:05,247-1-INFO-ServicioConsola.Program.Main.47: Uri:net.tcp://localhost:8083/Emision
+2018-07-10 12:36:33,546-9-ERROR-ServicioBussines.OperacionCertificados.ObtenerCertificadosPorRfc.132: System.NotSupportedException: The method 'Skip' is only supported for sorted input in LINQ to Entities. The method 'OrderBy' must be called before the method 'Skip'.
+   at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.OrderByLifter.PassthroughOrderByLifter.Skip(DbExpression k)
+   at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.OrderByLifter.Skip(DbExpressionBinding input, DbExpression skipCount)
+   at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.Skip(DbExpressionBinding input, DbExpression skipCount)
+   at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.MethodCallTranslator.SkipTranslator.TranslatePagingOperator(ExpressionConverter parent, DbExpression operand, DbExpression count)
+   at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.MethodCallTranslator.PagingTranslator.TranslateUnary(ExpressionConverter parent, DbExpression operand, MethodCallExpression call)
+   at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.MethodCallTranslator.UnarySequenceMethodTranslator.Translate(ExpressionConverter parent, MethodCallExpression call)
+   at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.MethodCallTranslator.SequenceMethodTranslator.Translate(ExpressionConverter parent, MethodCallExpression call, SequenceMethod sequenceMethod)
+   at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.MethodCallTranslator.TypedTranslate(ExpressionConverter parent, MethodCallExpression linq)
+   at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.TypedTranslator`1.Translate(ExpressionConverter parent, Expression linq)
+   at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.TranslateExpression(Expression linq)
+   at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.MethodCallTranslator.UnarySequenceMethodTranslator.Translate(ExpressionConverter parent, MethodCallExpression call)
+   at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.MethodCallTranslator.SequenceMethodTranslator.Translate(ExpressionConverter parent, MethodCallExpression call, SequenceMethod sequenceMethod)
+   at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.MethodCallTranslator.TypedTranslate(ExpressionConverter parent, MethodCallExpression linq)
+   at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.TypedTranslator`1.Translate(ExpressionConverter parent, Expression linq)
+   at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.TranslateExpression(Expression linq)
+   at System.Data.Entity.Core.Objects.ELinq.ExpressionConverter.Convert()
+   at System.Data.Entity.Core.Objects.ELinq.ELinqQueryState.GetExecutionPlan(Nullable`1 forMergeOption)
+   at System.Data.Entity.Core.Objects.ObjectQuery`1.<>c__DisplayClass7.<GetResults>b__6()
+   at System.Data.Entity.Core.Objects.ObjectContext.ExecuteInTransaction[T](Func`1 func, IDbExecutionStrategy executionStrategy, Boolean startLocalTransaction, Boolean releaseConnectionOnSuccess)
+   at System.Data.Entity.Core.Objects.ObjectQuery`1.<>c__DisplayClass7.<GetResults>b__5()
+   at System.Data.Entity.SqlServer.DefaultSqlExecutionStrategy.Execute[TResult](Func`1 operation)
+   at System.Data.Entity.Core.Objects.ObjectQuery`1.GetResults(Nullable`1 forMergeOption)
+   at System.Data.Entity.Core.Objects.ObjectQuery`1.<System.Collections.Generic.IEnumerable<T>.GetEnumerator>b__0()
+   at System.Data.Entity.Internal.LazyEnumerator`1.MoveNext()
+   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   at ServicioBussines.OperacionCertificados.ObtenerCertificadosPorRfc(String rfc, Int32 numRegistros, Int32 paginaActual) in Z:\Alexander\Mega\Personal\Trabajo\Proyectos\Mvc\Emision\ServicioBussines\OperacionCertificados.cs:line 127
+2018-07-10 12:40:26,052-1-DEBUG-ServicioConsola.Program.Main.25: Iniciando servicio
+2018-07-10 12:40:26,597-1-INFO-ServicioConsola.Program.Main.47: Uri:net.tcp://localhost:8083/Emision
+2018-07-10 12:54:24,955-1-DEBUG-ServicioConsola.Program.Main.25: Iniciando servicio
+2018-07-10 12:54:25,118-1-INFO-ServicioConsola.Program.Main.47: Uri:net.tcp://localhost:8083/Emision
+2018-07-10 12:59:11,811-1-DEBUG-ServicioConsola.Program.Main.25: Iniciando servicio
+2018-07-10 12:59:12,654-1-INFO-ServicioConsola.Program.Main.47: Uri:net.tcp://localhost:8083/Emision
+2018-07-10 17:50:40,056-1-DEBUG-ServicioConsola.Program.Main.25: Iniciando servicio
+2018-07-10 17:50:40,269-1-INFO-ServicioConsola.Program.Main.47: Uri:net.tcp://localhost:8083/Emision
+2018-07-10 18:08:11,392-1-DEBUG-ServicioConsola.Program.Main.25: Iniciando servicio
+2018-07-10 18:08:11,782-1-INFO-ServicioConsola.Program.Main.47: Uri:net.tcp://localhost:8083/Emision
+2018-07-10 18:23:57,725-1-DEBUG-ServicioConsola.Program.Main.25: Iniciando servicio
+2018-07-10 18:23:58,648-1-INFO-ServicioConsola.Program.Main.47: Uri:net.tcp://localhost:8083/Emision
+2018-07-10 18:38:40,416-1-DEBUG-ServicioConsola.Program.Main.25: Iniciando servicio
+2018-07-10 18:38:40,505-1-INFO-ServicioConsola.Program.Main.47: Uri:net.tcp://localhost:8083/Emision
+2018-07-10 18:44:06,007-1-DEBUG-ServicioConsola.Program.Main.25: Iniciando servicio
+2018-07-10 18:44:06,228-1-INFO-ServicioConsola.Program.Main.47: Uri:net.tcp://localhost:8083/Emision
+2018-07-10 18:47:33,039-1-DEBUG-ServicioConsola.Program.Main.25: Iniciando servicio
+2018-07-10 18:47:33,108-1-INFO-ServicioConsola.Program.Main.47: Uri:net.tcp://localhost:8083/Emision

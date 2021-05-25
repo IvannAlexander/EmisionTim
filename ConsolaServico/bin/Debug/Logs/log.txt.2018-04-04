@@ -1,0 +1,6 @@
+﻿2018-04-04 13:50:13,686-10-DEBUG-ServicioConsola.Program.Main.23: Iniciando servicio
+2018-04-04 13:50:13,900-10-INFO-ServicioConsola.Program.Main.44: Uri:net.tcp://localhost:8088/CmService
+2018-04-04 13:53:12,470-10-DEBUG-ServicioConsola.Program.Main.23: Iniciando servicio
+2018-04-04 13:53:12,830-10-INFO-ServicioConsola.Program.Main.44: Uri:net.tcp://localhost:8088/CmService
+2018-04-04 17:00:58,695-9-DEBUG-ServicioConsola.Program.Main.23: Iniciando servicio
+2018-04-04 17:00:59,219-9-INFO-ServicioConsola.Program.Main.44: Uri:net.tcp://localhost:8088/CmService

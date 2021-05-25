@@ -1,0 +1,136 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<cfdi:Comprobante xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sat.gob.mx/cfd/3 http://www.sat.gob.mx/sitio_internet/cfd/3/cfdv33.xsd" Version="3.3" Serie="A" Folio="30684" Fecha="2018-04-26T00:09:27" FormaPago="02" CondicionesDePago="45 DIAS" SubTotal="1627586.26" Moneda="MXN" TipoCambio="1" Total="1888000.06" TipoDeComprobante="I" MetodoPago="PPD" LugarExpedicion="10350" xmlns:cfdi="http://www.sat.gob.mx/cfd/3" NoCertificado="30001000000300023708" Sello="UMFBYGcFSGVeT+B3BgRLVdYi1vR91KS4clM6t6YMfSCYZUjEZHoKuhXqcBKBhZOP79KqQTSyWAP8APAlJqpnuRwRPc47TIT+GLfJlhlQuX12rfdZeFbu9zLb9JOWj6wWHCnbRzQBxdwzExUZA6WGxmInR45eZ+f3pqlAO3Oi0UkdpBtLACdplALpMJq/HHoq/62glk+t3pO6gqadwuLVz8xdvnUvVaUqXF454dMbow9JYgskE+EkhoeHsL2Cth5V2YgQNhG1DVRwkK9pKfA/ssuXekWdxIPZekYw2mUJm9E21ieumNBSsonAzfXM0Vob6P/CTRJ0l4uDZoYOLym9FQ==" Certificado="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">
+    <cfdi:Emisor Rfc="AAA010101AAA" Nombre="NOTMUSA S.A. DE C.V." RegimenFiscal="601" />
+    <cfdi:Receptor Rfc="PVE930113JS1" Nombre="PARTIDO VERDE ECOLOGISTA DE MEXICO" UsoCFDI="G03" />
+    <cfdi:Conceptos>
+        <cfdi:Concepto ClaveProdServ="82101503" Cantidad="1" ClaveUnidad="E48" Unidad="Unidad de servicio" Descripcion="PUBLICIDAD TV NOTAS" ValorUnitario="1627586.26" Importe="1627586.26">
+            <cfdi:Impuestos>
+                <cfdi:Traslados>
+                    <cfdi:Traslado Base="1627586.260000" Impuesto="002" TipoFactor="Tasa" TasaOCuota="0.160000" Importe="260413.801600" />
+                </cfdi:Traslados>
+            </cfdi:Impuestos>
+        </cfdi:Concepto>
+    </cfdi:Conceptos>
+    <cfdi:Impuestos TotalImpuestosTrasladados="260413.80">
+        <cfdi:Traslados>
+            <cfdi:Traslado Importe="260413.80" TasaOCuota="0.160000" Impuesto="002" TipoFactor="Tasa" />
+        </cfdi:Traslados>
+    </cfdi:Impuestos>
+    <cfdi:Complemento>
+        <ine:INE Version="1.1" TipoProceso="Campaña" xsi:schemaLocation="http://www.sat.gob.mx/ine http://www.sat.gob.mx/sitio_internet/cfd/ine/ine11.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ine="http://www.sat.gob.mx/ine">
+            <ine:Entidad ClaveEntidad="DIF" Ambito="Local">
+                <ine:Contabilidad IdContabilidad="041126" />
+            </ine:Entidad>
+        </ine:INE>
+        <tfd:TimbreFiscalDigital xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sat.gob.mx/TimbreFiscalDigital http://www.sat.gob.mx/sitio_internet/cfd/timbrefiscaldigital/TimbreFiscalDigitalv11.xsd" Version="1.1" UUID="7C6BAEFE-8D3A-4B89-B2FE-D16DAE1EFA96" FechaTimbrado="2018-04-26T16:39:16" RfcProvCertif="AAA010101AAA" SelloCFD="UMFBYGcFSGVeT+B3BgRLVdYi1vR91KS4clM6t6YMfSCYZUjEZHoKuhXqcBKBhZOP79KqQTSyWAP8APAlJqpnuRwRPc47TIT+GLfJlhlQuX12rfdZeFbu9zLb9JOWj6wWHCnbRzQBxdwzExUZA6WGxmInR45eZ+f3pqlAO3Oi0UkdpBtLACdplALpMJq/HHoq/62glk+t3pO6gqadwuLVz8xdvnUvVaUqXF454dMbow9JYgskE+EkhoeHsL2Cth5V2YgQNhG1DVRwkK9pKfA/ssuXekWdxIPZekYw2mUJm9E21ieumNBSsonAzfXM0Vob6P/CTRJ0l4uDZoYOLym9FQ==" NoCertificadoSAT="20001000000300022323" SelloSAT="O8XwJb7iiqWfEqQ0JMhO/cjTfWXdQSK/jWuXm/CMKUcsXa+hatfN6ZigJjKDdykslkCutWnCNy60qXaZyd7SNOpxWo4A/j4N6Sx725HhvfAZSYWEkXHxVZkWxuzS7FrgrDwf8f+kcktdcks6WP3p1e+ZBNMNRh2get09KEkulDrfZzB+iE8ahCWeBVG1ew9KX6nPUKtwJckMFkPQpBmuidS5JfDFXVBt1Vt9rr27xfoVg9hT3EPjRnnkuuvltTxjpNZCdu7/i9aA847XrIv46NQpBOwJeZabfcNeAaeG/juCD7paFBHzit7uIOZDk8lQlvTtReLEyzSIOYvM6gySJw==" xmlns:tfd="http://www.sat.gob.mx/TimbreFiscalDigital" />
+    </cfdi:Complemento>
+    <cfdi:Addenda>
+        <mf:MASFACTURA xsi:schemaLocation="http://www.masteredi.com.mx/masfactura http://www.masteredi.com.mx/masfacturanet/masfactura.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mf="http://www.masteredi.com.mx/masfactura">VERSIO	3.3
+	http://www.w3.org/2001/XMLSchema-instance
+?E	
+AOAPRO	0
+CALEMI	Boulevard Periférico Sur
+CALREC	CERRADA LOMA BONITA
+CODEMI	14210
+CODLUGEXP	10350
+CODMETPAG	PPD
+CODMETPAGDESC	Pago en parcialidades o diferido
+CODREC	11950
+COLEMI	Jardines en la Montaña
+COLREC	LOMAS ALTAS
+COM_INE_AMBI	Local
+COM_INE_CLAV	DIF
+COM_INE_ID_1	041126
+COM_INE_PROC	Campaña
+COM_INE_VERS	1.1
+CONDPAG	45 DIAS
+CVEFORPAG	02
+CVEFORPAGDESC	Cheque nominativo
+CVEREGIMEN	601
+CVEREGIMENDESC	General de Ley Personas Morales
+CVETIPDOC	I
+DIAPAG	45
+EANEMI	00000000001
+ESTEMI	CDMX
+ESTREC	CDMX
+FCTTOTIVA	0.160000
+FCTTOTIVA1	0.160000
+FECEXP	2018-04-26T00:09:27
+FECHOC	2018-04-23
+FUNDOC	O
+IVATRA	260413.80
+IVATRA1	260413.80
+LOCEMI	CDMX
+LUGEXP	10350
+METPAG	03
+MONDET	0.00
+MUNEMI	Tlalpan
+MUNREC	MIGUEL HIDALGO
+NEXEMI	4293
+NEXREC	18
+NINEMI	Piso 5
+NIVATR	IVA
+NIVATR1	IVA
+NIVATRCVE1	002
+NOAPRO	0
+NOMDOC	FACTURA
+NOMEMI	NOTMUSA S.A. DE C.V.
+NOMEMICFD	NOTMUSA S.A. DE C.V.
+NOMREC	PARTIDO VERDE ECOLOGISTA DE MEXICO
+NOMRECCFD	PARTIDO VERDE ECOLOGISTA DE MEXICO
+NOTAS3	UN MILLON OCHOCIENTOS OCHENTA Y OCHO MIL
+NUMCER	
+NUMEOC	040683
+NUMFOL	30684
+OBSERV	PUBLICIDAD EXHIBIDA EN REVISTAS
+OBSERVACIONES:	RELATIVA A LA PUBLICIDAD DE CAMPAÑA A BENEFICIO DEL CANDIDATO PRESIDENCIAL JOSÉ ANTONIO MEADE KURIBREÑA DEL 3 DE ABRIL AL 26 DE JUNIO DEL 2018. (ID CONTRATO PR-CO-300-NA-1-1)
+PAIEMI	MEXICO
+PAIREC	MEXICO
+PRCDSG	0
+REFEMI	A00000000000000003067
+REGIMEN	Persona Fisica
+RFCEMI	AAA010101AAA
+RFCREC	PVE930113JS1
+SERFOL	A
+SUBTAI	1627586.26
+SUBTBR	1627586.26
+SUBTOT	1627586.26
+TIPCAM	1
+TIPCOM	ingreso
+TIPDOC	1
+TIPFACIVA	Tasa
+TIPFACIVA1	Tasa
+TIPMON	MXN
+TOTCAN	1
+TOTIVA	16.00
+TOTIVA1	16.00
+TOTPAG	1888000.06
+TOTTRA	260413.80
+USOCFDI	G03
+USOCFDIDESC	Gastos en general
+VER_MFACTURA	3.0
+CANTID	1
+CVEPRODSERV	82101503
+CVEUNIDAD	E48
+DESCRI	PUBLICIDAD TV NOTAS
+ESTILV	900006
+FCTTASIPE	0.160000
+IMPBRU	1627586.26
+IMPORT	1627586.26
+IMPORTIPE	1627586.260000
+IMPORTIPE1	1627586.26
+MDECON	0.00
+MONIPE	260413.801600
+MONIPECVE	002
+NUMLIN	1
+PBRUDE	1627586.26
+TASIPE	16.00
+TDECON	0
+TIPIPETR	Tasa
+TOTIVA	16.00
+UNIDAD	Unidad de servicio
+VALUNI	1627586.26
+TOTLPF	1</mf:MASFACTURA>
+    </cfdi:Addenda>
+</cfdi:Comprobante>

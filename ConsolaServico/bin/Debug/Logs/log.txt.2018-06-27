@@ -1,0 +1,40 @@
+﻿2018-06-27 11:52:06,484-1-DEBUG-ServicioConsola.Program.Main.25: Iniciando servicio
+2018-06-27 11:52:07,195-1-INFO-ServicioConsola.Program.Main.47: Uri:net.tcp://localhost:8083/Emision
+2018-06-27 12:22:26,223-1-DEBUG-ServicioConsola.Program.Main.25: Iniciando servicio
+2018-06-27 12:22:26,371-1-INFO-ServicioConsola.Program.Main.47: Uri:net.tcp://localhost:8083/Emision
+2018-06-27 12:26:43,595-1-DEBUG-ServicioConsola.Program.Main.25: Iniciando servicio
+2018-06-27 12:26:43,770-1-INFO-ServicioConsola.Program.Main.47: Uri:net.tcp://localhost:8083/Emision
+2018-06-27 12:28:42,649-1-DEBUG-ServicioConsola.Program.Main.25: Iniciando servicio
+2018-06-27 12:28:42,842-1-INFO-ServicioConsola.Program.Main.47: Uri:net.tcp://localhost:8083/Emision
+2018-06-27 12:48:21,405-1-DEBUG-ServicioConsola.Program.Main.25: Iniciando servicio
+2018-06-27 12:48:21,714-1-INFO-ServicioConsola.Program.Main.47: Uri:net.tcp://localhost:8083/Emision
+2018-06-27 12:50:09,571-1-DEBUG-ServicioConsola.Program.Main.25: Iniciando servicio
+2018-06-27 12:50:09,710-1-INFO-ServicioConsola.Program.Main.47: Uri:net.tcp://localhost:8083/Emision
+2018-06-27 13:01:35,456-1-DEBUG-ServicioConsola.Program.Main.25: Iniciando servicio
+2018-06-27 13:01:35,816-1-INFO-ServicioConsola.Program.Main.47: Uri:net.tcp://localhost:8083/Emision
+2018-06-27 13:06:05,612-1-DEBUG-ServicioConsola.Program.Main.25: Iniciando servicio
+2018-06-27 13:06:06,869-1-INFO-ServicioConsola.Program.Main.47: Uri:net.tcp://localhost:8083/Emision
+2018-06-27 13:34:39,382-1-DEBUG-ServicioConsola.Program.Main.25: Iniciando servicio
+2018-06-27 13:34:39,519-1-INFO-ServicioConsola.Program.Main.47: Uri:net.tcp://localhost:8083/Emision
+2018-06-27 16:20:47,309-1-DEBUG-ServicioConsola.Program.Main.25: Iniciando servicio
+2018-06-27 16:20:47,838-1-INFO-ServicioConsola.Program.Main.47: Uri:net.tcp://localhost:8083/Emision
+2018-06-27 16:40:21,971-1-DEBUG-ServicioConsola.Program.Main.25: Iniciando servicio
+2018-06-27 16:40:23,261-1-INFO-ServicioConsola.Program.Main.47: Uri:net.tcp://localhost:8083/Emision
+2018-06-27 16:53:14,732-1-DEBUG-ServicioConsola.Program.Main.25: Iniciando servicio
+2018-06-27 16:53:14,857-1-INFO-ServicioConsola.Program.Main.47: Uri:net.tcp://localhost:8083/Emision
+2018-06-27 16:57:59,085-1-DEBUG-ServicioConsola.Program.Main.25: Iniciando servicio
+2018-06-27 16:58:00,240-1-INFO-ServicioConsola.Program.Main.47: Uri:net.tcp://localhost:8083/Emision
+2018-06-27 16:58:39,399-5-ERROR-ServicioBussines.OperacionCertificados.GuardaCertificados.60: System.Exception: El RFC AAA010101AAA del certificado no corredponde al RFC de la empresa. Favor de validar.
+   at ServicioBussines.OperacionCertificados.GuardaCertificados(Byte[] archivoCer, Byte[] archivoKey, String pass, String rfcEmpresa) in Z:\Alexander\Mega\Personal\Trabajo\Proyectos\Mvc\Emision\ServicioBussines\OperacionCertificados.cs:line 31
+2018-06-27 16:59:04,031-1-DEBUG-ServicioConsola.Program.Main.25: Iniciando servicio
+2018-06-27 16:59:04,382-1-INFO-ServicioConsola.Program.Main.47: Uri:net.tcp://localhost:8083/Emision
+2018-06-27 17:16:26,428-1-DEBUG-ServicioConsola.Program.Main.25: Iniciando servicio
+2018-06-27 17:16:27,217-1-INFO-ServicioConsola.Program.Main.47: Uri:net.tcp://localhost:8083/Emision
+2018-06-27 17:17:00,468-1-DEBUG-ServicioConsola.Program.Main.25: Iniciando servicio
+2018-06-27 17:17:00,569-1-INFO-ServicioConsola.Program.Main.47: Uri:net.tcp://localhost:8083/Emision
+2018-06-27 17:59:12,049-52-ERROR-ServicioBussines.OperacionCertificados.GuardaCertificados.60: System.Exception: El RFC AAA010101AAA del certificado no corredponde al RFC de la empresa. Favor de validar.
+   at ServicioBussines.OperacionCertificados.GuardaCertificados(Byte[] archivoCer, Byte[] archivoKey, String pass, String rfcEmpresa) in Z:\Alexander\Mega\Personal\Trabajo\Proyectos\Mvc\Emision\ServicioBussines\OperacionCertificados.cs:line 31
+2018-06-27 17:59:37,793-49-ERROR-ServicioBussines.OperacionCertificados.GuardaCertificados.60: System.Exception: El RFC AAA010101AAA del certificado no corredponde al RFC de la empresa. Favor de validar.
+   at ServicioBussines.OperacionCertificados.GuardaCertificados(Byte[] archivoCer, Byte[] archivoKey, String pass, String rfcEmpresa) in Z:\Alexander\Mega\Personal\Trabajo\Proyectos\Mvc\Emision\ServicioBussines\OperacionCertificados.cs:line 31
+2018-06-27 18:01:02,657-56-ERROR-ServicioBussines.OperacionCertificados.GuardaCertificados.60: System.Exception: El RFC AAA010101AAA del certificado no corredponde al RFC de la empresa. Favor de validar.
+   at ServicioBussines.OperacionCertificados.GuardaCertificados(Byte[] archivoCer, Byte[] archivoKey, String pass, String rfcEmpresa) in Z:\Alexander\Mega\Personal\Trabajo\Proyectos\Mvc\Emision\ServicioBussines\OperacionCertificados.cs:line 31

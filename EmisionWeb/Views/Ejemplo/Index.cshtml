@@ -1,0 +1,48 @@
+﻿
+@{
+//Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <style>
+        body.dragging, body.dragging * {
+            cursor: move !important;
+        }
+
+        .dragged {
+            position: absolute;
+            opacity: 0.5;
+            z-index: 2000;
+        }
+
+        ol.example li.placeholder {
+            position: relative;
+            /** More li styles **/
+        }
+
+            ol.example li.placeholder:before {
+                position: absolute;
+                /** Define arrowhead **/
+            }
+    </style>
+    <script>
+        $(function () {
+            $("ol.example").sortable();
+        });
+    </script>
+</head>
+<body>
+
+    <ol class='example'>
+        <li>First</li>
+        <li>Second</li>
+        <li>Third</li>
+    </ol>
+        <script src='~/Scripts/jquery-sortable.js'></script>
+</body>
+</html>

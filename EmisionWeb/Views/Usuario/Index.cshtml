@@ -1,0 +1,32 @@
+﻿@model ServicioContract.Sys_Usuario
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/MasterDefault.cshtml";
+}
+
+
+
+<h2>Index</h2>
+
+<div class="container">
+
+
+    
+
+
+    @using (Html.BeginForm())
+    {
+        <div class="row">
+            <div class="col-md-3">
+                @Html.TextBoxFor(p => p.Sys_Usr, new { @class = "form-control center-block", placeholder = "Usuario" })
+            </div>
+            <div class="col-md-3">
+                @Html.TextBoxFor(p => p.Sys_Pass, new { @class = "form-control center-block", placeholder = "Contraseña" })
+            </div>
+            <div class="col-md-3">
+                @Html.TextBoxFor(p => p.Sys_Correo, new { @class = "form-control center-block", placeholder = "Correo Electronico" })
+            </div>
+        </div>
+    }
+</div>

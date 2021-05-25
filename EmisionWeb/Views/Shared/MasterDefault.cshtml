@@ -1,0 +1,105 @@
+﻿
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    @Html.ActionLink("Application name", "Index", "Inicio", new { area = "" }, new { @class = "navbar-brand" })
+                </div>
+
+                <div class="navbar-right">
+
+                    <ul class="nav navbar-nav">
+                        <li class="dropdown-submenu">
+
+                            @Html.ActionLink(" ", "CerrarSesion", new { controller = "Inicio" }, new { @class = "glyphicon glyphicon-off navbar-right" })
+
+                        </li>
+                    </ul>
+                </div>
+                
+
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        @{
+                        if (Session["Sys_Menu"] != null)
+                        {
+
+                            var menus = (List<ServicioContract.Sys_Menu>)Session["Sys_Menu"];
+                            if (menus.Any())
+                            {
+                                var menuPadre = menus.Where(p => p.Sys_Parent == 0).ToList();
+                                foreach (var menu in menuPadre)
+                                {
+                                        <li class="dropdown-submenu">
+                                            <a href="#" class="submenu" data-toggle="dropdown">
+                                                @Html.Label(menu.Sys_Nombre)
+                                            </a>
+
+                                            <ul class="dropdown-menu">
+                                                @{
+                                                var menuHijo = menus.Where(p => p.Sys_Parent == menu.Sys_Id).ToList();
+                                                if (menuHijo.Any())
+                                                {
+                                                    foreach (var submenu in menuHijo)
+                                                    {
+                                                            <li>@Html.ActionLink(submenu.Sys_Nombre, submenu.Sys_Action, submenu.Sys_Controller)</li>
+                                                    }
+                                                }
+                                                }
+                                            </ul>
+                                        </li>
+                                                        }
+                                                    }
+                                                }
+                        }
+                        @*<li>@Html.ActionLink("Home", "Index", "Home")</li>
+                    <li>@Html.ActionLink("About", "About", "Home")</li>
+                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                    <li class="dropdown-submenu">
+                        <a href="#" class="submenu" data-toggle="dropdown">
+                            @Html.Label("Sub")
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                            <li>@Html.ActionLink("About", "About", "Home")</li>
+                            <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                        </ul>
+                    </li>*@
+                    </ul>
+
+                </div>
+
+            </div>
+            
+        </div>
+    </div>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

@@ -1,0 +1,13 @@
+F:\Alexander\Mega\Personal\Trabajo\Proyectos\Mvc\Emision\ServicioContract\bin\Release\aspnet-Emision-20180404113138.mdf
+F:\Alexander\Mega\Personal\Trabajo\Proyectos\Mvc\Emision\ServicioContract\bin\Release\aspnet-Emision-20180404113138_log.ldf
+F:\Alexander\Mega\Personal\Trabajo\Proyectos\Mvc\Emision\ServicioContract\bin\Release\ServicioContract.dll.config
+F:\Alexander\Mega\Personal\Trabajo\Proyectos\Mvc\Emision\ServicioContract\bin\Release\ServicioContract.dll
+F:\Alexander\Mega\Personal\Trabajo\Proyectos\Mvc\Emision\ServicioContract\bin\Release\ServicioContract.pdb
+F:\Alexander\Mega\Personal\Trabajo\Proyectos\Mvc\Emision\ServicioContract\bin\Release\EntityFramework.dll
+F:\Alexander\Mega\Personal\Trabajo\Proyectos\Mvc\Emision\ServicioContract\bin\Release\EntityFramework.SqlServer.dll
+F:\Alexander\Mega\Personal\Trabajo\Proyectos\Mvc\Emision\ServicioContract\bin\Release\log4net.dll
+F:\Alexander\Mega\Personal\Trabajo\Proyectos\Mvc\Emision\ServicioContract\bin\Release\EntityFramework.xml
+F:\Alexander\Mega\Personal\Trabajo\Proyectos\Mvc\Emision\ServicioContract\bin\Release\EntityFramework.SqlServer.xml
+F:\Alexander\Mega\Personal\Trabajo\Proyectos\Mvc\Emision\ServicioContract\obj\Release\ServicioContract.csprojResolveAssemblyReference.cache
+F:\Alexander\Mega\Personal\Trabajo\Proyectos\Mvc\Emision\ServicioContract\obj\Release\ServicioContract.dll
+F:\Alexander\Mega\Personal\Trabajo\Proyectos\Mvc\Emision\ServicioContract\obj\Release\ServicioContract.pdb

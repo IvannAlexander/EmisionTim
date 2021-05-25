@@ -1,0 +1,39 @@
+﻿2018-06-26 13:30:00,956-1-DEBUG-ServicioConsola.Program.Main.25: Iniciando servicio
+2018-06-26 13:30:01,148-1-INFO-ServicioConsola.Program.Main.47: Uri:net.tcp://localhost:8083/Emision
+2018-06-26 13:30:18,886-4-ERROR-ServicioBussines.OperacionUsuario.ObtenerUsuario.71: System.InvalidOperationException: No connection string named 'Entities' could be found in the application config file.
+   at System.Data.Entity.Internal.LazyInternalConnection.get_ConnectionHasModel()
+   at System.Data.Entity.Internal.LazyInternalContext.InitializeContext()
+   at System.Data.Entity.Internal.InternalContext.Initialize()
+   at System.Data.Entity.Internal.InternalContext.GetEntitySetAndBaseTypeForType(Type entityType)
+   at System.Data.Entity.Internal.Linq.InternalSet`1.Initialize()
+   at System.Data.Entity.Internal.Linq.InternalSet`1.get_InternalContext()
+   at System.Data.Entity.Infrastructure.DbQuery`1.System.Linq.IQueryable.get_Provider()
+   at System.Linq.Queryable.FirstOrDefault[TSource](IQueryable`1 source, Expression`1 predicate)
+   at ServicioBussines.OperacionUsuario.ObtenerUsuario(String usuario, String rfc) in Z:\Alexander\Mega\Personal\Trabajo\Proyectos\Mvc\Emision\ServicioBussines\OperacionUsuario.cs:line 66
+2018-06-26 13:31:53,602-1-DEBUG-ServicioConsola.Program.Main.25: Iniciando servicio
+2018-06-26 13:31:53,838-1-INFO-ServicioConsola.Program.Main.47: Uri:net.tcp://localhost:8083/Emision
+2018-06-26 15:58:45,748-1-DEBUG-ServicioConsola.Program.Main.25: Iniciando servicio
+2018-06-26 15:58:46,385-1-INFO-ServicioConsola.Program.Main.47: Uri:net.tcp://localhost:8083/Emision
+2018-06-26 15:59:40,390-5-ERROR-ServicioBussines.OperacionMenu.ObtenerMenuPorUsuario.64: System.InvalidCastException: Unable to cast object of type '<>f__AnonymousType1`1[ServicioContract.Sys_Menu]' to type 'ServicioContract.Sys_Menu'.
+   at System.Linq.Enumerable.<CastIterator>d__97`1.MoveNext()
+   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   at ServicioBussines.OperacionMenu.ObtenerMenuPorUsuario(String rfc, String usuario) in Z:\Alexander\Mega\Personal\Trabajo\Proyectos\Mvc\Emision\ServicioBussines\OperacionMenu.cs:line 56
+2018-06-26 16:06:05,240-1-DEBUG-ServicioConsola.Program.Main.25: Iniciando servicio
+2018-06-26 16:06:05,395-1-INFO-ServicioConsola.Program.Main.47: Uri:net.tcp://localhost:8083/Emision
+2018-06-26 16:11:39,894-1-DEBUG-ServicioConsola.Program.Main.25: Iniciando servicio
+2018-06-26 16:11:40,096-1-INFO-ServicioConsola.Program.Main.47: Uri:net.tcp://localhost:8083/Emision
+2018-06-26 16:31:17,660-1-DEBUG-ServicioConsola.Program.Main.25: Iniciando servicio
+2018-06-26 16:31:17,916-1-INFO-ServicioConsola.Program.Main.47: Uri:net.tcp://localhost:8083/Emision
+2018-06-26 18:05:59,859-1-DEBUG-ServicioConsola.Program.Main.25: Iniciando servicio
+2018-06-26 18:06:00,141-1-INFO-ServicioConsola.Program.Main.47: Uri:net.tcp://localhost:8083/Emision
+2018-06-26 18:10:41,074-1-DEBUG-ServicioConsola.Program.Main.25: Iniciando servicio
+2018-06-26 18:10:41,220-1-INFO-ServicioConsola.Program.Main.47: Uri:net.tcp://localhost:8083/Emision
+2018-06-26 18:13:27,419-1-DEBUG-ServicioConsola.Program.Main.25: Iniciando servicio
+2018-06-26 18:13:27,537-1-INFO-ServicioConsola.Program.Main.47: Uri:net.tcp://localhost:8083/Emision
+2018-06-26 18:28:11,537-1-DEBUG-ServicioConsola.Program.Main.25: Iniciando servicio
+2018-06-26 18:28:11,680-1-INFO-ServicioConsola.Program.Main.47: Uri:net.tcp://localhost:8083/Emision
+2018-06-26 18:32:14,073-1-DEBUG-ServicioConsola.Program.Main.25: Iniciando servicio
+2018-06-26 18:32:14,241-1-INFO-ServicioConsola.Program.Main.47: Uri:net.tcp://localhost:8083/Emision
+2018-06-26 18:35:55,150-1-DEBUG-ServicioConsola.Program.Main.25: Iniciando servicio
+2018-06-26 18:35:55,636-1-INFO-ServicioConsola.Program.Main.47: Uri:net.tcp://localhost:8083/Emision

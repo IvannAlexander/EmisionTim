@@ -1,0 +1,14 @@
+Z:\Alexander\Mega\Personal\Trabajo\Proyectos\Mvc\Emision\ServicioTimbrado\bin\Debug\ServicioTimbrado.dll
+Z:\Alexander\Mega\Personal\Trabajo\Proyectos\Mvc\Emision\ServicioTimbrado\bin\Debug\ServicioTimbrado.pdb
+Z:\Alexander\Mega\Personal\Trabajo\Proyectos\Mvc\Emision\ServicioTimbrado\bin\Debug\log4net.dll
+Z:\Alexander\Mega\Personal\Trabajo\Proyectos\Mvc\Emision\ServicioTimbrado\obj\Debug\ServicioTimbrado.dll
+Z:\Alexander\Mega\Personal\Trabajo\Proyectos\Mvc\Emision\ServicioTimbrado\obj\Debug\ServicioTimbrado.pdb
+Z:\Alexander\Mega\Personal\Trabajo\Proyectos\Mvc\Emision\ServicioTimbrado\obj\Debug\ServicioTimbrado.csprojResolveAssemblyReference.cache
+D:\Alexander\Mega\Trabajo\Proyectos\Mvc\Emision\ServicioTimbrado\bin\Debug\ServicioTimbrado.dll
+D:\Alexander\Mega\Trabajo\Proyectos\Mvc\Emision\ServicioTimbrado\bin\Debug\ServicioTimbrado.pdb
+D:\Alexander\Mega\Trabajo\Proyectos\Mvc\Emision\ServicioTimbrado\bin\Debug\log4net.dll
+D:\Alexander\Mega\Trabajo\Proyectos\Mvc\Emision\ServicioTimbrado\obj\Debug\ServicioTimbrado.csprojAssemblyReference.cache
+D:\Alexander\Mega\Trabajo\Proyectos\Mvc\Emision\ServicioTimbrado\obj\Debug\ServicioTimbrado.csproj.CoreCompileInputs.cache
+D:\Alexander\Mega\Trabajo\Proyectos\Mvc\Emision\ServicioTimbrado\obj\Debug\ServicioTimbrado.csproj.CopyComplete
+D:\Alexander\Mega\Trabajo\Proyectos\Mvc\Emision\ServicioTimbrado\obj\Debug\ServicioTimbrado.dll
+D:\Alexander\Mega\Trabajo\Proyectos\Mvc\Emision\ServicioTimbrado\obj\Debug\ServicioTimbrado.pdb

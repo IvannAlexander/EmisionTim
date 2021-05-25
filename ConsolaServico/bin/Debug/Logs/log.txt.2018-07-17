@@ -1,0 +1,33 @@
+﻿2018-07-17 10:32:55,811-1-DEBUG-ServicioConsola.Program.Main.25: Iniciando servicio
+2018-07-17 10:32:56,054-1-INFO-ServicioConsola.Program.Main.47: Uri:net.tcp://localhost:8083/Emision
+2018-07-17 11:18:34,359-1-DEBUG-ServicioConsola.Program.Main.25: Iniciando servicio
+2018-07-17 11:18:34,578-1-INFO-ServicioConsola.Program.Main.47: Uri:net.tcp://localhost:8083/Emision
+2018-07-17 11:31:20,224-1-DEBUG-ServicioConsola.Program.Main.25: Iniciando servicio
+2018-07-17 11:31:20,353-1-INFO-ServicioConsola.Program.Main.47: Uri:net.tcp://localhost:8083/Emision
+2018-07-17 12:32:21,206-1-DEBUG-ServicioConsola.Program.Main.25: Iniciando servicio
+2018-07-17 12:32:22,824-1-INFO-ServicioConsola.Program.Main.47: Uri:net.tcp://localhost:8083/Emision
+2018-07-17 12:34:54,221-1-DEBUG-ServicioConsola.Program.Main.25: Iniciando servicio
+2018-07-17 12:34:54,470-1-INFO-ServicioConsola.Program.Main.47: Uri:net.tcp://localhost:8083/Emision
+2018-07-17 12:48:22,337-1-DEBUG-ServicioConsola.Program.Main.25: Iniciando servicio
+2018-07-17 12:48:22,442-1-INFO-ServicioConsola.Program.Main.47: Uri:net.tcp://localhost:8083/Emision
+2018-07-17 12:59:08,447-23-ERROR-ServicioBussines.OperacionCliente.GuardarClienteNuevo.77: System.Data.Entity.Validation.DbEntityValidationException: Validation failed for one or more entities. See 'EntityValidationErrors' property for more details.
+   at System.Data.Entity.Internal.InternalContext.SaveChanges()
+   at System.Data.Entity.Internal.LazyInternalContext.SaveChanges()
+   at System.Data.Entity.DbContext.SaveChanges()
+   at ServicioBussines.OperacionCliente.GuardarClienteNuevo(Sys_Cliente cliente) in Z:\Alexander\Mega\Personal\Trabajo\Proyectos\Mvc\Emision\ServicioBussines\OperacionCliente.cs:line 72
+2018-07-17 15:43:26,990-1-DEBUG-ServicioConsola.Program.Main.25: Iniciando servicio
+2018-07-17 15:43:27,131-1-INFO-ServicioConsola.Program.Main.47: Uri:net.tcp://localhost:8083/Emision
+2018-07-17 16:00:55,115-1-DEBUG-ServicioConsola.Program.Main.25: Iniciando servicio
+2018-07-17 16:00:55,224-1-INFO-ServicioConsola.Program.Main.47: Uri:net.tcp://localhost:8083/Emision
+2018-07-17 16:06:21,344-1-DEBUG-ServicioConsola.Program.Main.25: Iniciando servicio
+2018-07-17 16:06:21,860-1-INFO-ServicioConsola.Program.Main.47: Uri:net.tcp://localhost:8083/Emision
+2018-07-17 16:15:57,557-1-DEBUG-ServicioConsola.Program.Main.25: Iniciando servicio
+2018-07-17 16:15:58,262-1-INFO-ServicioConsola.Program.Main.47: Uri:net.tcp://localhost:8083/Emision
+2018-07-17 16:20:10,104-1-DEBUG-ServicioConsola.Program.Main.25: Iniciando servicio
+2018-07-17 16:20:10,187-1-INFO-ServicioConsola.Program.Main.47: Uri:net.tcp://localhost:8083/Emision
+2018-07-17 16:32:35,829-1-DEBUG-ServicioConsola.Program.Main.25: Iniciando servicio
+2018-07-17 16:32:35,973-1-INFO-ServicioConsola.Program.Main.47: Uri:net.tcp://localhost:8083/Emision
+2018-07-17 16:57:36,186-1-DEBUG-ServicioConsola.Program.Main.25: Iniciando servicio
+2018-07-17 16:57:36,800-1-INFO-ServicioConsola.Program.Main.47: Uri:net.tcp://localhost:8083/Emision
+2018-07-17 17:20:37,508-1-DEBUG-ServicioConsola.Program.Main.25: Iniciando servicio
+2018-07-17 17:20:37,714-1-INFO-ServicioConsola.Program.Main.47: Uri:net.tcp://localhost:8083/Emision

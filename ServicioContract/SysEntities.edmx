@@ -1,0 +1,437 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="Db_EmisionModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2012" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="Db_EmisionModelStoreContainer">
+    <EntitySet Name="Sys_Certificado" EntityType="Db_EmisionModel.Store.Sys_Certificado" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Sys_Dir_Empresa" EntityType="Db_EmisionModel.Store.Sys_Dir_Empresa" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Sys_Empresa" EntityType="Db_EmisionModel.Store.Sys_Empresa" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Sys_Menu" EntityType="Db_EmisionModel.Store.Sys_Menu" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Sys_Perfiles" EntityType="Db_EmisionModel.Store.Sys_Perfiles" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Sys_Tipo_Sistema" EntityType="Db_EmisionModel.Store.Sys_Tipo_Sistema" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Sys_Usuario" EntityType="Db_EmisionModel.Store.Sys_Usuario" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Sys_Menu_Usuario" EntityType="Db_EmisionModel.Store.Sys_Menu_Usuario" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Sys_Cliente" EntityType="Db_EmisionModel.Store.Sys_Cliente" store:Type="Tables" Schema="dbo" />
+  </EntityContainer>
+  <EntityType Name="Sys_Certificado">
+    <Key>
+      <PropertyRef Name="Sys_Id" />
+    </Key>
+    <Property Name="Sys_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Sys_Rfc" Type="varchar" Nullable="false" MaxLength="13" />
+    <Property Name="Sys_Numero" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="Sys_Nombre" Type="varchar" Nullable="false" MaxLength="250" />
+    <Property Name="Sys_Certificado1" Type="varchar(max)" Nullable="false" />
+    <Property Name="Sys_Key" Type="varchar(max)" Nullable="false" />
+    <Property Name="Sys_Pwd" Type="varchar" Nullable="false" MaxLength="250" />
+    <Property Name="Sys_Fec_Registro" Type="datetime" Nullable="false" />
+    <Property Name="Sys_Fec_Alta" Type="datetime" Nullable="false" />
+    <Property Name="Sys_Fec_Vencimiento" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Sys_Dir_Empresa">
+    <Key>
+      <PropertyRef Name="Sys_Id" />
+    </Key>
+    <Property Name="Sys_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Sys_Rfc" Type="varchar" Nullable="false" MaxLength="13" />
+    <Property Name="Sys_CodPos" Type="varchar" Nullable="false" MaxLength="5" />
+    <Property Name="Sys_Calle" Type="varchar" Nullable="true" MaxLength="250" />
+    <Property Name="Sys_No_Exterior" Type="varchar" Nullable="true" MaxLength="10" />
+    <Property Name="Sys_No_Interior" Type="varchar" Nullable="true" MaxLength="10" />
+    <Property Name="Sys_Colonia" Type="varchar" Nullable="true" MaxLength="250" />
+    <Property Name="Sys_Municipio" Type="varchar" Nullable="true" MaxLength="250" />
+    <Property Name="Sys_Referencia" Type="varchar" Nullable="true" MaxLength="250" />
+    <Property Name="Sys_Estado" Type="varchar" Nullable="true" MaxLength="50" />
+    <Property Name="Sys_Pais" Type="varchar" Nullable="true" MaxLength="50" />
+    <Property Name="Sys_Usr_Modif" Type="varchar" Nullable="true" MaxLength="20" />
+    <Property Name="Sys_Fec_Registro" Type="datetime" Nullable="false" />
+    <Property Name="Sys_Fec_Modf" Type="datetime" Nullable="true" />
+  </EntityType>
+  <EntityType Name="Sys_Empresa">
+    <Key>
+      <PropertyRef Name="Sys_Rfc" />
+    </Key>
+    <Property Name="Sys_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Sys_Rfc" Type="varchar" Nullable="false" MaxLength="13" />
+    <Property Name="Sys_Nombre" Type="varchar" Nullable="false" MaxLength="250" />
+    <Property Name="Sys_Regimen_Fiscal" Type="varchar" Nullable="true" MaxLength="250" />
+    <Property Name="Sys_Curp" Type="varchar" Nullable="true" MaxLength="18" />
+    <Property Name="Sys_Pagina" Type="varchar" Nullable="true" MaxLength="100" />
+    <Property Name="Sys_Correo" Type="varchar" Nullable="true" MaxLength="100" />
+    <Property Name="Sys_Telefono" Type="varchar" Nullable="true" MaxLength="25" />
+    <Property Name="Sys_Usr_Modif" Type="varchar" Nullable="true" MaxLength="20" />
+    <Property Name="Sys_Fec_Registro" Type="datetime" Nullable="false" />
+    <Property Name="Sys_Fec_Modf" Type="datetime" Nullable="true" />
+    <Property Name="Sys_Activo" Type="bit" Nullable="true" />
+  </EntityType>
+  <EntityType Name="Sys_Menu">
+    <Key>
+      <PropertyRef Name="Sys_Id" />
+    </Key>
+    <Property Name="Sys_Id" Type="int" Nullable="false" />
+    <Property Name="Sys_Nombre" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="Sys_Controller" Type="varchar" Nullable="true" MaxLength="100" />
+    <Property Name="Sys_Action" Type="varchar" Nullable="true" MaxLength="100" />
+    <Property Name="Sys_Parent" Type="int" Nullable="true" />
+  </EntityType>
+  <EntityType Name="Sys_Perfiles">
+    <Key>
+      <PropertyRef Name="Sys_Id" />
+    </Key>
+    <Property Name="Sys_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Sys_Tipo" Type="int" Nullable="false" />
+    <Property Name="Sys_Rfc" Type="varchar" Nullable="false" MaxLength="13" />
+    <Property Name="Sys_Perfiles1" Type="varchar" Nullable="true" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Sys_Tipo_Sistema">
+    <Key>
+      <PropertyRef Name="Sys_Id" />
+    </Key>
+    <Property Name="Sys_Id" Type="int" Nullable="false" />
+    <Property Name="Sys_Nombre" Type="varchar" Nullable="true" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Sys_Usuario">
+    <Key>
+      <PropertyRef Name="Sys_Id" />
+    </Key>
+    <Property Name="Sys_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Sys_Rfc" Type="varchar" Nullable="false" MaxLength="13" />
+    <Property Name="Sys_Usr" Type="varchar" Nullable="false" MaxLength="20" />
+    <Property Name="Sys_Pass" Type="varchar" Nullable="false" MaxLength="100" />
+    <Property Name="Sys_Correo" Type="varchar" Nullable="false" MaxLength="30" />
+    <Property Name="Sys_Intentos" Type="int" Nullable="true" />
+    <Property Name="Sys_Fec_Bloqueo" Type="datetime" Nullable="true" />
+    <Property Name="Sys_Fec_Creacion" Type="datetime" Nullable="false" />
+    <Property Name="Sys_Ultimo_Login" Type="datetime" Nullable="true" />
+    <Property Name="Sys_Estatus" Type="int" Nullable="true" />
+    <Property Name="Sys_Sistema_Id" Type="int" Nullable="true" />
+    <Property Name="Sys_Perfil_Id" Type="int" Nullable="true" />
+  </EntityType>
+  <EntityType Name="Sys_Menu_Usuario">
+    <Key>
+      <PropertyRef Name="Sys_Id" />
+    </Key>
+    <Property Name="Sys_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Sys_Menu_Id" Type="int" Nullable="false" />
+    <Property Name="Sys_Usuario_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Sys_Cliente">
+    <Key>
+      <PropertyRef Name="Sys_Id" />
+    </Key>
+    <Property Name="Sys_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Sys_RFC" Type="varchar" Nullable="false" MaxLength="13" />
+    <Property Name="Sys_Razon_Social" Type="varchar" Nullable="true" MaxLength="255" />
+    <Property Name="Sys_Nombre_Comercial" Type="varchar" Nullable="true" MaxLength="255" />
+    <Property Name="Sys_Correo" Type="varchar" Nullable="true" MaxLength="255" />
+    <Property Name="Sys_Calle" Type="varchar" Nullable="true" MaxLength="255" />
+    <Property Name="Sys_CP" Type="varchar" Nullable="true" MaxLength="5" />
+    <Property Name="Sys_Municipio" Type="varchar" Nullable="true" MaxLength="255" />
+    <Property Name="Sys_Estado" Type="varchar" Nullable="true" MaxLength="255" />
+    <Property Name="Sys_Colonia" Type="varchar" Nullable="true" MaxLength="255" />
+    <Property Name="Sys_Pais" Type="varchar" Nullable="true" MaxLength="50" />
+    <Property Name="Sys_Fecha_Registro" Type="datetime" Nullable="false" />
+    <Property Name="Sys_Fecha_Modificacion" Type="datetime" Nullable="false" />
+    <Property Name="Sys_Usuario_Id" Type="int" Nullable="false" />
+    <Property Name="Sys_Empresa_Rfc" Type="varchar" Nullable="false" MaxLength="13" />
+  </EntityType>
+</Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Db_EmisionModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Sys_Certificado">
+          <Key>
+            <PropertyRef Name="Sys_Id" />
+          </Key>
+          <Property Name="Sys_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Sys_Rfc" Type="String" MaxLength="13" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Sys_Numero" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Sys_Nombre" Type="String" MaxLength="250" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Sys_Certificado1" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Sys_Key" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Sys_Pwd" Type="String" MaxLength="250" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Sys_Fec_Registro" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Sys_Fec_Alta" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Sys_Fec_Vencimiento" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="Sys_Dir_Empresa">
+          <Key>
+            <PropertyRef Name="Sys_Id" />
+          </Key>
+          <Property Name="Sys_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Sys_Rfc" Type="String" MaxLength="13" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Sys_CodPos" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Sys_Calle" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="Sys_No_Exterior" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Sys_No_Interior" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="Sys_Colonia" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="Sys_Municipio" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="Sys_Referencia" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="Sys_Estado" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Sys_Pais" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Sys_Usr_Modif" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Sys_Fec_Registro" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Sys_Fec_Modf" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="Sys_Empresa">
+          <Key>
+            <PropertyRef Name="Sys_Rfc" />
+          </Key>
+          <Property Name="Sys_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Sys_Rfc" Type="String" MaxLength="13" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Sys_Nombre" Type="String" MaxLength="250" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Sys_Regimen_Fiscal" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="Sys_Curp" Type="String" MaxLength="18" FixedLength="false" Unicode="false" />
+          <Property Name="Sys_Pagina" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Sys_Correo" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Sys_Telefono" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="Sys_Usr_Modif" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="Sys_Fec_Registro" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Sys_Fec_Modf" Type="DateTime" Precision="3" />
+          <Property Name="Sys_Activo" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="Sys_Menu">
+          <Key>
+            <PropertyRef Name="Sys_Id" />
+          </Key>
+          <Property Name="Sys_Id" Type="Int32" Nullable="false" />
+          <Property Name="Sys_Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Sys_Controller" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Sys_Action" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Sys_Parent" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Sys_Perfiles">
+          <Key>
+            <PropertyRef Name="Sys_Id" />
+          </Key>
+          <Property Name="Sys_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Sys_Tipo" Type="Int32" Nullable="false" />
+          <Property Name="Sys_Rfc" Type="String" MaxLength="13" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Sys_Perfiles1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Sys_Tipo_Sistema">
+          <Key>
+            <PropertyRef Name="Sys_Id" />
+          </Key>
+          <Property Name="Sys_Id" Type="Int32" Nullable="false" />
+          <Property Name="Sys_Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Sys_Usuario">
+          <Key>
+            <PropertyRef Name="Sys_Id" />
+          </Key>
+          <Property Name="Sys_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Sys_Rfc" Type="String" MaxLength="13" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Sys_Usr" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Sys_Pass" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Sys_Correo" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Sys_Intentos" Type="Int32" />
+          <Property Name="Sys_Fec_Bloqueo" Type="DateTime" Precision="3" />
+          <Property Name="Sys_Fec_Creacion" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Sys_Ultimo_Login" Type="DateTime" Precision="3" />
+          <Property Name="Sys_Estatus" Type="Int32" />
+          <Property Name="Sys_Sistema_Id" Type="Int32" />
+          <Property Name="Sys_Perfil_Id" Type="Int32" />
+        </EntityType>
+        <EntityContainer Name="Entities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Sys_Certificado" EntityType="Self.Sys_Certificado" />
+          <EntitySet Name="Sys_Dir_Empresa" EntityType="Self.Sys_Dir_Empresa" />
+          <EntitySet Name="Sys_Empresa" EntityType="Self.Sys_Empresa" />
+          <EntitySet Name="Sys_Menu" EntityType="Self.Sys_Menu" />
+          <EntitySet Name="Sys_Perfiles" EntityType="Self.Sys_Perfiles" />
+          <EntitySet Name="Sys_Tipo_Sistema" EntityType="Self.Sys_Tipo_Sistema" />
+          <EntitySet Name="Sys_Usuario" EntityType="Self.Sys_Usuario" />
+          <EntitySet Name="Sys_Menu_Usuario" EntityType="Db_EmisionModel.Sys_Menu_Usuario" />
+          <EntitySet Name="Sys_Cliente" EntityType="Db_EmisionModel.Sys_Cliente" />
+        </EntityContainer>
+        <EntityType Name="Sys_Menu_Usuario">
+          <Key>
+            <PropertyRef Name="Sys_Id" />
+          </Key>
+          <Property Name="Sys_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Sys_Menu_Id" Type="Int32" Nullable="false" />
+          <Property Name="Sys_Usuario_Id" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Sys_Cliente">
+          <Key>
+            <PropertyRef Name="Sys_Id" />
+          </Key>
+          <Property Name="Sys_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Sys_RFC" Type="String" Nullable="false" MaxLength="13" FixedLength="false" Unicode="false" />
+          <Property Name="Sys_Razon_Social" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Sys_Nombre_Comercial" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Sys_Correo" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Sys_Calle" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Sys_CP" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="Sys_Municipio" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Sys_Estado" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Sys_Colonia" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Sys_Pais" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Sys_Fecha_Registro" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Sys_Fecha_Modificacion" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Sys_Usuario_Id" Type="Int32" Nullable="false" />
+          <Property Name="Sys_Empresa_Rfc" Type="String" Nullable="false" MaxLength="13" FixedLength="false" Unicode="false" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+    <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Db_EmisionModelStoreContainer" CdmEntityContainer="Entities">
+    <EntitySetMapping Name="Sys_Certificado">
+      <EntityTypeMapping TypeName="IsTypeOf(Db_EmisionModel.Sys_Certificado)">
+        <MappingFragment StoreEntitySet="Sys_Certificado">
+          <ScalarProperty Name="Sys_Id" ColumnName="Sys_Id" />
+          <ScalarProperty Name="Sys_Rfc" ColumnName="Sys_Rfc" />
+          <ScalarProperty Name="Sys_Numero" ColumnName="Sys_Numero" />
+          <ScalarProperty Name="Sys_Nombre" ColumnName="Sys_Nombre" />
+          <ScalarProperty Name="Sys_Certificado1" ColumnName="Sys_Certificado1" />
+          <ScalarProperty Name="Sys_Key" ColumnName="Sys_Key" />
+          <ScalarProperty Name="Sys_Pwd" ColumnName="Sys_Pwd" />
+          <ScalarProperty Name="Sys_Fec_Registro" ColumnName="Sys_Fec_Registro" />
+          <ScalarProperty Name="Sys_Fec_Alta" ColumnName="Sys_Fec_Alta" />
+          <ScalarProperty Name="Sys_Fec_Vencimiento" ColumnName="Sys_Fec_Vencimiento" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sys_Dir_Empresa">
+      <EntityTypeMapping TypeName="IsTypeOf(Db_EmisionModel.Sys_Dir_Empresa)">
+        <MappingFragment StoreEntitySet="Sys_Dir_Empresa">
+          <ScalarProperty Name="Sys_Id" ColumnName="Sys_Id" />
+          <ScalarProperty Name="Sys_Rfc" ColumnName="Sys_Rfc" />
+          <ScalarProperty Name="Sys_CodPos" ColumnName="Sys_CodPos" />
+          <ScalarProperty Name="Sys_Calle" ColumnName="Sys_Calle" />
+          <ScalarProperty Name="Sys_No_Exterior" ColumnName="Sys_No_Exterior" />
+          <ScalarProperty Name="Sys_No_Interior" ColumnName="Sys_No_Interior" />
+          <ScalarProperty Name="Sys_Colonia" ColumnName="Sys_Colonia" />
+          <ScalarProperty Name="Sys_Municipio" ColumnName="Sys_Municipio" />
+          <ScalarProperty Name="Sys_Referencia" ColumnName="Sys_Referencia" />
+          <ScalarProperty Name="Sys_Estado" ColumnName="Sys_Estado" />
+          <ScalarProperty Name="Sys_Pais" ColumnName="Sys_Pais" />
+          <ScalarProperty Name="Sys_Usr_Modif" ColumnName="Sys_Usr_Modif" />
+          <ScalarProperty Name="Sys_Fec_Registro" ColumnName="Sys_Fec_Registro" />
+          <ScalarProperty Name="Sys_Fec_Modf" ColumnName="Sys_Fec_Modf" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sys_Empresa">
+      <EntityTypeMapping TypeName="IsTypeOf(Db_EmisionModel.Sys_Empresa)">
+        <MappingFragment StoreEntitySet="Sys_Empresa">
+          <ScalarProperty Name="Sys_Rfc" ColumnName="Sys_Rfc" />
+          <ScalarProperty Name="Sys_Id" ColumnName="Sys_Id" />
+          <ScalarProperty Name="Sys_Nombre" ColumnName="Sys_Nombre" />
+          <ScalarProperty Name="Sys_Regimen_Fiscal" ColumnName="Sys_Regimen_Fiscal" />
+          <ScalarProperty Name="Sys_Curp" ColumnName="Sys_Curp" />
+          <ScalarProperty Name="Sys_Pagina" ColumnName="Sys_Pagina" />
+          <ScalarProperty Name="Sys_Correo" ColumnName="Sys_Correo" />
+          <ScalarProperty Name="Sys_Telefono" ColumnName="Sys_Telefono" />
+          <ScalarProperty Name="Sys_Usr_Modif" ColumnName="Sys_Usr_Modif" />
+          <ScalarProperty Name="Sys_Fec_Registro" ColumnName="Sys_Fec_Registro" />
+          <ScalarProperty Name="Sys_Fec_Modf" ColumnName="Sys_Fec_Modf" />
+          <ScalarProperty Name="Sys_Activo" ColumnName="Sys_Activo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sys_Menu">
+      <EntityTypeMapping TypeName="IsTypeOf(Db_EmisionModel.Sys_Menu)">
+        <MappingFragment StoreEntitySet="Sys_Menu">
+          <ScalarProperty Name="Sys_Id" ColumnName="Sys_Id" />
+          <ScalarProperty Name="Sys_Nombre" ColumnName="Sys_Nombre" />
+          <ScalarProperty Name="Sys_Controller" ColumnName="Sys_Controller" />
+          <ScalarProperty Name="Sys_Action" ColumnName="Sys_Action" />
+          <ScalarProperty Name="Sys_Parent" ColumnName="Sys_Parent" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sys_Perfiles">
+      <EntityTypeMapping TypeName="IsTypeOf(Db_EmisionModel.Sys_Perfiles)">
+        <MappingFragment StoreEntitySet="Sys_Perfiles">
+          <ScalarProperty Name="Sys_Id" ColumnName="Sys_Id" />
+          <ScalarProperty Name="Sys_Tipo" ColumnName="Sys_Tipo" />
+          <ScalarProperty Name="Sys_Rfc" ColumnName="Sys_Rfc" />
+          <ScalarProperty Name="Sys_Perfiles1" ColumnName="Sys_Perfiles1" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sys_Tipo_Sistema">
+      <EntityTypeMapping TypeName="IsTypeOf(Db_EmisionModel.Sys_Tipo_Sistema)">
+        <MappingFragment StoreEntitySet="Sys_Tipo_Sistema">
+          <ScalarProperty Name="Sys_Id" ColumnName="Sys_Id" />
+          <ScalarProperty Name="Sys_Nombre" ColumnName="Sys_Nombre" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sys_Usuario">
+      <EntityTypeMapping TypeName="IsTypeOf(Db_EmisionModel.Sys_Usuario)">
+        <MappingFragment StoreEntitySet="Sys_Usuario">
+          <ScalarProperty Name="Sys_Id" ColumnName="Sys_Id" />
+          <ScalarProperty Name="Sys_Rfc" ColumnName="Sys_Rfc" />
+          <ScalarProperty Name="Sys_Usr" ColumnName="Sys_Usr" />
+          <ScalarProperty Name="Sys_Pass" ColumnName="Sys_Pass" />
+          <ScalarProperty Name="Sys_Correo" ColumnName="Sys_Correo" />
+          <ScalarProperty Name="Sys_Intentos" ColumnName="Sys_Intentos" />
+          <ScalarProperty Name="Sys_Fec_Bloqueo" ColumnName="Sys_Fec_Bloqueo" />
+          <ScalarProperty Name="Sys_Fec_Creacion" ColumnName="Sys_Fec_Creacion" />
+          <ScalarProperty Name="Sys_Ultimo_Login" ColumnName="Sys_Ultimo_Login" />
+          <ScalarProperty Name="Sys_Estatus" ColumnName="Sys_Estatus" />
+          <ScalarProperty Name="Sys_Sistema_Id" ColumnName="Sys_Sistema_Id" />
+          <ScalarProperty Name="Sys_Perfil_Id" ColumnName="Sys_Perfil_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sys_Menu_Usuario">
+      <EntityTypeMapping TypeName="IsTypeOf(Db_EmisionModel.Sys_Menu_Usuario)">
+        <MappingFragment StoreEntitySet="Sys_Menu_Usuario">
+          <ScalarProperty Name="Sys_Id" ColumnName="Sys_Id" />
+          <ScalarProperty Name="Sys_Menu_Id" ColumnName="Sys_Menu_Id" />
+          <ScalarProperty Name="Sys_Usuario_Id" ColumnName="Sys_Usuario_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sys_Cliente">
+      <EntityTypeMapping TypeName="IsTypeOf(Db_EmisionModel.Sys_Cliente)">
+        <MappingFragment StoreEntitySet="Sys_Cliente">
+          <ScalarProperty Name="Sys_Id" ColumnName="Sys_Id" />
+          <ScalarProperty Name="Sys_RFC" ColumnName="Sys_RFC" />
+          <ScalarProperty Name="Sys_Razon_Social" ColumnName="Sys_Razon_Social" />
+          <ScalarProperty Name="Sys_Nombre_Comercial" ColumnName="Sys_Nombre_Comercial" />
+          <ScalarProperty Name="Sys_Correo" ColumnName="Sys_Correo" />
+          <ScalarProperty Name="Sys_Calle" ColumnName="Sys_Calle" />
+          <ScalarProperty Name="Sys_CP" ColumnName="Sys_CP" />
+          <ScalarProperty Name="Sys_Municipio" ColumnName="Sys_Municipio" />
+          <ScalarProperty Name="Sys_Estado" ColumnName="Sys_Estado" />
+          <ScalarProperty Name="Sys_Colonia" ColumnName="Sys_Colonia" />
+          <ScalarProperty Name="Sys_Pais" ColumnName="Sys_Pais" />
+          <ScalarProperty Name="Sys_Fecha_Registro" ColumnName="Sys_Fecha_Registro" />
+          <ScalarProperty Name="Sys_Fecha_Modificacion" ColumnName="Sys_Fecha_Modificacion" />
+          <ScalarProperty Name="Sys_Usuario_Id" ColumnName="Sys_Usuario_Id" />
+          <ScalarProperty Name="Sys_Empresa_Rfc" ColumnName="Sys_Empresa_Rfc" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping></edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="false" />
+        <DesignerProperty Name="UseLegacyProvider" Value="False" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

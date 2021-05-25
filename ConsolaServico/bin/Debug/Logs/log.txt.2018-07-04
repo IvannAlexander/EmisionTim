@@ -1,0 +1,4 @@
+﻿2018-07-04 12:30:16,336-1-DEBUG-ServicioConsola.Program.Main.25: Iniciando servicio
+2018-07-04 12:30:16,608-1-INFO-ServicioConsola.Program.Main.47: Uri:net.tcp://localhost:8083/Emision
+2018-07-04 12:32:50,627-1-DEBUG-ServicioConsola.Program.Main.25: Iniciando servicio
+2018-07-04 12:32:50,882-1-INFO-ServicioConsola.Program.Main.47: Uri:net.tcp://localhost:8083/Emision

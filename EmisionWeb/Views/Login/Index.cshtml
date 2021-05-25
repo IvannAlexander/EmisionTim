@@ -1,0 +1,77 @@
+﻿@model ServicioContract.Sys_Usuario
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+}
+
+
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Login</title>
+</head>
+<body>
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    @using (Html.BeginForm())
+    {
+        
+            <div class="container" style="height: inherit; min-height: 100%">
+                <div id="loginbox" style="margin-top:50px;" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+                    <div class="panel panel-info">
+                        <div class="panel-heading">
+                            <div class="panel-title">Acceso</div>
+                            <div style="float:right; font-size: 80%; position: relative; top:-10px"><a href="#">No recuerdo mi contraseña</a></div>
+                        </div>   
+                        <div style="padding-top:30px" class="panel-body">
+                            <div class="row">
+                                <div class="col-xs-2 col-sm-2 col-md-2"></div>
+                                <div class="col-xs-8 col-sm-8 col-md-8  input-group">
+                                    <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                                    @Html.TextBoxFor(p => p.Sys_Usr, new { @class = "form-control", placeholder = "Usuario", @required = "required" })
+                                    @Html.ValidationMessageFor(p => p.Sys_Usr, null, new { @class = "text-danger" })
+                                </div>
+                                <div class="col-md-2"></div>
+                            </div>
+                            <br />
+                            <div class="row">
+                                <div class="col-xs-2 col-sm-2 col-md-2"></div>
+                                <div class="col-xs-8 col-sm-8 col-md-8 input-group">
+                                    <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                                    @Html.PasswordFor(p => p.Sys_Pass, new { @class = "form-control", placeholder = "Contraseña", @required = "required" })
+                                    @Html.ValidationMessageFor(p => p.Sys_Pass)
+                                </div>
+                                <div class="col-xs-2 col-sm-2 col-md-2"></div>
+                            </div>
+                            <br /><br />
+                            <div class="row">
+                                <div class="col-xs-2 col-sm-2 col-md-2"></div>
+                                <div class="col-xs-8 col-sm-8 col-md-8">
+                                    <input type="submit" value="Entrar" class="btn btn-success btn-block" />
+                                </div>
+                                <div class="col-md-2"></div>
+                            </div>
+                            <br />
+                            <div class="row">
+                                <div class="col-xs-2 col-sm-2 col-md-2"></div>
+                                <div class="col-xs-8 col-sm-8 col-md-8 input-group">
+                                    <span style="color:green">@ViewBag.Message</span>
+                                </div>
+                                <div class="col-xs-2 col-sm-2 col-md-2"></div>
+                            </div>
+                        </div>
+                        </div>
+                </div>
+            </div>
+
+
+
+    }
+
+</body>
+</html>
+

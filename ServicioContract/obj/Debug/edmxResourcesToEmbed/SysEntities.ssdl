@@ -1,0 +1,136 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Db_EmisionModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2012" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="Db_EmisionModelStoreContainer">
+    <EntitySet Name="Sys_Certificado" EntityType="Db_EmisionModel.Store.Sys_Certificado" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Sys_Dir_Empresa" EntityType="Db_EmisionModel.Store.Sys_Dir_Empresa" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Sys_Empresa" EntityType="Db_EmisionModel.Store.Sys_Empresa" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Sys_Menu" EntityType="Db_EmisionModel.Store.Sys_Menu" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Sys_Perfiles" EntityType="Db_EmisionModel.Store.Sys_Perfiles" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Sys_Tipo_Sistema" EntityType="Db_EmisionModel.Store.Sys_Tipo_Sistema" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Sys_Usuario" EntityType="Db_EmisionModel.Store.Sys_Usuario" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Sys_Menu_Usuario" EntityType="Db_EmisionModel.Store.Sys_Menu_Usuario" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Sys_Cliente" EntityType="Db_EmisionModel.Store.Sys_Cliente" store:Type="Tables" Schema="dbo" />
+  </EntityContainer>
+  <EntityType Name="Sys_Certificado">
+    <Key>
+      <PropertyRef Name="Sys_Id" />
+    </Key>
+    <Property Name="Sys_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Sys_Rfc" Type="varchar" Nullable="false" MaxLength="13" />
+    <Property Name="Sys_Numero" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="Sys_Nombre" Type="varchar" Nullable="false" MaxLength="250" />
+    <Property Name="Sys_Certificado1" Type="varchar(max)" Nullable="false" />
+    <Property Name="Sys_Key" Type="varchar(max)" Nullable="false" />
+    <Property Name="Sys_Pwd" Type="varchar" Nullable="false" MaxLength="250" />
+    <Property Name="Sys_Fec_Registro" Type="datetime" Nullable="false" />
+    <Property Name="Sys_Fec_Alta" Type="datetime" Nullable="false" />
+    <Property Name="Sys_Fec_Vencimiento" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Sys_Dir_Empresa">
+    <Key>
+      <PropertyRef Name="Sys_Id" />
+    </Key>
+    <Property Name="Sys_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Sys_Rfc" Type="varchar" Nullable="false" MaxLength="13" />
+    <Property Name="Sys_CodPos" Type="varchar" Nullable="false" MaxLength="5" />
+    <Property Name="Sys_Calle" Type="varchar" Nullable="true" MaxLength="250" />
+    <Property Name="Sys_No_Exterior" Type="varchar" Nullable="true" MaxLength="10" />
+    <Property Name="Sys_No_Interior" Type="varchar" Nullable="true" MaxLength="10" />
+    <Property Name="Sys_Colonia" Type="varchar" Nullable="true" MaxLength="250" />
+    <Property Name="Sys_Municipio" Type="varchar" Nullable="true" MaxLength="250" />
+    <Property Name="Sys_Referencia" Type="varchar" Nullable="true" MaxLength="250" />
+    <Property Name="Sys_Estado" Type="varchar" Nullable="true" MaxLength="50" />
+    <Property Name="Sys_Pais" Type="varchar" Nullable="true" MaxLength="50" />
+    <Property Name="Sys_Usr_Modif" Type="varchar" Nullable="true" MaxLength="20" />
+    <Property Name="Sys_Fec_Registro" Type="datetime" Nullable="false" />
+    <Property Name="Sys_Fec_Modf" Type="datetime" Nullable="true" />
+  </EntityType>
+  <EntityType Name="Sys_Empresa">
+    <Key>
+      <PropertyRef Name="Sys_Rfc" />
+    </Key>
+    <Property Name="Sys_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Sys_Rfc" Type="varchar" Nullable="false" MaxLength="13" />
+    <Property Name="Sys_Nombre" Type="varchar" Nullable="false" MaxLength="250" />
+    <Property Name="Sys_Regimen_Fiscal" Type="varchar" Nullable="true" MaxLength="250" />
+    <Property Name="Sys_Curp" Type="varchar" Nullable="true" MaxLength="18" />
+    <Property Name="Sys_Pagina" Type="varchar" Nullable="true" MaxLength="100" />
+    <Property Name="Sys_Correo" Type="varchar" Nullable="true" MaxLength="100" />
+    <Property Name="Sys_Telefono" Type="varchar" Nullable="true" MaxLength="25" />
+    <Property Name="Sys_Usr_Modif" Type="varchar" Nullable="true" MaxLength="20" />
+    <Property Name="Sys_Fec_Registro" Type="datetime" Nullable="false" />
+    <Property Name="Sys_Fec_Modf" Type="datetime" Nullable="true" />
+    <Property Name="Sys_Activo" Type="bit" Nullable="true" />
+  </EntityType>
+  <EntityType Name="Sys_Menu">
+    <Key>
+      <PropertyRef Name="Sys_Id" />
+    </Key>
+    <Property Name="Sys_Id" Type="int" Nullable="false" />
+    <Property Name="Sys_Nombre" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="Sys_Controller" Type="varchar" Nullable="true" MaxLength="100" />
+    <Property Name="Sys_Action" Type="varchar" Nullable="true" MaxLength="100" />
+    <Property Name="Sys_Parent" Type="int" Nullable="true" />
+  </EntityType>
+  <EntityType Name="Sys_Perfiles">
+    <Key>
+      <PropertyRef Name="Sys_Id" />
+    </Key>
+    <Property Name="Sys_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Sys_Tipo" Type="int" Nullable="false" />
+    <Property Name="Sys_Rfc" Type="varchar" Nullable="false" MaxLength="13" />
+    <Property Name="Sys_Perfiles1" Type="varchar" Nullable="true" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Sys_Tipo_Sistema">
+    <Key>
+      <PropertyRef Name="Sys_Id" />
+    </Key>
+    <Property Name="Sys_Id" Type="int" Nullable="false" />
+    <Property Name="Sys_Nombre" Type="varchar" Nullable="true" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Sys_Usuario">
+    <Key>
+      <PropertyRef Name="Sys_Id" />
+    </Key>
+    <Property Name="Sys_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Sys_Rfc" Type="varchar" Nullable="false" MaxLength="13" />
+    <Property Name="Sys_Usr" Type="varchar" Nullable="false" MaxLength="20" />
+    <Property Name="Sys_Pass" Type="varchar" Nullable="false" MaxLength="100" />
+    <Property Name="Sys_Correo" Type="varchar" Nullable="false" MaxLength="30" />
+    <Property Name="Sys_Intentos" Type="int" Nullable="true" />
+    <Property Name="Sys_Fec_Bloqueo" Type="datetime" Nullable="true" />
+    <Property Name="Sys_Fec_Creacion" Type="datetime" Nullable="false" />
+    <Property Name="Sys_Ultimo_Login" Type="datetime" Nullable="true" />
+    <Property Name="Sys_Estatus" Type="int" Nullable="true" />
+    <Property Name="Sys_Sistema_Id" Type="int" Nullable="true" />
+    <Property Name="Sys_Perfil_Id" Type="int" Nullable="true" />
+  </EntityType>
+  <EntityType Name="Sys_Menu_Usuario">
+    <Key>
+      <PropertyRef Name="Sys_Id" />
+    </Key>
+    <Property Name="Sys_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Sys_Menu_Id" Type="int" Nullable="false" />
+    <Property Name="Sys_Usuario_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Sys_Cliente">
+    <Key>
+      <PropertyRef Name="Sys_Id" />
+    </Key>
+    <Property Name="Sys_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Sys_RFC" Type="varchar" Nullable="false" MaxLength="13" />
+    <Property Name="Sys_Razon_Social" Type="varchar" Nullable="true" MaxLength="255" />
+    <Property Name="Sys_Nombre_Comercial" Type="varchar" Nullable="true" MaxLength="255" />
+    <Property Name="Sys_Correo" Type="varchar" Nullable="true" MaxLength="255" />
+    <Property Name="Sys_Calle" Type="varchar" Nullable="true" MaxLength="255" />
+    <Property Name="Sys_CP" Type="varchar" Nullable="true" MaxLength="5" />
+    <Property Name="Sys_Municipio" Type="varchar" Nullable="true" MaxLength="255" />
+    <Property Name="Sys_Estado" Type="varchar" Nullable="true" MaxLength="255" />
+    <Property Name="Sys_Colonia" Type="varchar" Nullable="true" MaxLength="255" />
+    <Property Name="Sys_Pais" Type="varchar" Nullable="true" MaxLength="50" />
+    <Property Name="Sys_Fecha_Registro" Type="datetime" Nullable="false" />
+    <Property Name="Sys_Fecha_Modificacion" Type="datetime" Nullable="false" />
+    <Property Name="Sys_Usuario_Id" Type="int" Nullable="false" />
+    <Property Name="Sys_Empresa_Rfc" Type="varchar" Nullable="false" MaxLength="13" />
+  </EntityType>
+</Schema>

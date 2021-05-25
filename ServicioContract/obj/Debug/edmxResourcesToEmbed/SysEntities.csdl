@@ -1,0 +1,136 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Db_EmisionModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Sys_Certificado">
+    <Key>
+      <PropertyRef Name="Sys_Id" />
+    </Key>
+    <Property Name="Sys_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Sys_Rfc" Type="String" MaxLength="13" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Sys_Numero" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Sys_Nombre" Type="String" MaxLength="250" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Sys_Certificado1" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Sys_Key" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Sys_Pwd" Type="String" MaxLength="250" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Sys_Fec_Registro" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Sys_Fec_Alta" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Sys_Fec_Vencimiento" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityType Name="Sys_Dir_Empresa">
+    <Key>
+      <PropertyRef Name="Sys_Id" />
+    </Key>
+    <Property Name="Sys_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Sys_Rfc" Type="String" MaxLength="13" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Sys_CodPos" Type="String" MaxLength="5" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Sys_Calle" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="Sys_No_Exterior" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Sys_No_Interior" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="Sys_Colonia" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="Sys_Municipio" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="Sys_Referencia" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="Sys_Estado" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Sys_Pais" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Sys_Usr_Modif" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Sys_Fec_Registro" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Sys_Fec_Modf" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="Sys_Empresa">
+    <Key>
+      <PropertyRef Name="Sys_Rfc" />
+    </Key>
+    <Property Name="Sys_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Sys_Rfc" Type="String" MaxLength="13" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Sys_Nombre" Type="String" MaxLength="250" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Sys_Regimen_Fiscal" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="Sys_Curp" Type="String" MaxLength="18" FixedLength="false" Unicode="false" />
+    <Property Name="Sys_Pagina" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Sys_Correo" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Sys_Telefono" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="Sys_Usr_Modif" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="Sys_Fec_Registro" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Sys_Fec_Modf" Type="DateTime" Precision="3" />
+    <Property Name="Sys_Activo" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="Sys_Menu">
+    <Key>
+      <PropertyRef Name="Sys_Id" />
+    </Key>
+    <Property Name="Sys_Id" Type="Int32" Nullable="false" />
+    <Property Name="Sys_Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Sys_Controller" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Sys_Action" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Sys_Parent" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Sys_Perfiles">
+    <Key>
+      <PropertyRef Name="Sys_Id" />
+    </Key>
+    <Property Name="Sys_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Sys_Tipo" Type="Int32" Nullable="false" />
+    <Property Name="Sys_Rfc" Type="String" MaxLength="13" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Sys_Perfiles1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Sys_Tipo_Sistema">
+    <Key>
+      <PropertyRef Name="Sys_Id" />
+    </Key>
+    <Property Name="Sys_Id" Type="Int32" Nullable="false" />
+    <Property Name="Sys_Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Sys_Usuario">
+    <Key>
+      <PropertyRef Name="Sys_Id" />
+    </Key>
+    <Property Name="Sys_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Sys_Rfc" Type="String" MaxLength="13" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Sys_Usr" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Sys_Pass" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Sys_Correo" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Sys_Intentos" Type="Int32" />
+    <Property Name="Sys_Fec_Bloqueo" Type="DateTime" Precision="3" />
+    <Property Name="Sys_Fec_Creacion" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Sys_Ultimo_Login" Type="DateTime" Precision="3" />
+    <Property Name="Sys_Estatus" Type="Int32" />
+    <Property Name="Sys_Sistema_Id" Type="Int32" />
+    <Property Name="Sys_Perfil_Id" Type="Int32" />
+  </EntityType>
+  <EntityContainer Name="Entities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Sys_Certificado" EntityType="Self.Sys_Certificado" />
+    <EntitySet Name="Sys_Dir_Empresa" EntityType="Self.Sys_Dir_Empresa" />
+    <EntitySet Name="Sys_Empresa" EntityType="Self.Sys_Empresa" />
+    <EntitySet Name="Sys_Menu" EntityType="Self.Sys_Menu" />
+    <EntitySet Name="Sys_Perfiles" EntityType="Self.Sys_Perfiles" />
+    <EntitySet Name="Sys_Tipo_Sistema" EntityType="Self.Sys_Tipo_Sistema" />
+    <EntitySet Name="Sys_Usuario" EntityType="Self.Sys_Usuario" />
+    <EntitySet Name="Sys_Menu_Usuario" EntityType="Db_EmisionModel.Sys_Menu_Usuario" />
+    <EntitySet Name="Sys_Cliente" EntityType="Db_EmisionModel.Sys_Cliente" />
+  </EntityContainer>
+  <EntityType Name="Sys_Menu_Usuario">
+    <Key>
+      <PropertyRef Name="Sys_Id" />
+    </Key>
+    <Property Name="Sys_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Sys_Menu_Id" Type="Int32" Nullable="false" />
+    <Property Name="Sys_Usuario_Id" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Sys_Cliente">
+    <Key>
+      <PropertyRef Name="Sys_Id" />
+    </Key>
+    <Property Name="Sys_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Sys_RFC" Type="String" Nullable="false" MaxLength="13" FixedLength="false" Unicode="false" />
+    <Property Name="Sys_Razon_Social" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Sys_Nombre_Comercial" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Sys_Correo" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Sys_Calle" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Sys_CP" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="Sys_Municipio" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Sys_Estado" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Sys_Colonia" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="Sys_Pais" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Sys_Fecha_Registro" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Sys_Fecha_Modificacion" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Sys_Usuario_Id" Type="Int32" Nullable="false" />
+    <Property Name="Sys_Empresa_Rfc" Type="String" Nullable="false" MaxLength="13" FixedLength="false" Unicode="false" />
+  </EntityType>
+</Schema>

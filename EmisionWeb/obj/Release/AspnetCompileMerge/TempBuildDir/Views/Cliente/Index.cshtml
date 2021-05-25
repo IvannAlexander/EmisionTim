@@ -1,0 +1,107 @@
+﻿@model Tuple<ServicioContract.Sys_Cliente, List<ServicioContract.Sys_Cliente>>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/MasterDefault.cshtml";
+}
+<h2></h2>
+<br /><br /><br />
+<div class="container">
+    @*@using (Html.BeginForm("Index", "Cliente", FormMethod.Post, new { enctype = "multipart/form-data" }))*@
+
+    @using (Html.BeginForm())
+    {
+    <div>
+        <div class="row rounded border border-dark">
+            <div class="col-md-3"><input type="text" class="form-control" placeholder="RFC" name="txtRfc" /></div>
+            <div class="col-md-3"><input type="text" class="form-control" placeholder="Razon Social o Nombre Comercial" name="txtRazonSocial" /></div>
+            @*<div class="col-md-3"><input type="submit" value="Buscar" class="btn btn-success btn-block" onclick="location.href='@Url.Action("BuscarClientes")'" formmethod="post" /></div>*@
+            <div class="col-md-3"><input type="submit" value="BuscarClientes" class="btn btn-success btn-block" formmethod="POST" method="POST" /></div>
+            <input type="submit" value="Create" name="action" formmethod="POST" method="POST"/> 
+            <div class="col-md-3"><input type="submit" value="Nuevo" class="btn btn-success btn-block" data-toggle="modal" data-target="#modalNuevo" /></div>
+        </div>
+
+        <table class="table table-striped table-bordered table-hover">
+            <thead>
+                <tr class="bg-primary">
+                    <th scope="col">RFC</th>
+                    <th scope="col">Razón Social</th>
+                    <th scope="col">Nombre Comercial</th>
+                    <th scope="col">Correo Electrónico</th>
+                </tr>
+            </thead>
+            @{
+                var lista = ViewData["ListaClientes"] == null ? new List<ServicioContract.Sys_Cliente>() : (List<ServicioContract.Sys_Cliente>)ViewData["ListaClientes"];
+                foreach (var item in lista)
+                {
+                    var rfc = item.Sys_RFC;
+                    var razonSocial = item.Sys_Razon_Social;
+                    var nombreComercial = item.Sys_Nombre_Comercial;
+                    var correo = item.Sys_Correo;
+                    <tbody>
+                        <tr>
+                            <th scope="row">
+                                @rfc
+                            </th>
+                            <td>
+                                @razonSocial
+                            </td>
+                            <td>
+                                @nombreComercial
+                            </td>
+                            <td>
+                                @correo
+                            </td>
+                        </tr>
+                    </tbody>
+                }
+            }
+        </table>
+    </div>
+
+    <div class="modal fade" id="modalNuevo" role="dialog">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Guardar Cliente</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <p>@Html.TextBoxFor(p => p.Item1.Sys_RFC, new { @class = "form-control center-block", placeholder = "RFC", @required = "required" })</p>
+                            <p>@Html.TextBoxFor(p => p.Item1.Sys_Razon_Social, new { @class = "form-control center-block", placeholder = "Razón Social" })</p>
+                            <p>@Html.TextBoxFor(p => p.Item1.Sys_Nombre_Comercial, new { @class = "form-control center-block", placeholder = "Nombre Comercial" })</p>
+                            <p>@Html.TextBoxFor(p => p.Item1.Sys_Correo, new { @class = "form-control center-block", placeholder = "Correo Electronico" })</p>
+                            <p>@Html.TextBoxFor(p => p.Item1.Sys_Calle, new { @class = "form-control center-block", placeholder = "Calle" })</p>
+                        </div>
+                        <div class="col-md-6">
+                            <p>@Html.TextBoxFor(p => p.Item1.Sys_CP, new { @class = "form-control center-block", placeholder = "Codigo Postal", @required = "required" })</p>
+                            <p>@Html.TextBoxFor(p => p.Item1.Sys_Municipio, new { @class = "form-control center-block", placeholder = "Municipio" })</p>
+                            <p>@Html.TextBoxFor(p => p.Item1.Sys_Estado, new { @class = "form-control center-block", placeholder = "Estado" })</p>
+                            <p>@Html.TextBoxFor(p => p.Item1.Sys_Colonia, new { @class = "form-control center-block", placeholder = "Colonia" })</p>
+                            <p>@Html.TextBoxFor(p => p.Item1.Sys_Pais, new { @class = "form-control center-block", placeholder = "Pais" })</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6"></div>
+                        <div class="col-md-6 text-right">
+                            @*<button type="button" class="btn btn-success right" id="btnGuardar" name="btnGuardar" onclick="location.href='@Url.Action("GuardarCliente", "Cliente", new  { sysCliente = Model })'">Guardar</button>
+                            <input type="submit"
+                                   formaction="GuardarCliente"
+                                   formmethod="post"
+                                   value="Save" />*@
+                            <input type="submit" formaction="@Url.Action("GuardarCliente")" value="Guardar" class="btn btn-success right" />
+
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    }
+</div>
