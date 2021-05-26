@@ -241,5 +241,29 @@ namespace TestForm
                 MessageBox.Show(ee.Message);
             }
         }
+
+        private void Login_Click(object sender, EventArgs e)
+        {
+            var user = "AdminAAA010101AAA";
+            var pass = "AAA010101AAA*";
+            var rfc = "AAA010101AAA";
+            var url = $"https://localhost:44368/Api/User/ValidateUser?user={user}&pass={pass}&rfcCompany={rfc}";
+            var header = new Dictionary<string, string>()
+                {
+                    { "Authorization","Basic " },//+ ConfigurationManager.AppSettings["Auth"]},
+                     { "Content-Type","application/json" }
+                };
+            var data = RestClient.GetFromService(url, header, Encoding.UTF8);
+            var userVal = JsonConvert.DeserializeObject<UsersDto>(data);
+            if (userVal == null)
+            {
+                MessageBox.Show("Usuario o Contraseña incorrecto.");
+            }
+            else
+            {
+                MessageBox.Show(userVal.Sys_Usr);
+            }
+            
+        }
     }
 }

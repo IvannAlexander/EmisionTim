@@ -5,12 +5,14 @@ using System.Text;
 using System.Threading.Tasks;
 using log4net;
 using EmisionService;
+using Contract;
+using Model;
 
 namespace Bussines
 {
     public class UserOperation
     {
-        //protected static ILog Logger = LogManager.GetLogger(typeof(UserOperation));
+        protected static ILog Logger = LogManager.GetLogger(typeof(UserOperation));
 
         //public void GuardarUsuario(Sys_Usuario usuario)
         //{
@@ -36,25 +38,30 @@ namespace Bussines
         //        throw new Exception("No se guardo el usuario correctamente.");
         //    }
         //}
-        //public Sys_Usuario ValidaUsuario(string usuario, string pass)
-        //{
-        //    try
-        //    {
-
-        //        var pwd = OperacionesComun.Encrypt(pass);
-        //        using (var db = new Entities())
-        //        //using (var db = new Entities())
-        //        {
-        //            var usr = db.Sys_Usuario.FirstOrDefault(p => p.Sys_Usr == usuario && p.Sys_Pass == pwd);
-        //            return usr;
-        //        }
-        //    }
-        //    catch (Exception ee)
-        //    {
-        //        Logger.Error(ee);
-        //        throw new Exception("No se valido correctamente el usuario.");
-        //    }
-        //}
+        public UsersDto ValidateUser(string user, string pass, string rfcCompany)
+        {
+            Logger.Info("ValidtaeUser");
+            try
+            {
+                var pwd = EmisionService.CommonOperation.Encrypt(pass);
+                using (var db = new Db_EmisionEntities())
+                {
+                    var usr = db.Sys_User.FirstOrDefault(p => p.Sys_Usr == user && p.Sys_Pass == pwd && p.Sys_Rfc == rfcCompany);
+                    var u = Common.Map<Sys_User, UsersDto>(usr);
+                    return u;
+                }
+            }
+            catch (Exception ee)
+            {
+                Logger.Error(ee);
+                Logger.Error(ee.StackTrace);
+                if (ee.InnerException != null)
+                {
+                    Logger.Error(ee.InnerException.Message);
+                }
+                return null;
+            }
+        }
 
         //public Sys_Usuario ObtenerUsuario(string usuario, string rfc)
         //{

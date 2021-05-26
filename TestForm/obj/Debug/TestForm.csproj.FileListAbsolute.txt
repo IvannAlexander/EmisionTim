@@ -69,5 +69,3 @@ D:\Alexander\Emision\TestForm\bin\Debug\CrystalDecisions.Shared.dll
 D:\Alexander\Emision\TestForm\bin\Debug\CrystalDecisions.ReportSource.dll
 D:\Alexander\Emision\TestForm\bin\Debug\EmisionService.pdb
 D:\Alexander\Emision\TestForm\bin\Debug\TimbradoService.pdb
-D:\Alexander\Emision\TestForm\bin\Debug\Xslt\cadenaoriginal_3_3.xslt
-D:\Alexander\Emision\TestForm\bin\Debug\Xslt\cadenaoriginal_TFD_1_1.xslt
