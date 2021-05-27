@@ -24,7 +24,15 @@ namespace Bussines
                     wc.Headers.Add(key, headers[key]);
                 }
                 wc.Encoding = enc;
-                var res = wc.UploadString(url, "POST", content);
+                string res = string.Empty;
+                if (content == string.Empty)
+                {
+                    res = wc.UploadString(url, string.Empty);
+                }
+                else
+                {
+                    res = wc.UploadString(url, "POST", content);
+                }
                 return res;
             }
             catch (WebException we)

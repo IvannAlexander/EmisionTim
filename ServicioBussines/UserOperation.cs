@@ -14,30 +14,36 @@ namespace Bussines
     {
         protected static ILog Logger = LogManager.GetLogger(typeof(UserOperation));
 
-        //public void GuardarUsuario(Sys_Usuario usuario)
-        //{
-        //    try
-        //    {
-        //        var usr = ObtenerUsuario(usuario.Sys_Usr, usuario.Sys_Rfc);
-        //        if (usr != null)
-        //        {
-        //            throw new Exception("El usuario " + usuario.Sys_Usr + " ya existe.");
-        //        }
-        //        using (var db = new Entities())
-        //        {
-        //            var pwd = OperacionesComun.Encrypt(usuario.Sys_Pass);
-        //            usuario.Sys_Pass = pwd;
-        //            //var emp = db.Sys_Empresa.FirstOrDefault(p=>p.Sys_Rfc == usuario.Sys_Rfc);
-        //            db.Sys_Usuario.Add(usuario);
-        //            db.SaveChanges();
-        //        }
-        //    }
-        //    catch (Exception ee)
-        //    {
-        //        Logger.Error(ee);
-        //        throw new Exception("No se guardo el usuario correctamente.");
-        //    }
-        //}
+        public string SaveUser(UsersDto user)
+        {
+            try
+            {
+                var usr = GetUser(user.Sys_Usr, user.Sys_Rfc);
+                if (usr != null)
+                {
+                    return $"El usuario {user.Sys_Usr} ya existe.";
+                }
+                using (var db = new Db_EmisionEntities())
+                {
+                    var pwd = EmisionService.CommonOperation.Encrypt(user.Sys_Pass);
+                    user.Sys_Pass = pwd;
+                    var usrDb = Common.Map<UsersDto, Sys_User>(user);
+                    db.Sys_User.Add(usrDb);
+                    db.SaveChanges();
+                }
+                return string.Empty;
+            }
+            catch (Exception ee)
+            {
+                Logger.Error(ee);
+                Logger.Error(ee.StackTrace);
+                if (ee.InnerException != null)
+                {
+                    Logger.Error(ee.InnerException.Message);
+                }
+                return ee.Message;
+            }
+        }
         public UsersDto ValidateUser(string user, string pass, string rfcCompany)
         {
             Logger.Info("ValidtaeUser");
@@ -63,20 +69,85 @@ namespace Bussines
             }
         }
 
-        //public Sys_Usuario ObtenerUsuario(string usuario, string rfc)
-        //{
-        //    try
-        //    {
-        //        using (var db = new Entities())
-        //        {
-        //            return db.Sys_Usuario.FirstOrDefault(p => p.Sys_Rfc == rfc && p.Sys_Usr == usuario);
-        //        }
-        //    }
-        //    catch (Exception ee)
-        //    {
-        //        Logger.Error(ee);
-        //        throw new Exception("Error al obtener el usuario.");
-        //    }
-        //}
+        public UsersDto GetUser(string user, string rfcCompany)
+        {
+            try
+            {
+                using (var db = new Db_EmisionEntities())
+                {
+                    var usr = db.Sys_User.FirstOrDefault(p => p.Sys_Rfc == rfcCompany && p.Sys_Usr == user);
+                    return Common.Map<Sys_User, UsersDto>(usr);
+                }
+            }
+            catch (Exception ee)
+            {
+                Logger.Error(ee);
+                Logger.Error(ee.StackTrace);
+                if (ee.InnerException != null)
+                {
+                    Logger.Error(ee.InnerException.Message);
+                }
+                return null;
+            }
+        }
+
+        public string CreateProfile(string name, string rfcCompany)
+        {
+            try
+            {
+                using (var db = new Db_EmisionEntities())
+                {
+                    var profile = db.Sys_Profile.FirstOrDefault(p => p.Sys_Rfc == rfcCompany && p.Sys_Name == name);
+                    if (profile != null)
+                    {
+                        return $"El perfil {name} ya existe";
+                    }
+                    else
+                    {
+                        Sys_Profile profileDb = new Sys_Profile
+                        {
+                            Sys_Name = name,
+                            Sys_Rfc= rfcCompany
+                        };
+                        db.Sys_Profile.Add(profileDb);
+                    }
+                    return string.Empty;
+                }
+            }
+            catch (Exception ee)
+            {
+                Logger.Error(ee);
+                Logger.Error(ee.StackTrace);
+                if (ee.InnerException != null)
+                {
+                    Logger.Error(ee.InnerException.Message);
+                }
+                return ee.Message;
+            }
+        }
+
+        public List<ProfileDto> GetListProfileByRfcCompany(string rfcCompany)
+        {
+            try
+            {
+                using (var db = new Db_EmisionEntities())
+                {
+                    var profile = db.Sys_Profile.Where(p => p.Sys_Rfc == rfcCompany).ToList();
+                    var profileDtos = new List<ProfileDto>();
+                    profile.ForEach(p => profileDtos.Add(Common.Map<Sys_Profile, ProfileDto>(p)));
+                    return profileDtos;
+                }
+            }
+            catch (Exception ee)
+            {
+                Logger.Error(ee);
+                Logger.Error(ee.StackTrace);
+                if (ee.InnerException != null)
+                {
+                    Logger.Error(ee.InnerException.Message);
+                }
+                return null;
+            }
+        }
     }
 }

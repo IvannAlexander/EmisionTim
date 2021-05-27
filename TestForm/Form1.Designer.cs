@@ -35,16 +35,19 @@
             this.btnCertificados = new System.Windows.Forms.Button();
             this.btnConvertir = new System.Windows.Forms.Button();
             this.Login = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.btnCrearPerfil = new System.Windows.Forms.Button();
+            this.btnObtenerPerfiles = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnAgregarUsuario
             // 
-            this.btnAgregarUsuario.Location = new System.Drawing.Point(13, 79);
+            this.btnAgregarUsuario.Location = new System.Drawing.Point(16, 210);
             this.btnAgregarUsuario.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnAgregarUsuario.Name = "btnAgregarUsuario";
             this.btnAgregarUsuario.Size = new System.Drawing.Size(159, 28);
             this.btnAgregarUsuario.TabIndex = 0;
-            this.btnAgregarUsuario.Text = "Agregar Usuario";
+            this.btnAgregarUsuario.Text = "7.- Agregar Usuario";
             this.btnAgregarUsuario.UseVisualStyleBackColor = true;
             this.btnAgregarUsuario.Click += new System.EventHandler(this.btnAgregarUsuario_Click);
             // 
@@ -61,7 +64,7 @@
             // 
             // btnObtenEmpresa
             // 
-            this.btnObtenEmpresa.Location = new System.Drawing.Point(13, 146);
+            this.btnObtenEmpresa.Location = new System.Drawing.Point(198, 348);
             this.btnObtenEmpresa.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnObtenEmpresa.Name = "btnObtenEmpresa";
             this.btnObtenEmpresa.Size = new System.Drawing.Size(159, 28);
@@ -72,29 +75,29 @@
             // 
             // btnObtenUsuario
             // 
-            this.btnObtenUsuario.Location = new System.Drawing.Point(13, 182);
+            this.btnObtenUsuario.Location = new System.Drawing.Point(13, 246);
             this.btnObtenUsuario.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnObtenUsuario.Name = "btnObtenUsuario";
             this.btnObtenUsuario.Size = new System.Drawing.Size(159, 28);
             this.btnObtenUsuario.TabIndex = 3;
-            this.btnObtenUsuario.Text = "Obtener Usuario";
+            this.btnObtenUsuario.Text = "8.- Obtener Usuario";
             this.btnObtenUsuario.UseVisualStyleBackColor = true;
             this.btnObtenUsuario.Click += new System.EventHandler(this.btnObtenUsuario_Click);
             // 
             // btnCertificados
             // 
-            this.btnCertificados.Location = new System.Drawing.Point(13, 115);
+            this.btnCertificados.Location = new System.Drawing.Point(16, 79);
             this.btnCertificados.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnCertificados.Name = "btnCertificados";
-            this.btnCertificados.Size = new System.Drawing.Size(159, 28);
+            this.btnCertificados.Size = new System.Drawing.Size(173, 28);
             this.btnCertificados.TabIndex = 4;
-            this.btnCertificados.Text = "Agregar Certificados";
+            this.btnCertificados.Text = "3.- Agregar Certificados";
             this.btnCertificados.UseVisualStyleBackColor = true;
             this.btnCertificados.Click += new System.EventHandler(this.btnCertificados_Click);
             // 
             // btnConvertir
             // 
-            this.btnConvertir.Location = new System.Drawing.Point(13, 217);
+            this.btnConvertir.Location = new System.Drawing.Point(16, 348);
             this.btnConvertir.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnConvertir.Name = "btnConvertir";
             this.btnConvertir.Size = new System.Drawing.Size(159, 28);
@@ -105,7 +108,7 @@
             // 
             // Login
             // 
-            this.Login.Location = new System.Drawing.Point(13, 43);
+            this.Login.Location = new System.Drawing.Point(16, 43);
             this.Login.Margin = new System.Windows.Forms.Padding(4);
             this.Login.Name = "Login";
             this.Login.Size = new System.Drawing.Size(159, 28);
@@ -114,11 +117,47 @@
             this.Login.UseVisualStyleBackColor = true;
             this.Login.Click += new System.EventHandler(this.Login_Click);
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(13, 115);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(224, 28);
+            this.button1.TabIndex = 7;
+            this.button1.Text = "4.- Obtener Certificados Lista";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // btnCrearPerfil
+            // 
+            this.btnCrearPerfil.Location = new System.Drawing.Point(16, 146);
+            this.btnCrearPerfil.Margin = new System.Windows.Forms.Padding(4);
+            this.btnCrearPerfil.Name = "btnCrearPerfil";
+            this.btnCrearPerfil.Size = new System.Drawing.Size(159, 28);
+            this.btnCrearPerfil.TabIndex = 8;
+            this.btnCrearPerfil.Text = "5.- Crear Perfil";
+            this.btnCrearPerfil.UseVisualStyleBackColor = true;
+            this.btnCrearPerfil.Click += new System.EventHandler(this.btnCrearPerfil_Click);
+            // 
+            // btnObtenerPerfiles
+            // 
+            this.btnObtenerPerfiles.Location = new System.Drawing.Point(13, 174);
+            this.btnObtenerPerfiles.Margin = new System.Windows.Forms.Padding(4);
+            this.btnObtenerPerfiles.Name = "btnObtenerPerfiles";
+            this.btnObtenerPerfiles.Size = new System.Drawing.Size(159, 28);
+            this.btnObtenerPerfiles.TabIndex = 9;
+            this.btnObtenerPerfiles.Text = "6.- Obtener Perfiles";
+            this.btnObtenerPerfiles.UseVisualStyleBackColor = true;
+            this.btnObtenerPerfiles.Click += new System.EventHandler(this.btnObtenerPerfiles_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(379, 321);
+            this.ClientSize = new System.Drawing.Size(379, 448);
+            this.Controls.Add(this.btnObtenerPerfiles);
+            this.Controls.Add(this.btnCrearPerfil);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.Login);
             this.Controls.Add(this.btnConvertir);
             this.Controls.Add(this.btnCertificados);
@@ -142,6 +181,9 @@
         private System.Windows.Forms.Button btnCertificados;
         private System.Windows.Forms.Button btnConvertir;
         private System.Windows.Forms.Button Login;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnCrearPerfil;
+        private System.Windows.Forms.Button btnObtenerPerfiles;
     }
 }
 

@@ -25,7 +25,7 @@ namespace ServicioTimbrado
             try
             {
                 //var urlTimbrado = ConfigurationManager.AppSettings["TimbradoMasteredi"];
-                var urlTimbrado = "http://184.106.8.75/Timbrado/TimbradoCFDServiceExternal.asmx";
+                var urlTimbrado = "http://timbradodev.masfactura.com.mx/Timbrado/TimbradoCFDServiceExternal.asmx";
                 var ws = new WebService(urlTimbrado, "TimbradoCFDStrXML");
                 ws.Params.Add("strXML", xml);
                 ws.Params.Add("strUser", "Post7342");
@@ -43,7 +43,7 @@ namespace ServicioTimbrado
             catch (Exception ee)
             {
                 Logger.Error(ee);
-                throw new Exception("Error al timbrar CFDi Masteredi.");
+                throw new Exception("Error al timbrar CFDI Masteredi.");
             }
         }
 

@@ -92,22 +92,30 @@ namespace TestForm
         {
             try
             {
-                //var usuario = new Sys_Usuario
-                //{
-                //    Sys_Correo = "usuarioOk@test.com.mx",
-                //    Sys_Estatus = 1,
-                //    Sys_Fec_Creacion = DateTime.Now,
-                //    Sys_Intentos = 0,
-                //    Sys_Pass = "AABBcc22++",
-                //    Sys_Usr = "Alex",
-                //    Sys_Rfc = "AAA010101AAA"
-                //};
+                var user = new UsersDto
+                {
+                    Sys_Email = "usuarioOk@test.com.mx",
+                    Sys_Status = 1,
+                    Sys_CreationDate = DateTime.Now,
+                    Sys_AccessAttempts = 0,
+                    Sys_Pass = "AABBcc22++",
+                    Sys_Usr = "Juan",
+                    Sys_Rfc = "EKU9003173C9",
+                    Sys_Profile_Id = 1
+                };
 
-                //var db = ClientFactory.GetCliente();
-                //using (db as IDisposable)
-                //{
-                //    db.GuardarUsuario(usuario);
-                //}
+                var urlBase = "https://localhost:44368/Api/User/SaveUser";
+
+                var header = new Dictionary<string, string>()
+                {
+                    { "Authorization","Basic VmFsZGV6QjpBQUJCY2MyMisr" },// + ConfigurationManager.AppSettings["Auth"] } ,
+                    { "Content-Type","application/json" }
+                };
+
+                var json = JsonConvert.SerializeObject(user);
+                var data = RestClient.SendToService(urlBase, json, header, Encoding.UTF8);
+                var answer = JsonConvert.DeserializeObject<string>(data);
+                MessageBox.Show(answer);
             }
             catch (Exception ee)
             {
@@ -135,87 +143,74 @@ namespace TestForm
 
         private void btnObtenUsuario_Click(object sender, EventArgs e)
         {
-            //try
-            //{
-
-            //    var client = ClientFactory.GetCliente();
-            //    using (client as IDisposable)
-            //    {
-            //        try
-            //        {
-            //            var usr = client.ObtenerUsuario("Alex", "MUFI880608267");
-            //            usr.ToString();
-            //        }
-            //        catch (FaultException fe)
-            //        {
-            //            MessageBox.Show(fe.Message);
-            //        }
-            //        catch (CommunicationException ec)
-            //        {
-            //            MessageBox.Show(ec.Message);
-            //        }
-            //        catch (TimeoutException et)
-            //        {
-            //            MessageBox.Show(et.Message);
-            //        }
-            //        catch (Exception ee)
-            //        {
-            //            MessageBox.Show(ee.Message);
-            //        }
-
-            //    }
-            //}
-            //catch (FaultException fe)
-            //{
-            //    MessageBox.Show(fe.Message);
-            //}
-            //catch (CommunicationException ec)
-            //{
-            //    MessageBox.Show(ec.Message);
-            //}
-            //catch (TimeoutException et)
-            //{
-            //    MessageBox.Show(et.Message);
-            //}
-            //catch (Exception ee)
-            //{
-            //    MessageBox.Show(ee.Message);
-            //}
+            var user = "Juan";
+            var rfc = "EKU9003173C9";
+            var url = $"https://localhost:44368/Api/User/GetUser?user={user}&rfcCompany={rfc}";
+            var header = new Dictionary<string, string>()
+                {
+                    { "Authorization","Basic " },//+ ConfigurationManager.AppSettings["Auth"]},
+                     { "Content-Type","application/json" }
+                };
+            var data = RestClient.GetFromService(url, header, Encoding.UTF8);
+            var userVal = JsonConvert.DeserializeObject<UsersDto>(data);
+            if (userVal == null)
+            {
+                MessageBox.Show("Usuario no existe.");
+            }
+            else
+            {
+                MessageBox.Show(userVal.Sys_Usr);
+            }
         }
 
         private void btnCertificados_Click(object sender, EventArgs e)
         {
-            //try
-            //{
-            //    var certificado =
-            //        @"Z:\Alexander\Mega\Personal\Trabajo\Proyectos\Mvc\Doc\Cert_Sellos\CSDAAA010101AAA\CSD01_AAA010101AAA.cer";
-            //    var key =
-            //        @"Z:\Alexander\Mega\Personal\Trabajo\Proyectos\Mvc\Doc\Cert_Sellos\CSDAAA010101AAA\CSD01_AAA010101AAA.key";
-            //    var bCer = File.ReadAllBytes(certificado);
-            //    var bKey = File.ReadAllBytes(key);
-            //    var cliente = ClientFactory.GetCliente();
-            //    using (cliente as IDisposable)
-            //    {
-            //        cliente.GuardaCertificados(bCer, bKey, "12345678a", "AAA010101AAA");
-                    
-            //    }
-            //}
-            //catch (FaultException fe)
-            //{
-            //    MessageBox.Show(fe.Message);
-            //}
-            //catch (CommunicationException ec)
-            //{
-            //    MessageBox.Show(ec.Message);
-            //}
-            //catch (TimeoutException et)
-            //{
-            //    MessageBox.Show(et.Message);
-            //}
-            //catch (Exception ee)
-            //{
-            //    MessageBox.Show(ee.Message);
-            //}
+            try
+            {
+                var certificado =
+                    @"C:\Users\ivann\Downloads\Csd-Pruebas\RFC-PAC-SC\Personas Morales\FIEL_EKU9003173C9_20190614160838\CSD_EKU9003173C9_20190617131829\CSD_Escuela_Kemper_Urgate_EKU9003173C9_20190617_131753s.cer";
+                var key =
+                    @"C:\Users\ivann\Downloads\Csd-Pruebas\RFC-PAC-SC\Personas Morales\FIEL_EKU9003173C9_20190614160838\CSD_EKU9003173C9_20190617131829\CSD_Escuela_Kemper_Urgate_EKU9003173C9_20190617_131753.key";
+                var bCer = File.ReadAllBytes(certificado);
+                var bKey = File.ReadAllBytes(key);
+
+                LoadCertificateDto loadCertificateDto = new LoadCertificateDto
+                {
+                    FileCer = bCer,
+                    FileKey = bKey,
+                    RfcCompany = "EKU9003173C9",
+                    Pass = "12345678a"
+                };
+                var urlBase = "https://localhost:44368/Api/Certificate/SaveCertificate";
+
+                var header = new Dictionary<string, string>()
+                {
+                    { "Authorization","Basic VmFsZGV6QjpBQUJCY2MyMisr" },// + ConfigurationManager.AppSettings["Auth"] } ,
+                    { "Content-Type","application/json" }
+                };
+
+                var json = JsonConvert.SerializeObject(loadCertificateDto);
+
+                var data = RestClient.SendToService(urlBase, json, header, Encoding.UTF8);
+                var answer = JsonConvert.DeserializeObject<string>(data);
+                MessageBox.Show(answer);
+            }
+            catch (FaultException fe)
+            {
+                MessageBox.Show(fe.Message);
+            }
+            catch (CommunicationException ec)
+            {
+                MessageBox.Show(ec.Message);
+            }
+            catch (TimeoutException et)
+            {
+                MessageBox.Show(et.Message);
+            }
+            catch (Exception ee)
+            {
+                MessageBox.Show(ee.Message);
+            }
         }
 
         private void btnConvertir_Click(object sender, EventArgs e)
@@ -245,7 +240,7 @@ namespace TestForm
         private void Login_Click(object sender, EventArgs e)
         {
             var user = "AdminAAA010101AAA";
-            var pass = "AAA010101AAA*";
+            var pass = "AAA010101AAA";
             var rfc = "AAA010101AAA";
             var url = $"https://localhost:44368/Api/User/ValidateUser?user={user}&pass={pass}&rfcCompany={rfc}";
             var header = new Dictionary<string, string>()
@@ -264,6 +259,65 @@ namespace TestForm
                 MessageBox.Show(userVal.Sys_Usr);
             }
             
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            var rfc = "EKU9003173C9";
+            var url = $"https://localhost:44368/Api/Certificate/GetCertificateByRfc?rfc={rfc}";
+            var header = new Dictionary<string, string>()
+                {
+                    { "Authorization","Basic " },//+ ConfigurationManager.AppSettings["Auth"]},
+                     { "Content-Type","application/json" }
+                };
+            var data = RestClient.GetFromService(url, header, Encoding.UTF8);
+            var cert = JsonConvert.DeserializeObject<List<CertificateDto>>(data);
+            if (cert == null)
+            {
+                MessageBox.Show($"No hay certificado con el RFC {rfc}.");
+            }
+            else
+            {
+                MessageBox.Show(cert[0].Sys_Rfc);
+            }
+        }
+
+        private void btnCrearPerfil_Click(object sender, EventArgs e)
+        {
+            var name = "Perfil2";
+            var rfcCompany = "AAA010101AAA";
+            var urlBase = $"https://localhost:44368/Api/Profile/CreateProfile?name={name}&rfcCompany={rfcCompany}";
+
+            var header = new Dictionary<string, string>()
+                {
+                    { "Authorization","Basic VmFsZGV6QjpBQUJCY2MyMisr" },// + ConfigurationManager.AppSettings["Auth"] } ,
+                    { "Content-Type","application/json" }
+                };
+
+            var data = RestClient.SendToService(urlBase, string.Empty, header, Encoding.UTF8);
+            var answer = JsonConvert.DeserializeObject<string>(data);
+            MessageBox.Show(answer);
+        }
+
+        private void btnObtenerPerfiles_Click(object sender, EventArgs e)
+        {
+            var rfc = "AAA010101AAA";
+            var url = $"https://localhost:44368/Api/Profile/GetListProfileByRfcCompany?rfcCompany={rfc}";
+            var header = new Dictionary<string, string>()
+                {
+                    { "Authorization","Basic " },//+ ConfigurationManager.AppSettings["Auth"]},
+                     { "Content-Type","application/json" }
+                };
+            var data = RestClient.GetFromService(url, header, Encoding.UTF8);
+            var cert = JsonConvert.DeserializeObject<List<ProfileDto>>(data);
+            if (cert == null)
+            {
+                MessageBox.Show($"No hay certificado con el RFC {rfc}.");
+            }
+            else
+            {
+                MessageBox.Show(cert[0].Sys_Rfc);
+            }
         }
     }
 }
