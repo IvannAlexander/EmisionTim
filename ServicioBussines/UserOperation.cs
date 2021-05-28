@@ -110,6 +110,7 @@ namespace Bussines
                             Sys_Rfc= rfcCompany
                         };
                         db.Sys_Profile.Add(profileDb);
+                        db.SaveChanges();
                     }
                     return string.Empty;
                 }
