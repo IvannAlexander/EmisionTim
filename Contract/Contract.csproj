@@ -31,8 +31,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AutoMapper, Version=8.0.0.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.8.0.0\lib\net461\AutoMapper.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -41,7 +47,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BillingDto.cs" />
     <Compile Include="CertificateDto.cs" />
+    <Compile Include="Clases\cfdv33.cs" />
+    <Compile Include="Clases\consumodeCombustibles11.cs">
+      <DependentUpon>consumodeCombustibles11.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Clases\DatosExtras.cs" />
+    <Compile Include="Clases\nomina12.cs" />
+    <Compile Include="Clases\TimbreFiscalDigitalv11.cs">
+      <DependentUpon>TimbreFiscalDigitalv11.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Clases\valesdedespensa.cs" />
     <Compile Include="ClientDto.cs" />
     <Compile Include="CompanyDto.cs" />
     <Compile Include="CompanyAddressDto.cs" />
@@ -53,6 +70,15 @@
     <Compile Include="ProfileDto.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UsersDto.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Clases\consumodeCombustibles11.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Clases\TimbreFiscalDigitalv11.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

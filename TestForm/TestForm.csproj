@@ -127,6 +127,10 @@
       <Project>{18696238-27fe-4469-99ce-be0b1c0ac309}</Project>
       <Name>Bussines</Name>
     </ProjectReference>
+    <ProjectReference Include="..\ServicioEmision\EmisionService.csproj">
+      <Project>{8B00796F-06F5-4765-B18A-BACF28343A73}</Project>
+      <Name>EmisionService</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Connected Services\" />

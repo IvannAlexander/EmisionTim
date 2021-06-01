@@ -28,8 +28,8 @@ namespace ServicioTimbrado
                 var urlTimbrado = "http://timbradodev.masfactura.com.mx/Timbrado/TimbradoCFDServiceExternal.asmx";
                 var ws = new WebService(urlTimbrado, "TimbradoCFDStrXML");
                 ws.Params.Add("strXML", xml);
-                ws.Params.Add("strUser", "Post7342");
-                ws.Params.Add("strPass", "masteredi1#");
+                ws.Params.Add("strUser", "MFW-7346");
+                ws.Params.Add("strPass", "ADMIN123*");
                 var resp = ws.Invoke(true);
                 if (resp)
                 {

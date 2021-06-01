@@ -10,7 +10,7 @@ namespace Bussines
 {
     public class ConvertTxtOperation
     {
-        //protected static ILog Logger = LogManager.GetLogger(typeof(ConvertTxtOperation));
+        protected static ILog Logger = LogManager.GetLogger(typeof(ConvertTxtOperation));
         //#region Valemex
 
         //public string ConvierteTxtAti(byte[] archivo, string rfc)

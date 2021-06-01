@@ -142,6 +142,35 @@ namespace Bussines
             }
         }
 
+        public string CreateCfdi(string xml)
+        {
+            try
+            {
+                var serializacion = new SerializationOperation();
+                var cfdi = serializacion.Deserializar<Comprobante>(xml);
+                var operacionesEmision = new EmisionOperation();
+                var cert = new CertificateDto();
+                using (var context = new Db_EmisionEntities())
+                {
+                    var certDb = context.Sys_Certificate.OrderByDescending(p => p.Sys_ExpirationDateCert).FirstOrDefault(p => p.Sys_Rfc == cfdi.Emisor.Rfc);
+                    cert = Common.Map<Sys_Certificate, CertificateDto>(certDb);
+                }
+                var passCert = EmisionService.CommonOperation.Decrypt(cert.Sys_Pwd);
+                var answer = operacionesEmision.GeneraCfdi33(cfdi, cert.Sys_Number, cert.Sys_Certificate1, cert.Sys_Key, passCert);
+                return answer.ToString();
+            }
+            catch (Exception ee)
+            {
+                Logger.Error(ee);
+                Logger.Error(ee.StackTrace);
+                if (ee.InnerException != null)
+                {
+                    Logger.Error(ee.InnerException.Message);
+                }
+                return "Error: No se genero el XML.";
+            }
+        }
+
         //public int CertificadosPorRfc(string rfc)
         //{
         //    try

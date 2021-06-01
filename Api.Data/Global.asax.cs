@@ -18,6 +18,8 @@ namespace Api.Data
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+            var xml = GlobalConfiguration.Configuration.Formatters.XmlFormatter;
+            xml.UseXmlSerializer = true;
         }
     }
 }

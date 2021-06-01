@@ -344,12 +344,20 @@ namespace EmisionService
                                     comprobante.Impuestos.TotalImpuestosRetenidos = ConvertToDecimalRound(valor, 2);
                                     comprobante.Impuestos.TotalImpuestosRetenidosSpecified = true;
                                 }
+                                else
+                                {
+                                    comprobante.Impuestos.TotalImpuestosRetenidosSpecified = false;
+                                }
                                 break;
                             case "totalImpuestosTrasladados":
                                 if (!string.IsNullOrEmpty(valor))
                                 {
                                     comprobante.Impuestos.TotalImpuestosTrasladados = ConvertToDecimalRound(valor, 2);
                                     comprobante.Impuestos.TotalImpuestosTrasladadosSpecified = true;
+                                }
+                                else
+                                {
+                                    comprobante.Impuestos.TotalImpuestosTrasladadosSpecified = false;
                                 }
                                 break;
                         }

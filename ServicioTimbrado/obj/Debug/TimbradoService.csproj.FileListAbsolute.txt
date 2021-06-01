@@ -1,8 +1,9 @@
 D:\Alexander\Emision\ServicioTimbrado\bin\Debug\TimbradoService.dll
 D:\Alexander\Emision\ServicioTimbrado\bin\Debug\TimbradoService.pdb
 D:\Alexander\Emision\ServicioTimbrado\bin\Debug\log4net.dll
+D:\Alexander\Emision\ServicioTimbrado\bin\Debug\log4net.xml
+D:\Alexander\Emision\ServicioTimbrado\obj\Debug\TimbradoService.csprojAssemblyReference.cache
 D:\Alexander\Emision\ServicioTimbrado\obj\Debug\TimbradoService.csproj.CoreCompileInputs.cache
 D:\Alexander\Emision\ServicioTimbrado\obj\Debug\TimbradoService.csproj.CopyComplete
 D:\Alexander\Emision\ServicioTimbrado\obj\Debug\TimbradoService.dll
 D:\Alexander\Emision\ServicioTimbrado\obj\Debug\TimbradoService.pdb
-D:\Alexander\Emision\ServicioTimbrado\obj\Debug\TimbradoService.csprojAssemblyReference.cache

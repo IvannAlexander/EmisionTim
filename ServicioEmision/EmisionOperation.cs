@@ -6,16 +6,22 @@ using System.Security.Cryptography;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml;
 using System.Xml.Linq;
+using System.Xml.Serialization;
 using System.Xml.XPath;
 using System.Xml.Xsl;
+using Contract;
 using log4net;
+using Model;
 
 namespace EmisionService
 {
     public class EmisionOperation
     {
         protected static ILog Logger = LogManager.GetLogger(typeof(EmisionOperation));
+
+        
 
         /// <summary>
         /// Método encargado de generar el CFDI.
@@ -48,7 +54,13 @@ namespace EmisionService
                 var cfdi = FirmarCfdi(doctoComprobante, cadenaOriginal, key, passCert);
                 //Obtener timbre XML
                 var operacionesTimbrado = new ServicioTimbrado.OperacionesTimbrado();
+
                 var timbre = operacionesTimbrado.TimbrarXml(cfdi);
+                if (timbre.StartsWith("Error"))
+                {
+                    Logger.Error(timbre);
+                    return null;
+                }
                 //Adiciona timbre a CFDI
                 return PegarTimbre(cfdi.ToString(), timbre, serializacion);
             }
@@ -63,6 +75,7 @@ namespace EmisionService
         {
             try
             {
+                
                 var comprobante = XDocument.Parse(cfdi);
                 var xmlComp = XDocument.Parse(timbre);
                 var operacionComplemento = new ComplementsOperation();
@@ -82,7 +95,7 @@ namespace EmisionService
             {
                 var operacionesCrypto = new CryptoOperation();
                 var firma = operacionesCrypto.SignString(key, passCert, cadenaOriginal);
-                var cfdi = DeserializarDocumentos(comprobante);
+                var cfdi = DeserializarDocumentos(comprobante.ToString());
                 cfdi.Sello = firma;
                 return SerializarDocumentos(cfdi, string.Empty);
             }
@@ -123,7 +136,7 @@ namespace EmisionService
             }
         }
 
-        private XDocument SerializarDocumentos(Comprobante comprobante, string tipoComplemento)
+        public XDocument SerializarDocumentos(Comprobante comprobante, string tipoComplemento)
         {
             try
             {
@@ -150,12 +163,12 @@ namespace EmisionService
             }
         }
 
-        private Comprobante DeserializarDocumentos(XDocument comprobante)
+        public Comprobante DeserializarDocumentos(string comprobante)
         {
             try
             {
                 var serializacion = new SerializationOperation();
-                return serializacion.Deserializar<Comprobante>(comprobante.ToString());
+                return serializacion.Deserializar<Comprobante>(comprobante);
             }
             catch (Exception ee)
             {
@@ -164,7 +177,27 @@ namespace EmisionService
             }
         }
 
+        public T Deserializar<T>(string xml)
+        {
+            try
+            {
+                var serializer = new XmlSerializer(typeof(T));
+                var xmlRed = new XmlReaderSettings();
+                using (var strReader = new StringReader(xml))
+                {
+                    using (var xmlReader = XmlReader.Create(strReader, xmlRed))
+                    {
+                        var xmlResp = (T)serializer.Deserialize(xmlReader);
+                        return xmlResp;
+                    }
+                }
+            }
+            catch (Exception ee)
+            {
+                throw new Exception("No se deserealizo correctamente.");
 
+            }
+        }
 
     }
 }
