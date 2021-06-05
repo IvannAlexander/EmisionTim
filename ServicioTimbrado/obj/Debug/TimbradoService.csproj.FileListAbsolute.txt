@@ -7,3 +7,11 @@ D:\Alexander\Emision\ServicioTimbrado\obj\Debug\TimbradoService.csproj.CoreCompi
 D:\Alexander\Emision\ServicioTimbrado\obj\Debug\TimbradoService.csproj.CopyComplete
 D:\Alexander\Emision\ServicioTimbrado\obj\Debug\TimbradoService.dll
 D:\Alexander\Emision\ServicioTimbrado\obj\Debug\TimbradoService.pdb
+D:\work\Emision\ServicioTimbrado\bin\Debug\TimbradoService.dll
+D:\work\Emision\ServicioTimbrado\bin\Debug\TimbradoService.pdb
+D:\work\Emision\ServicioTimbrado\bin\Debug\log4net.dll
+D:\work\Emision\ServicioTimbrado\bin\Debug\log4net.xml
+D:\work\Emision\ServicioTimbrado\obj\Debug\TimbradoService.csproj.CoreCompileInputs.cache
+D:\work\Emision\ServicioTimbrado\obj\Debug\TimbradoService.csproj.CopyComplete
+D:\work\Emision\ServicioTimbrado\obj\Debug\TimbradoService.dll
+D:\work\Emision\ServicioTimbrado\obj\Debug\TimbradoService.pdb
