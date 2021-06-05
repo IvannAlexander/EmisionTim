@@ -21,6 +21,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Contract", "Contract\Contra
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Api.Data", "Api.Data\Api.Data.csproj", "{4D7CCE2F-3739-47B7-BF88-9EC7B7960E8E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Emision.WEB", "Emision.WEB\Emision.WEB.csproj", "{0693E5E5-C8A0-4DEF-BCA6-FD5E6C25162C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -63,6 +65,10 @@ Global
 		{4D7CCE2F-3739-47B7-BF88-9EC7B7960E8E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4D7CCE2F-3739-47B7-BF88-9EC7B7960E8E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4D7CCE2F-3739-47B7-BF88-9EC7B7960E8E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0693E5E5-C8A0-4DEF-BCA6-FD5E6C25162C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0693E5E5-C8A0-4DEF-BCA6-FD5E6C25162C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0693E5E5-C8A0-4DEF-BCA6-FD5E6C25162C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0693E5E5-C8A0-4DEF-BCA6-FD5E6C25162C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

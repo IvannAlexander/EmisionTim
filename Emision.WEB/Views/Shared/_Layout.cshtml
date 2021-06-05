@@ -1,0 +1,66 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+<title>@ViewData["Title"] - Emision </title>
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
+    <link rel="shortcut icon" href="~/favicon.png">
+    <link href="~/Content/angular-material.css" rel="stylesheet" />
+    <link href="~/Content/angular-material.layout-attributes.css" rel="stylesheet" />
+    <link href="~/Content/angular-material.layouts.css" rel="stylesheet" />
+    <link href="~/Content/angular-material.layouts.ie_fixes.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <link href="~/Content/md-steppers.css" rel="stylesheet" />
+    <link href="~/Content/Site.css" rel="stylesheet" />
+
+    <script src="~/Scripts/jquery-3.4.1.js"></script>
+    <script src="~/Scripts/angular.js"></script>
+    <script src="~/Scripts/i18n/angular-locale_es-mx.js"></script>
+    <script src="~/Scripts/angular-animate.js"></script>
+    <script src="~/Scripts/angular-aria.js"></script>
+    <script src="~/Scripts/angular-messages.js"></script>
+    <script src="~/Scripts/angular-moment.js"></script>
+    <script src="~/Scripts/angular-material.js"></script>
+    <script src="~/Scripts/angular-cookies.js"></script>
+    <link href="~/Content/md-data-table.css" rel="stylesheet" />
+    <script src="~/Scripts/md-data-table.js"></script>
+    <script src="~/Scripts/md-steppers.js"></script>
+    <script src="~/Scripts/moment.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
+    <script src="~/Scripts/Emision/Emision.js"></script>
+
+
+</head>
+<body style="background-color:#693DFF;">
+
+    <div ng-app="Emision" ng-controller="menu">
+        <div hide-xs class="sidenav" ng-class="{'sidenav': visible, 'nosidenav': !visible}" layout="column" style="background-color:#00C1FF;">
+            <ul class="menu ">
+                <li style="display:flex;justify-content:flex-end">
+
+                </li>
+            </ul>
+
+            <ul class="menu">
+                <li>
+                    <img class="img" style="margin-top: 0px; margin-bottom: 0px" ng-class="{'imgmenu': visible, 'imgmenu2': !visible}" src="~/Imagenes/Grupo_Bimbo_logo.svg.png" />
+                </li>
+            </ul>
+            <ul class="menu" style="height:100%"></ul>
+        </div>
+        <div layout="row" layout-align="center" style=" display:flex; align-content:center; padding-bottom:40px">
+
+            @RenderBody()
+
+        </div>
+
+    </div>
+    <script src="~/Scripts/Emision/menu.js"></script>
+</body>
+</html>
