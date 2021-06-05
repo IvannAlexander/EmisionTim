@@ -5,6 +5,7 @@
       <PropertyRef Name="Sys_Id" />
     </Key>
     <Property Name="Sys_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Sys_IdCompany" Type="bigint" Nullable="false" />
     <Property Name="Sys_Rfc" Type="varchar" MaxLength="13" Nullable="false" />
     <Property Name="Sys_Number" Type="varchar" MaxLength="50" Nullable="false" />
     <Property Name="Sys_Name" Type="varchar" MaxLength="250" Nullable="false" />
@@ -20,6 +21,7 @@
       <PropertyRef Name="Sys_Id" />
     </Key>
     <Property Name="Sys_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Sys_IdCompany" Type="bigint" Nullable="false" />
     <Property Name="Sys_Rfc" Type="varchar" MaxLength="13" Nullable="false" />
     <Property Name="Sys_BusinessName" Type="varchar" MaxLength="255" />
     <Property Name="Sys_Tradename" Type="varchar" MaxLength="255" />
@@ -37,9 +39,9 @@
   </EntityType>
   <EntityType Name="Sys_Company">
     <Key>
-      <PropertyRef Name="Sys_Rfc" />
+      <PropertyRef Name="Sys_Id" />
     </Key>
-    <Property Name="Sys_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Sys_Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Sys_Rfc" Type="varchar" MaxLength="13" Nullable="false" />
     <Property Name="Sys_Name" Type="varchar" MaxLength="250" Nullable="false" />
     <Property Name="Sys_FiscalRegime" Type="varchar" MaxLength="250" />
@@ -58,6 +60,7 @@
       <PropertyRef Name="Sys_Id" />
     </Key>
     <Property Name="Sys_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Sys_IdCompany" Type="bigint" Nullable="false" />
     <Property Name="Sys_Rfc" Type="varchar" MaxLength="13" Nullable="false" />
     <Property Name="Sys_ZipCode" Type="varchar" MaxLength="5" Nullable="false" />
     <Property Name="Sys_Street" Type="varchar" MaxLength="250" />
@@ -78,6 +81,38 @@
     </Key>
     <Property Name="Sys_Id" Type="int" Nullable="false" />
     <Property Name="Sys_Name" Type="varchar" MaxLength="50" />
+    <Property Name="Sys_IdCompany" Type="bigint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Sys_Invoice">
+    <Key>
+      <PropertyRef Name="Sys_Id" />
+    </Key>
+    <Property Name="Sys_Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Sys_IdCompany" Type="bigint" Nullable="false" />
+    <Property Name="Sys_FechaRegistro" Type="datetime" Nullable="false" />
+    <Property Name="Sys_RfcEmisor" Type="varchar" MaxLength="13" Nullable="false" />
+    <Property Name="Sys_NombreEmisor" Type="varchar" MaxLength="300" />
+    <Property Name="Sys_RfcReceptor" Type="varchar" MaxLength="13" Nullable="false" />
+    <Property Name="Sys_NombreReceptor" Type="varchar" MaxLength="300" />
+    <Property Name="Sys_RegimenFiscal" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="Sys_UsoCfdi" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="Sys_FormaPago" Type="varchar" MaxLength="30" />
+    <Property Name="Sys_MetodoPago" Type="varchar" MaxLength="13" />
+    <Property Name="Sys_LugarExpedicion" Type="varchar" MaxLength="25" Nullable="false" />
+    <Property Name="Sys_NoCertificado" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="Sys_CondicionPago" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="Sys_Moneda" Type="varchar" MaxLength="25" Nullable="false" />
+    <Property Name="Sys_Subtotal" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="Sys_Total" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="Sys_FechaCaptura" Type="datetime" Nullable="false" />
+    <Property Name="Sys_TipoComprobante" Type="varchar" MaxLength="5" Nullable="false" />
+    <Property Name="Sys_Folio" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="Sys_Serie" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="Sys_Cancelado" Type="bit" Nullable="false" />
+    <Property Name="Sys_TimbreFiscal" Type="varchar" MaxLength="36" Nullable="false" />
+    <Property Name="Sys_TimbreFiscalRelacionado" Type="varchar" MaxLength="36" />
+    <Property Name="Sys_TipoCambio" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Sys_Descuento" Type="decimal" Precision="18" Scale="2" />
   </EntityType>
   <EntityType Name="Sys_Menu">
     <Key>
@@ -103,13 +138,14 @@
     </Key>
     <Property Name="Sys_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Sys_Name" Type="nvarchar" MaxLength="50" Nullable="false" />
-    <Property Name="Sys_Rfc" Type="varchar" MaxLength="13" Nullable="false" />
+    <Property Name="Sys_IdCompany" Type="bigint" Nullable="false" />
   </EntityType>
   <EntityType Name="Sys_User">
     <Key>
       <PropertyRef Name="Sys_Id" />
     </Key>
     <Property Name="Sys_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Sys_IdCompany" Type="bigint" Nullable="false" />
     <Property Name="Sys_Rfc" Type="varchar" MaxLength="13" Nullable="false" />
     <Property Name="Sys_Usr" Type="varchar" MaxLength="20" Nullable="false" />
     <Property Name="Sys_Pass" Type="varchar" MaxLength="100" Nullable="false" />
@@ -127,6 +163,7 @@
     <EntitySet Name="Sys_Company" EntityType="Self.Sys_Company" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Sys_CompanyAddress" EntityType="Self.Sys_CompanyAddress" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Sys_Complements" EntityType="Self.Sys_Complements" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Sys_Invoice" EntityType="Self.Sys_Invoice" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Sys_Menu" EntityType="Self.Sys_Menu" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Sys_Menu_Profile" EntityType="Self.Sys_Menu_Profile" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Sys_Profile" EntityType="Self.Sys_Profile" Schema="dbo" store:Type="Tables" />

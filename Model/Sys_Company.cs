@@ -14,7 +14,7 @@ namespace Model
     
     public partial class Sys_Company
     {
-        public int Sys_Id { get; set; }
+        public long Sys_Id { get; set; }
         public string Sys_Rfc { get; set; }
         public string Sys_Name { get; set; }
         public string Sys_FiscalRegime { get; set; }

@@ -32,7 +32,7 @@ namespace TestForm
 
                 var company = new CompanyDto
                 {
-                    Sys_Rfc = "AAA010101AAA",
+                    Sys_Rfc = "EKU9003173C9",
                     Sys_Name = "Test",
                     Sys_Status = true,
                     Sys_Email = "test@test.com",
@@ -56,7 +56,7 @@ namespace TestForm
                     Sys_Reference = "Referencia",
                     Sys_InternalNumber = "0",
                     Sys_RegistrationDate = DateTime.Now,
-                    Sys_Rfc = "AAA010101AAA",
+                    Sys_Rfc = "EKU9003173C9",
                     Sys_State = "Estado",
                     Sys_Street = "Calle",
                     Sys_User = "Sistema",
@@ -102,7 +102,8 @@ namespace TestForm
                     Sys_Pass = "AABBcc22++",
                     Sys_Usr = "Juan",
                     Sys_Rfc = "EKU9003173C9",
-                    Sys_Profile_Id = 1
+                    Sys_Profile_Id = 1,
+                    Sys_IdCompany = 1
                 };
 
                 var urlBase = "https://localhost:44368/Api/User/SaveUser";
@@ -145,8 +146,8 @@ namespace TestForm
         private void btnObtenUsuario_Click(object sender, EventArgs e)
         {
             var user = "Juan";
-            var rfc = "EKU9003173C9";
-            var url = $"https://localhost:44368/Api/User/GetUser?user={user}&rfcCompany={rfc}";
+            var id = 1;
+            var url = $"https://localhost:44368/Api/User/GetUser?user={user}&idCompany={id}";
             var header = new Dictionary<string, string>()
                 {
                     { "Authorization","Basic " },//+ ConfigurationManager.AppSettings["Auth"]},
@@ -180,7 +181,8 @@ namespace TestForm
                     FileCer = bCer,
                     FileKey = bKey,
                     RfcCompany = "EKU9003173C9",
-                    Pass = "12345678a"
+                    Pass = "12345678a",
+                    Sys_IdCompany = 1
                 };
                 var urlBase = "https://localhost:44368/Api/Certificate/SaveCertificate";
 
@@ -240,9 +242,9 @@ namespace TestForm
 
         private void Login_Click(object sender, EventArgs e)
         {
-            var user = "AdminAAA010101AAA";
-            var pass = "AAA010101AAA";
-            var rfc = "AAA010101AAA";
+            var user = "Admin";
+            var pass = "EKU9003173C9*";
+            var rfc = "EKU9003173C9";
             var url = $"https://localhost:44368/Api/User/ValidateUser?user={user}&pass={pass}&rfcCompany={rfc}";
             var header = new Dictionary<string, string>()
                 {
@@ -286,8 +288,8 @@ namespace TestForm
         private void btnCrearPerfil_Click(object sender, EventArgs e)
         {
             var name = "Perfil2";
-            var rfcCompany = "AAA010101AAA";
-            var urlBase = $"https://localhost:44368/Api/Profile/CreateProfile?name={name}&rfcCompany={rfcCompany}";
+            var idCompany = 1;
+            var urlBase = $"https://localhost:44368/Api/Profile/CreateProfile?name={name}&idCompany={idCompany}";
 
             var header = new Dictionary<string, string>()
                 {
@@ -302,8 +304,8 @@ namespace TestForm
 
         private void btnObtenerPerfiles_Click(object sender, EventArgs e)
         {
-            var rfc = "AAA010101AAA";
-            var url = $"https://localhost:44368/Api/Profile/GetListProfileByRfcCompany?rfcCompany={rfc}";
+            var idCompany = 1;
+            var url = $"https://localhost:44368/Api/Profile/GetListProfileByRfcCompany?idCompany={idCompany}";
             var header = new Dictionary<string, string>()
                 {
                     { "Authorization","Basic " },//+ ConfigurationManager.AppSettings["Auth"]},
@@ -313,18 +315,18 @@ namespace TestForm
             var cert = JsonConvert.DeserializeObject<List<ProfileDto>>(data);
             if (cert == null)
             {
-                MessageBox.Show($"No hay certificado con el RFC {rfc}.");
+                MessageBox.Show($"No hay certificado con el RFC X.");
             }
             else
             {
-                MessageBox.Show(cert[0].Sys_Rfc);
+                MessageBox.Show(cert[0].Sys_IdCompany.ToString());
             }
         }
 
         private void btnPdf_Click(object sender, EventArgs e)
         {
             var cfdi = File.ReadAllText(@"C:\Users\ivann\Downloads\new 3.xml");
-            BillingDto billingDto = new BillingDto { XmlRequest = cfdi };
+            BillingDto billingDto = new BillingDto { XmlRequest = cfdi, Usr = "Juan", Pwd = "AABBcc22++", RfcCompany = "EKU9003173C9" };
             var url = $"https://localhost:44368/Api/Billing/GetPdfFromXml";
             var header = new Dictionary<string, string>()
                 {
@@ -335,6 +337,7 @@ namespace TestForm
             var data = RestClient.SendToService(url, json, header, Encoding.UTF8);
             var pdf = JsonConvert.DeserializeObject<byte[]>(data);
             File.WriteAllBytes(@"D:\Eliminar\ApiTestPdf.pdf", pdf);
+            MessageBox.Show("Termino");
         }
 
         private void btnCfdi_Click(object sender, EventArgs e)
@@ -421,12 +424,13 @@ namespace TestForm
 
             var serializacion = new SerializationOperation();
             var xml =serializacion.Serializar<Comprobante>(comprobante);
-            BillingDto billingDto = new BillingDto { XmlRequest = xml.ToString() };
+            BillingDto billingDto = new BillingDto { XmlRequest = xml.ToString(), Usr = "Juan", Pwd = "AABBcc22++", RfcCompany = "EKU9003173C9" };
             var json = JsonConvert.SerializeObject(billingDto);
 
             var data = RestClient.SendToService(urlBase, json, header, Encoding.UTF8);
             var answer = JsonConvert.DeserializeObject<string>(data);
             File.WriteAllText(@"D:\Eliminar\xmlApiPrueba.xml", answer);
+            MessageBox.Show("Termino");
         }
     }
 }

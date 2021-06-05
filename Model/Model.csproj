@@ -81,6 +81,9 @@
     <Compile Include="Sys_Complements.cs">
       <DependentUpon>SysEmision.tt</DependentUpon>
     </Compile>
+    <Compile Include="Sys_Invoice.cs">
+      <DependentUpon>SysEmision.tt</DependentUpon>
+    </Compile>
     <Compile Include="Sys_Menu.cs">
       <DependentUpon>SysEmision.tt</DependentUpon>
     </Compile>

@@ -42,6 +42,7 @@ namespace Bussines
                             //Add address
                             var address = Common.Map<CompanyAddressDto, Sys_CompanyAddress>(company.CompanyAddress);
                             address.Sys_Rfc = comp.Sys_Rfc;
+                            address.Sys_IdCompany = comp.Sys_Id;
                             context.Sys_CompanyAddress.Add(address);
                             context.SaveChanges();
 
@@ -53,7 +54,7 @@ namespace Bussines
                             Sys_Profile profile = new Sys_Profile
                             {
                                 Sys_Name = "Administrador",
-                                Sys_Rfc = comp.Sys_Rfc
+                                Sys_IdCompany = comp.Sys_Id
                             };
                             context.Sys_Profile.Add(profile);
                             context.SaveChanges();
@@ -74,11 +75,12 @@ namespace Bussines
                             var usr = new Sys_User
                             {
                                 Sys_Email = comp.Sys_Email,
+                                Sys_IdCompany = comp.Sys_Id,
                                 Sys_Status = 1,//Activo
                                 Sys_CreationDate = DateTime.Now,
                                 Sys_AccessAttempts = 0,
-                                Sys_Pass = comp.Sys_Rfc,
-                                Sys_Usr = $"Admin{comp.Sys_Rfc}",
+                                Sys_Pass = comp.Sys_Rfc + "*",
+                                Sys_Usr = $"Admin",
                                 Sys_Rfc = comp.Sys_Rfc
                             };
 

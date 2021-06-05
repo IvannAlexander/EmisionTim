@@ -27,12 +27,13 @@ namespace Model
     
         public virtual DbSet<Sys_Certificate> Sys_Certificate { get; set; }
         public virtual DbSet<Sys_Client> Sys_Client { get; set; }
-        public virtual DbSet<Sys_Company> Sys_Company { get; set; }
         public virtual DbSet<Sys_CompanyAddress> Sys_CompanyAddress { get; set; }
         public virtual DbSet<Sys_Complements> Sys_Complements { get; set; }
+        public virtual DbSet<Sys_Menu> Sys_Menu { get; set; }
         public virtual DbSet<Sys_Menu_Profile> Sys_Menu_Profile { get; set; }
         public virtual DbSet<Sys_Profile> Sys_Profile { get; set; }
         public virtual DbSet<Sys_User> Sys_User { get; set; }
-        public virtual DbSet<Sys_Menu> Sys_Menu { get; set; }
+        public virtual DbSet<Sys_Company> Sys_Company { get; set; }
+        public virtual DbSet<Sys_Invoice> Sys_Invoice { get; set; }
     }
 }
