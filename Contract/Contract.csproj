@@ -63,6 +63,7 @@
     <Compile Include="CompanyDto.cs" />
     <Compile Include="CompanyAddressDto.cs" />
     <Compile Include="ComplementDto.cs" />
+    <Compile Include="InvoiceDto.cs" />
     <Compile Include="LoadCertificateDto.cs" />
     <Compile Include="MenuDto.cs" />
     <Compile Include="MenuProfileDto.cs" />

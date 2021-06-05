@@ -32,7 +32,7 @@ namespace EmisionService
         /// <param name="key">Key en base64.</param>
         /// <param name="passCert">Contraseña del certificado en claro.</param>
         /// <returns>Regresa CFDI en objeto XDocument.</returns>
-        public XDocument GeneraCfdi33(Comprobante comprobante, string noCertificado, string certificado, string key, string passCert)
+        public XDocument GeneraCfdi33(Comprobante comprobante, string noCertificado, string certificado, string key, string passCert, ref string timbreXml)
         {
             try
             {
@@ -61,6 +61,7 @@ namespace EmisionService
                     Logger.Error(timbre);
                     return null;
                 }
+                timbreXml = timbre;
                 //Adiciona timbre a CFDI
                 return PegarTimbre(cfdi.ToString(), timbre, serializacion);
             }

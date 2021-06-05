@@ -12,5 +12,6 @@ namespace Contract
         public byte[] FileKey { get; set; }
         public string Pass { get; set; }
         public string RfcCompany { get; set; }
+        public long Sys_IdCompany { get; set; }
     }
 }

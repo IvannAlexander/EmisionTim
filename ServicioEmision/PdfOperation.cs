@@ -89,7 +89,7 @@ namespace EmisionService
             try
             {
                 var report = new ReportViewer();
-                var reportPath = @"D:\Alexander\Emision\ServicioEmision\Pdf\Factura.rdlc";//ConfigurationManager.AppSettings["RuraRdlc"];
+                var reportPath = Path.Combine(ConfigurationManager.AppSettings["Rdlc"], "Factura.rdlc");
                 var ds = new System.Data.DataSet() { Tables = { new DataTable() } };
 
                 var listaComprobante = new List<Comprobante>();

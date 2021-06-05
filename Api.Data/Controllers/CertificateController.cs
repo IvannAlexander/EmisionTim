@@ -15,7 +15,7 @@ namespace Api.Data.Controllers
         public IHttpActionResult SaveCertificate([FromBody]LoadCertificateDto loadCertificate)
         {
             Bussines.CertificateOperation certificateOperation = new Bussines.CertificateOperation();
-            var answer = certificateOperation.SaveCertificate(loadCertificate.FileCer, loadCertificate.FileKey, loadCertificate.Pass, loadCertificate.RfcCompany);
+            var answer = certificateOperation.SaveCertificate(loadCertificate.FileCer, loadCertificate.FileKey, loadCertificate.Pass, loadCertificate.RfcCompany, loadCertificate.Sys_IdCompany);
             return Json(answer);
         }
 

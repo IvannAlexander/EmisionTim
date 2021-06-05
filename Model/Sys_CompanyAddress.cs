@@ -15,6 +15,7 @@ namespace Model
     public partial class Sys_CompanyAddress
     {
         public int Sys_Id { get; set; }
+        public long Sys_IdCompany { get; set; }
         public string Sys_Rfc { get; set; }
         public string Sys_ZipCode { get; set; }
         public string Sys_Street { get; set; }

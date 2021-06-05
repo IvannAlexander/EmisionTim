@@ -31,28 +31,28 @@ namespace Api.Data.Controllers
 
         [System.Web.Http.Route("Api/User/GetUser")]
         [System.Web.Http.HttpGet]
-        public IHttpActionResult GetUser(string user, string rfcCompany)
+        public IHttpActionResult GetUser(string user, long idCompany)
         {
             UserOperation userOperation = new UserOperation();
-            var userVal = userOperation.GetUser(user, rfcCompany);
+            var userVal = userOperation.GetUser(user, idCompany);
             return Json(userVal);
         }
 
         [System.Web.Http.Route("Api/Profile/CreateProfile")]
         [System.Web.Http.HttpPost]
-        public IHttpActionResult CreateProfile(string name, string rfcCompany)
+        public IHttpActionResult CreateProfile(string name, long idCompany)
         {
             UserOperation userOperation = new UserOperation();
-            var answer = userOperation.CreateProfile(name, rfcCompany);
+            var answer = userOperation.CreateProfile(name, idCompany);
             return Json(answer);
         }
 
         [System.Web.Http.Route("Api/Profile/GetListProfileByRfcCompany")]
         [System.Web.Http.HttpGet]
-        public IHttpActionResult GetListProfileByRfcCompany(string rfcCompany)
+        public IHttpActionResult GetListProfileByRfcCompany(long idCompany)
         {
             UserOperation userOperation = new UserOperation();
-            var answer = userOperation.GetListProfileByRfcCompany(rfcCompany);
+            var answer = userOperation.GetListProfileByRfcCompany(idCompany);
             return Json(answer);
         }
     }

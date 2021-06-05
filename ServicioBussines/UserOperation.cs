@@ -18,7 +18,7 @@ namespace Bussines
         {
             try
             {
-                var usr = GetUser(user.Sys_Usr, user.Sys_Rfc);
+                var usr = GetUser(user.Sys_Usr, user.Sys_IdCompany);
                 if (usr != null)
                 {
                     return $"El usuario {user.Sys_Usr} ya existe.";
@@ -69,13 +69,13 @@ namespace Bussines
             }
         }
 
-        public UsersDto GetUser(string user, string rfcCompany)
+        public UsersDto GetUser(string user, long idCompany)
         {
             try
             {
                 using (var db = new Db_EmisionEntities())
                 {
-                    var usr = db.Sys_User.FirstOrDefault(p => p.Sys_Rfc == rfcCompany && p.Sys_Usr == user);
+                    var usr = db.Sys_User.FirstOrDefault(p => p.Sys_IdCompany == idCompany && p.Sys_Usr == user);
                     return Common.Map<Sys_User, UsersDto>(usr);
                 }
             }
@@ -91,13 +91,13 @@ namespace Bussines
             }
         }
 
-        public string CreateProfile(string name, string rfcCompany)
+        public string CreateProfile(string name, long idCompany)
         {
             try
             {
                 using (var db = new Db_EmisionEntities())
                 {
-                    var profile = db.Sys_Profile.FirstOrDefault(p => p.Sys_Rfc == rfcCompany && p.Sys_Name == name);
+                    var profile = db.Sys_Profile.FirstOrDefault(p => p.Sys_IdCompany == idCompany && p.Sys_Name == name);
                     if (profile != null)
                     {
                         return $"El perfil {name} ya existe";
@@ -107,7 +107,7 @@ namespace Bussines
                         Sys_Profile profileDb = new Sys_Profile
                         {
                             Sys_Name = name,
-                            Sys_Rfc= rfcCompany
+                            Sys_IdCompany= idCompany
                         };
                         db.Sys_Profile.Add(profileDb);
                         db.SaveChanges();
@@ -127,13 +127,13 @@ namespace Bussines
             }
         }
 
-        public List<ProfileDto> GetListProfileByRfcCompany(string rfcCompany)
+        public List<ProfileDto> GetListProfileByRfcCompany(long idCompany)
         {
             try
             {
                 using (var db = new Db_EmisionEntities())
                 {
-                    var profile = db.Sys_Profile.Where(p => p.Sys_Rfc == rfcCompany).ToList();
+                    var profile = db.Sys_Profile.Where(p => p.Sys_IdCompany == idCompany).ToList();
                     var profileDtos = new List<ProfileDto>();
                     profile.ForEach(p => profileDtos.Add(Common.Map<Sys_Profile, ProfileDto>(p)));
                     return profileDtos;

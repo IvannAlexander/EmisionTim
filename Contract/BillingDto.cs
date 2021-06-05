@@ -9,5 +9,8 @@ namespace Contract
     public class BillingDto
     {
         public string XmlRequest { get; set; }
+        public string Usr { get; set; }
+        public string Pwd { get; set; }
+        public string RfcCompany { get; set; }
     }
 }

@@ -2361,7 +2361,7 @@
                   </Style>
                 </TextRun>
                 <TextRun>
-                  <Value>="Periodo		" + First(Fields!Otro1.Value, "DsComprobante")</Value>
+                  <Value>=First(Fields!Fecha.Value, "DsComprobante")</Value>
                   <Style>
                     <FontSize>6pt</FontSize>
                     <FontWeight>Bold</FontWeight>

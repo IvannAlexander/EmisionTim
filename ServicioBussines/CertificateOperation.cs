@@ -9,6 +9,9 @@ using log4net;
 using EmisionService;
 using Contract;
 using Model;
+using System.Xml.Linq;
+using System.Configuration;
+using System.IO;
 
 namespace Bussines
 {
@@ -16,7 +19,7 @@ namespace Bussines
     {
         protected static ILog Logger = LogManager.GetLogger(typeof(CertificateOperation));
 
-        public string SaveCertificate(byte[] fileCer, byte[] fileKey, string pass, string rfcCompany)
+        public string SaveCertificate(byte[] fileCer, byte[] fileKey, string pass, string rfcCompany, long idCompany)
         {
             try
             {
@@ -48,7 +51,8 @@ namespace Bussines
                         Sys_Pwd = EmisionService.CommonOperation.Encrypt(pass),
                         Sys_Certificate1 = cerBase64,
                         Sys_Name = nombreCer.Trim(),
-                        Sys_Rfc = rfcCompany
+                        Sys_Rfc = rfcCompany,
+                        Sys_IdCompany = idCompany
                     };
                     db.Sys_Certificate.Add(sysCertificado);
                     db.SaveChanges();
@@ -142,7 +146,7 @@ namespace Bussines
             }
         }
 
-        public string CreateCfdi(string xml)
+        public string CreateCfdi(string xml, long idCompany)
         {
             try
             {
@@ -156,7 +160,26 @@ namespace Bussines
                     cert = Common.Map<Sys_Certificate, CertificateDto>(certDb);
                 }
                 var passCert = EmisionService.CommonOperation.Decrypt(cert.Sys_Pwd);
-                var answer = operacionesEmision.GeneraCfdi33(cfdi, cert.Sys_Number, cert.Sys_Certificate1, cert.Sys_Key, passCert);
+                var timbre = "";
+                var answer = operacionesEmision.GeneraCfdi33(cfdi, cert.Sys_Number, cert.Sys_Certificate1, cert.Sys_Key, passCert, ref timbre);
+                if (answer != null)
+                {
+                    var operacionesSerializacion = new EmisionOperation();
+                    var xmlTim = XDocument.Parse(timbre);
+                    var timbreFiscal = operacionesSerializacion.Deserializar<TimbreFiscalDigital>(xmlTim.ToString());
+
+                    var fecha = string.Format("{0:yyyy-MM-dd}", Convert.ToDateTime(cfdi.Fecha));
+                    var path = Path.Combine(ConfigurationManager.AppSettings["Invoice"], cfdi.Emisor.Rfc, fecha);
+                    if (!Directory.Exists(path))
+                    {
+                        Directory.CreateDirectory(path);
+                    }
+                    var t = answer.ToString();
+                    var fileName = Path.Combine(path, $"{cfdi.Emisor.Rfc}_{cfdi.Receptor.Rfc}_{timbreFiscal.UUID}.xml");
+                    File.WriteAllText(fileName, t);
+                    //Save in databse
+                    SaveInvoice(cfdi, idCompany, timbre);
+                }
                 return answer.ToString();
             }
             catch (Exception ee)
@@ -170,6 +193,60 @@ namespace Bussines
                 return "Error: No se genero el XML.";
             }
         }
+
+        private void SaveInvoice(Comprobante comprobante, long idCompany, string uuid)
+        {
+            try
+            {
+                
+
+                InvoiceDto invoice = new InvoiceDto
+                {
+                    Sys_Folio = comprobante.Folio,
+                    Sys_FechaCaptura = DateTime.Now,
+                    Sys_FechaRegistro = Convert.ToDateTime(comprobante.Fecha),
+                    Sys_Cancelado = false,
+                    Sys_CondicionPago = comprobante.CondicionesDePago,
+                    Sys_FormaPago = comprobante.FormaPago,
+                    Sys_IdCompany = idCompany,
+                    Sys_LugarExpedicion = comprobante.LugarExpedicion,
+                    Sys_MetodoPago = comprobante.MetodoPago,
+                    Sys_Moneda = comprobante.Moneda,
+                    Sys_NoCertificado = comprobante.NoCertificado,
+                    Sys_NombreEmisor = comprobante.Emisor.Nombre,
+                    Sys_NombreReceptor = comprobante.Receptor.Nombre,
+                    Sys_RegimenFiscal = comprobante.Emisor.RegimenFiscal,
+                    Sys_RfcEmisor = comprobante.Emisor.Rfc,
+                    Sys_RfcReceptor = comprobante.Receptor.Rfc,
+                    Sys_Serie = comprobante.Serie,
+                    Sys_Subtotal = comprobante.SubTotal,
+                    Sys_TipoComprobante = comprobante.TipoDeComprobante,
+                    Sys_Total = comprobante.Total,
+                    Sys_UsoCfdi = comprobante.Receptor.UsoCFDI,
+                    Sys_TipoCambio = comprobante.TipoCambio,
+                    Sys_Descuento = comprobante.Descuento,
+                    Sys_TimbreFiscal = uuid
+                };
+
+                //Save info
+                using (var context = new Db_EmisionEntities())
+                {
+                    var invoicedb = Common.Map<InvoiceDto, Sys_Invoice>(invoice);
+                    context.Sys_Invoice.Add(invoicedb);
+                    context.SaveChanges();
+                }
+            }
+            catch (Exception ee)
+            {
+                Logger.Error(ee);
+                Logger.Error(ee.StackTrace);
+                if (ee.InnerException != null)
+                {
+                    Logger.Error(ee.InnerException.Message);
+                }
+            }
+        }
+
 
         //public int CertificadosPorRfc(string rfc)
         //{

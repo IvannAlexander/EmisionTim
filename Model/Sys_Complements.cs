@@ -16,5 +16,6 @@ namespace Model
     {
         public int Sys_Id { get; set; }
         public string Sys_Name { get; set; }
+        public long Sys_IdCompany { get; set; }
     }
 }

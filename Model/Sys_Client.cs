@@ -15,6 +15,7 @@ namespace Model
     public partial class Sys_Client
     {
         public int Sys_Id { get; set; }
+        public long Sys_IdCompany { get; set; }
         public string Sys_Rfc { get; set; }
         public string Sys_BusinessName { get; set; }
         public string Sys_Tradename { get; set; }

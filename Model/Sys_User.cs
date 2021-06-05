@@ -15,6 +15,7 @@ namespace Model
     public partial class Sys_User
     {
         public int Sys_Id { get; set; }
+        public long Sys_IdCompany { get; set; }
         public string Sys_Rfc { get; set; }
         public string Sys_Usr { get; set; }
         public string Sys_Pass { get; set; }
