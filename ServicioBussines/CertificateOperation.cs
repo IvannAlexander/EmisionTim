@@ -178,7 +178,7 @@ namespace Bussines
                     var fileName = Path.Combine(path, $"{cfdi.Emisor.Rfc}_{cfdi.Receptor.Rfc}_{timbreFiscal.UUID}.xml");
                     File.WriteAllText(fileName, t);
                     //Save in databse
-                    SaveInvoice(cfdi, idCompany, timbre);
+                    SaveInvoice(cfdi, idCompany, timbreFiscal.UUID);
                 }
                 return answer.ToString();
             }
