@@ -50,3 +50,6 @@ modules.order
 Module.symvers
 Mkfile.old
 dkms.conf
+Contract/obj/Debug/Contract.csproj.AssemblyReference.cache
+Model/obj/Debug/Model.csproj.AssemblyReference.cache
+ServicioTimbrado/obj/Debug/TimbradoService.csproj.AssemblyReference.cache
