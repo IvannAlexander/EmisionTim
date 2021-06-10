@@ -10,14 +10,3 @@ D:\Alexander\Emision\Model\obj\Debug\Model.csproj.CoreCompileInputs.cache
 D:\Alexander\Emision\Model\obj\Debug\Model.csproj.CopyComplete
 D:\Alexander\Emision\Model\obj\Debug\Model.dll
 D:\Alexander\Emision\Model\obj\Debug\Model.pdb
-D:\work\Emision\Model\bin\Debug\Model.dll.config
-D:\work\Emision\Model\bin\Debug\Model.dll
-D:\work\Emision\Model\bin\Debug\Model.pdb
-D:\work\Emision\Model\bin\Debug\EntityFramework.dll
-D:\work\Emision\Model\bin\Debug\EntityFramework.SqlServer.dll
-D:\work\Emision\Model\bin\Debug\EntityFramework.xml
-D:\work\Emision\Model\bin\Debug\EntityFramework.SqlServer.xml
-D:\work\Emision\Model\obj\Debug\Model.csproj.CoreCompileInputs.cache
-D:\work\Emision\Model\obj\Debug\Model.csproj.CopyComplete
-D:\work\Emision\Model\obj\Debug\Model.dll
-D:\work\Emision\Model\obj\Debug\Model.pdb

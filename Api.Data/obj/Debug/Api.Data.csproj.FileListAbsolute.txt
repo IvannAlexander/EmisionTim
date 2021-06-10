@@ -290,6 +290,8 @@ D:\Alexander\Emision\Api.Data\bin\System.Numerics.Vectors.xml
 D:\Alexander\Emision\Api.Data\bin\System.Runtime.CompilerServices.Unsafe.xml
 D:\Alexander\Emision\Api.Data\bin\System.Text.Encodings.Web.xml
 D:\Alexander\Emision\Api.Data\bin\System.Threading.Tasks.Extensions.xml
+<<<<<<< HEAD
+=======
 D:\work\Emision\Api.Data\bin\Xslt\cadenaoriginal_3_3.xslt
 D:\work\Emision\Api.Data\bin\Xslt\cadenaoriginal_TFD_1_1.xslt
 D:\work\Emision\Api.Data\bin\Pdf\Ecc.rdlc
@@ -574,3 +576,4 @@ D:\work\Emision\Api.Data\obj\Debug\Api.Data.pdb
 D:\Alexander\Emision\Api.Data\bin\Web.config
 D:\Alexander\Emision\Api.Data\bin\Web.Debug.config
 D:\Alexander\Emision\Api.Data\bin\Web.Release.config
+>>>>>>> 09b81becb9ee2314aaeb97ac8d46a9ea3715a84a

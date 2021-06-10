@@ -231,5 +231,3 @@ D:\Alexander\Mega\Trabajo\Proyectos\Mvc\Emision\EmisionWeb\obj\Debug\EmisionWeb.
 D:\Alexander\Mega\Trabajo\Proyectos\Mvc\Emision\EmisionWeb\obj\Debug\EmisionWeb.csproj.CopyComplete
 D:\Alexander\Mega\Trabajo\Proyectos\Mvc\Emision\EmisionWeb\obj\Debug\EmisionWeb.dll
 D:\Alexander\Mega\Trabajo\Proyectos\Mvc\Emision\EmisionWeb\obj\Debug\EmisionWeb.pdb
-D:\work\Emision\EmisionWeb\obj\Debug\EmisionWeb.csproj.AssemblyReference.cache
-D:\work\Emision\EmisionWeb\obj\Debug\EmisionWeb.csproj.CoreCompileInputs.cache

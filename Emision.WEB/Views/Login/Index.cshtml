@@ -1,0 +1,167 @@
+﻿
+@{
+    ViewBag.Title = "Emision";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+<script src="~/Scripts/Emision/login.js"></script>
+<div ng-app="Emision" ng-controller="Login" class="control-label">
+    @*<link rel="stylesheet" href="~/css/StyleSheet.css">
+        <img src="~/src/img-large.jpg" class="responsive" />*@
+    <div style="color:white;font-size:xx-large">Emision</div>
+    <div style="color:white;">
+        Emision
+    </div>
+
+    <div style="color:white;">Inicio Sesion</div>
+    <div>
+        <form name="requerido">
+
+
+            <md-input-container class="md-block" flex>
+                <label style="color:white;">Usuario</label>
+                <input name="Usuario"
+                       ng-model="usuario.Usuario"
+                       style="color:white;"
+                       required>
+                <div ng-messages="requerido.Nombre.$error">
+                    <div ng-message="required">El campo es requerido.</div>
+                </div>
+            </md-input-container>
+
+            <md-input-container class="md-block" flex>
+                <label style="color:white;">Password</label>
+                <input name="Nombre"
+                       type="password"
+                       ng-model="usuario.pass"
+                       style="color:white;"
+                       required>
+                <div ng-messages="requerido.Nombre.$error">
+                    <div ng-message="required">El campo es requerido.</div>
+                </div>
+            </md-input-container>
+
+            <md-input-container class="md-block" flex>
+                <label style="color:white;">RFC</label>
+                <input name="RFC"
+                       ng-model="usuario.RFC"
+                       style="color:white;"
+                       required>
+                <div ng-messages="requerido.Nombre.$error">
+                    <div ng-message="required">El campo es requerido.</div>
+                </div>
+            </md-input-container>
+
+            <md-dialog-actions layout="row">
+                <span flex></span>
+                <md-button class="buttonborder "
+                           type="sumbit"
+                           ng-disabled="progreso"
+                           ng-click="AltaUsuario()">
+                    Registro
+                </md-button>
+                <md-button class="buttonborder "
+                           type="sumbit"
+                           ng-disabled="progreso"
+                           ng-click="Buscar()">
+                    Aceptar
+                </md-button>
+            </md-dialog-actions>
+        </form>
+    </div>
+
+    <script type="text/ng-template" id="ModalDardeAlta">
+        <md-dialog flex="30">
+            <form name="requerido">
+
+                <md-input-container class="md-block" flex>
+                    <label>Usuario</label>
+                    <input name="Usuario"
+                           ng-model="usuario.Usuario"
+                           required>
+                    <div ng-messages="requerido.Usuario.$error">
+                        <div ng-message="required">El campo es requerido.</div>
+                    </div>
+                </md-input-container>
+
+                <md-input-container class="md-block" flex>
+                    <label>Nombre</label>
+                    <input name="Usuario"
+                           ng-model="usuario.Nombre"
+                           required>
+                    <div ng-messages="requerido.Nombre.$error">
+                        <div ng-message="required">El campo es requerido.</div>
+                    </div>
+                </md-input-container>
+
+                <md-input-container class="md-block" flex>
+                    <label>Edad</label>
+                    <input name="Edad"
+                           ng-model="usuario.Edad"
+                           type="number"
+                           required>
+                    <div ng-messages="requerido.Edad.$error">
+                        <div ng-message="required">El campo es requerido.</div>
+                    </div>
+                </md-input-container>
+                <md-input-container class="md-block" flex>
+                    <label>Password</label>
+                    <input name="password"
+                           type="password"
+                           ng-model="usuario.pass"
+                           required>
+                    <div ng-messages="requerido.pass.$error">
+                        <div ng-message="required">El campo es requerido.</div>
+                    </div>
+                </md-input-container>
+
+                <md-input-container class="md-block" flex>
+                    <label>Ciudad</label>
+                    <input name="Ciudad"
+                           ng-model="usuario.Ciudad"
+                           required>
+                    <div ng-messages="requerido.Ciudad.$error">
+                        <div ng-message="required">El campo es requerido.</div>
+                    </div>
+                </md-input-container>
+
+                <md-input-container class="md-block" flex>
+                    <label>E-mail</label>
+                    <input name="mail"
+                           ng-model="usuario.mail"
+                           required>
+                    <div ng-messages="requerido.mail.$error">
+                        <div ng-message="required">El campo es requerido.</div>
+                    </div>
+                </md-input-container>
+
+                <md-input-container class="md-block" flex>
+                    <label>Telefono</label>
+                    <input name="Telefono"
+                           ng-model="usuario.Telefono"
+                           type="number"
+                           required>
+                    <div ng-messages="requerido.Telefono.$error">
+                        <div ng-message="required">El campo es requerido.</div>
+                    </div>
+                </md-input-container>
+                <md-dialog-actions layout="row">
+                    <span flex></span>
+                    <md-button class="buttonborder buttonborderwarn"
+                               ng-click="Cancelar()">
+                        Cancelar
+                    </md-button>
+                    <md-button class="buttonborder "
+                               type="sumbit"
+                               ng-disabled="progreso"
+                               ng-click="Agregar()">
+                        Aceptar
+                    </md-button>
+                </md-dialog-actions>
+            </form>
+        </md-dialog>
+    </script>
+</div>
+

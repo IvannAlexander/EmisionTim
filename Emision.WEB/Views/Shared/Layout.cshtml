@@ -1,0 +1,307 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>@ViewData["Title"] - Emision </title>
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
+    <link rel="shortcut icon" href="~/favicon.png">
+    <link href="~/Content/angular-material.css" rel="stylesheet" />
+    <link href="~/Content/angular-material.layout-attributes.css" rel="stylesheet" />
+    <link href="~/Content/angular-material.layouts.css" rel="stylesheet" />
+    <link href="~/Content/angular-material.layouts.ie_fixes.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <link href="~/Content/md-steppers.css" rel="stylesheet" />
+    <link href="~/Content/Site.css" rel="stylesheet" />
+
+    <script src="~/Scripts/jquery-3.4.1.js"></script>
+    <script src="~/Scripts/angular.js"></script>
+    <script src="~/Scripts/i18n/angular-locale_es-mx.js"></script>
+    <script src="~/Scripts/angular-animate.js"></script>
+    <script src="~/Scripts/angular-aria.js"></script>
+    <script src="~/Scripts/angular-messages.js"></script>
+    <script src="~/Scripts/angular-moment.js"></script>
+    <script src="~/Scripts/angular-material.js"></script>
+    <script src="~/Scripts/angular-cookies.js"></script>
+    <link href="~/Content/md-data-table.css" rel="stylesheet" />
+    <script src="~/Scripts/md-data-table.js"></script>
+    <script src="~/Scripts/md-steppers.js"></script>
+    <script src="~/Scripts/moment.js"></script>
+    <script src="~/Scripts/Emision/Emision.js"></script>
+    <script src="~/Scripts/Emision/menu.js"></script>
+    <script src="~/Scripts/Emision/login.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
+
+
+
+</head>
+<body style="background-color:#2C6FB0;">
+    <div ng-app="Emision" ng-controller="menu">
+        <div hide-xs class="sidenav" ng-class="{'sidenav': visible, 'nosidenav': !visible}" layout="column" style="background-color:#0FADBB;">
+            <ul class="menu ">
+                <li style="display:flex;justify-content:flex-end">
+                    <md-button class="md-icon-button md-button md-primary md-ink-ripple md-fab md-mini" ng-click="show()">
+                        <md-icon style="line-height:24px" class="material-icons ng-scope">
+                            menu
+                        </md-icon>
+                        <md-tooltip ng-if="!visible" md-direction="right">
+                            Menú
+                        </md-tooltip>
+                    </md-button>
+                </li>
+            </ul>
+            <ul class="menu">
+                <li>
+                    <img class="img" style="margin-top: 0px; margin-bottom: 0px; height:150px;width:125px;" ng-class="{'imgmenu': visible, 'imgmenu2': !visible}" src="~/src/nanp.png" />
+                </li>
+            </ul>
+            <ul class="menu" style="margin-top:5px" ng-class="{'menuoculto': !visible, 'menuvisible': visible}">
+                <li style="justify-content:space-between; border-bottom:1px solid rgba(52, 76, 103, 0.25); border-top:1px solid rgba(52, 76, 103, 0.25); margin:5px 0;">
+                    <div>
+                        <p style="text-align:center;line-height: 35px; max-height:34px; overflow:hidden; width:100%">Bienvenido: {{usuarionombre}}</p>
+
+                    </div>
+
+                </li>
+
+            </ul>
+            <ul class="menu menuitem" ng-class="{'menuoculto': !visible, 'menuvisible': visible}">
+                <li>
+
+                    <div>
+                        <md-button ng-click="togglepagos03()" style="display:flex; flex-flow:row nowrap;border-radius:16px;width:100% !important" class=" md-ink-ripple md-button">
+
+                            <md-icon ng-class="{'show-icon': visible, 'hide-icon': !visible}" class="material-icons" style="display:block; line-height:24px; height:34px;min-width:34px; display:flex; justify-content:center;align-items:center">
+                                next_week
+                            </md-icon>
+                            <a href="/Perfil" style="text-transform:none;text-align:left; max-height:34px; overflow:hidden; width:100%; ">Perfil</a>
+                            <md-tooltip ng-if="!visible" md-direction="right">
+                                Perfil
+                            </md-tooltip>
+
+                        </md-button>
+                    </div>
+
+                </li>
+                <li>
+
+                    <div>
+                        <md-button class="md-icon-button md-button md-ink-ripple">
+                            <md-icon ng-class="{'show-icon': visible, 'hide-icon': !visible}" class="material-icons" style="display:block; line-height:24px; height:34px;min-width:34px; display:flex; justify-content:center;align-items:center">
+                                payment
+                            </md-icon>
+                            <md-tooltip ng-if="!visible" md-direction="right">
+                                Quienes somos
+                            </md-tooltip>
+
+                        </md-button>
+                        <a href="/Empresa">Quienes somos</a>
+                    </div>
+                </li>
+                <li>
+
+                    <div>
+                        <md-button class="md-icon-button md-button md-ink-ripple">
+                            <md-icon ng-class="{'show-icon': visible, 'hide-icon': !visible}" class="material-icons" style="display:block; line-height:24px; height:34px;min-width:34px; display:flex; justify-content:center;align-items:center">
+                                payment
+                            </md-icon>
+                            <md-tooltip ng-if="!visible" md-direction="right">
+                                Contacto
+                            </md-tooltip>
+
+                        </md-button>
+                        <a href="/Contacto">Contacto</a>
+                    </div>
+                </li>
+                <li>
+                    <div>
+                        <md-button class="md-icon-button md-button md-ink-ripple">
+                            <a href="/ControlDePagos/Pago">
+                                <md-icon class="material-icons ng-scope">
+                                    account_balance
+                                </md-icon>
+                                <md-tooltip ng-if="!visible" md-direction="right">
+                                    Monitoreo
+                                </md-tooltip>
+                            </a>
+                        </md-button>
+                        <a href="/Monitoreo"> Monitoreo</a>
+                    </div>
+                </li>
+                <li>
+                    <div>
+                        <md-button class="md-icon-button md-button md-ink-ripple" ">
+                            <a href="/ControlDePagos/Usuarios">
+                                <md-icon class="material-icons ng-scope">
+                                    settings
+                                </md-icon>
+                                <md-tooltip ng-if="!visible" md-direction="right">
+                                    Codigo QR
+                                </md-tooltip>
+                            </a>
+                        </md-button>
+                        <a href="/CodigoQR">Codigo QR</a>
+                    </div>
+                </li>
+                <li>
+                    <div>
+                        <md-button class="md-icon-button md-button md-ink-ripple" ">
+                            <a href="/ControlDePagos/Usuarios">
+                                <md-icon class="material-icons ng-scope">
+                                    settings
+                                </md-icon>
+                                <md-tooltip ng-if="!visible" md-direction="right">
+                                    Tienda
+                                </md-tooltip>
+                            </a>
+                        </md-button>
+                        <a href="/Tienda">Tienda</a>
+                    </div>
+                </li>
+            </ul>
+            <ul class="menu" style="height:100%"></ul>
+        </div>
+        <div layout="row" layout-align="center" style=" display:flex; align-content:center; padding-bottom:40px">
+
+            @RenderBody()
+
+        </div>
+
+        <script type="text/ng-template" id="ModalDardeAlta">
+            <md-dialog flex="30">
+                <form name="requerido">
+
+                    <md-input-container class="md-block" flex>
+                        <label>Usuario</label>
+                        <input name="Usuario"
+                               ng-model="usuario.Usuario"
+                               required>
+                        <div ng-messages="requerido.Usuario.$error">
+                            <div ng-message="required">El campo es requerido.</div>
+                        </div>
+                    </md-input-container>
+
+                    <md-input-container class="md-block" flex>
+                        <label>Nombre</label>
+                        <input name="Usuario"
+                               ng-model="usuario.Nombre"
+                               required>
+                        <div ng-messages="requerido.Nombre.$error">
+                            <div ng-message="required">El campo es requerido.</div>
+                        </div>
+                    </md-input-container>
+
+                    <md-input-container class="md-block" flex>
+                        <label>Edad</label>
+                        <input name="Edad"
+                               ng-model="usuario.Edad"
+                               type="number"
+                               required>
+                        <div ng-messages="requerido.Edad.$error">
+                            <div ng-message="required">El campo es requerido.</div>
+                        </div>
+                    </md-input-container>
+                    <md-input-container class="md-block" flex>
+                        <label>Password</label>
+                        <input name="password"
+                               type="password"
+                               ng-model="usuario.pass"
+                               required>
+                        <div ng-messages="requerido.pass.$error">
+                            <div ng-message="required">El campo es requerido.</div>
+                        </div>
+                    </md-input-container>
+
+                    <md-input-container class="md-block" flex>
+                        <label>Ciudad</label>
+                        <input name="Ciudad"
+                               ng-model="usuario.Ciudad"
+                               required>
+                        <div ng-messages="requerido.Ciudad.$error">
+                            <div ng-message="required">El campo es requerido.</div>
+                        </div>
+                    </md-input-container>
+
+                    <md-input-container class="md-block" flex>
+                        <label>E-mail</label>
+                        <input name="mail"
+                               ng-model="usuario.mail"
+                               required>
+                        <div ng-messages="requerido.mail.$error">
+                            <div ng-message="required">El campo es requerido.</div>
+                        </div>
+                    </md-input-container>
+
+                    <md-input-container class="md-block" flex>
+                        <label>Telefono</label>
+                        <input name="Telefono"
+                               ng-model="usuario.Telefono"
+                               type="number"
+                               required>
+                        <div ng-messages="requerido.Telefono.$error">
+                            <div ng-message="required">El campo es requerido.</div>
+                        </div>
+                    </md-input-container>
+                    <md-dialog-actions layout="row">
+                        <span flex></span>
+                        <md-button class="buttonborder buttonborderwarn"
+                                   ng-click="Cancelar()">
+                            Cancelar
+                        </md-button>
+                        <md-button class="buttonborder "
+                                   type="sumbit"
+                                   ng-disabled="progreso"
+                                   ng-click="Agregar()">
+                            Aceptar
+                        </md-button>
+                    </md-dialog-actions>
+                </form>
+            </md-dialog>
+        </script>
+
+        <script type="text/ng-template" id="ModalIngresar">
+            <md-dialog flex="30">
+                <form name="requerido">
+
+
+                    <md-input-container class="md-block" flex>
+                        <label>Usuario</label>
+                        <input name="Usuario"
+                               ng-model="usuario.Usuario"
+                               required>
+                        <div ng-messages="requerido.Nombre.$error">
+                            <div ng-message="required">El campo es requerido.</div>
+                        </div>
+                    </md-input-container>
+
+                    <md-input-container class="md-block" flex>
+                        <label>Password</label>
+                        <input name="Nombre"
+                               type="password"
+                               ng-model="usuario.pass"
+                               required>
+                        <div ng-messages="requerido.Nombre.$error">
+                            <div ng-message="required">El campo es requerido.</div>
+                        </div>
+                    </md-input-container>
+
+
+                    <md-dialog-actions layout="row">
+                        <span flex></span>
+                        <md-button class="buttonborder buttonborderwarn"
+                                   ng-click="Cancelar()">
+                            Cancelar
+                        </md-button>
+                        <md-button class="buttonborder "
+                                   type="sumbit"
+                                   ng-disabled="progreso"
+                                   ng-click="Buscar()">
+                            Aceptar
+                        </md-button>
+                    </md-dialog-actions>
+                </form>
+            </md-dialog>
+        </script>
+    </div>
+</body>
+
+</html>

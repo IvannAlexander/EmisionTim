@@ -10,14 +10,3 @@ D:\Alexander\Emision\Contract\bin\Debug\AutoMapper.pdb
 D:\Alexander\Emision\Contract\bin\Debug\AutoMapper.xml
 D:\Alexander\Emision\Contract\bin\Debug\System.ValueTuple.xml
 D:\Alexander\Emision\Contract\obj\Debug\Contract.csproj.CopyComplete
-D:\work\Emision\Contract\bin\Debug\Contract.dll
-D:\work\Emision\Contract\bin\Debug\Contract.pdb
-D:\work\Emision\Contract\bin\Debug\AutoMapper.dll
-D:\work\Emision\Contract\bin\Debug\System.ValueTuple.dll
-D:\work\Emision\Contract\bin\Debug\AutoMapper.pdb
-D:\work\Emision\Contract\bin\Debug\AutoMapper.xml
-D:\work\Emision\Contract\bin\Debug\System.ValueTuple.xml
-D:\work\Emision\Contract\obj\Debug\Contract.csproj.CoreCompileInputs.cache
-D:\work\Emision\Contract\obj\Debug\Contract.csproj.CopyComplete
-D:\work\Emision\Contract\obj\Debug\Contract.dll
-D:\work\Emision\Contract\obj\Debug\Contract.pdb
