@@ -432,5 +432,98 @@ namespace TestForm
             File.WriteAllText(@"D:\Eliminar\xmlApiPrueba.xml", answer);
             MessageBox.Show("Termino");
         }
+
+        private void btnFactura_Click(object sender, EventArgs e)
+        {
+            Comprobante comprobante = new Comprobante
+            {
+                Version = "3.3",
+                Serie = "A",
+                Folio = "01",
+                Fecha = DateTime.Now.ToString("s"),
+                FormaPago = "99",
+                MetodoPago = "PUE",
+                CondicionesDePago = "CONTADO",
+                SubTotal = 1,
+                Moneda = "MXN",
+                Total = 1.16M,
+                TipoDeComprobante = "I",
+                LugarExpedicion = "01001",
+                Emisor = new ComprobanteEmisor
+                {
+                    Rfc = "EKU9003173C9",
+                    Nombre = "Certificado de pruebas",
+                    RegimenFiscal = "601",
+                },
+                Receptor = new ComprobanteReceptor
+                {
+                    Rfc = "PJM391026PK5",
+                    Nombre = "Receptor de pruebas",
+                    UsoCFDI = "G02"
+                },
+                Conceptos = new List<ComprobanteConcepto>
+                {
+                    new ComprobanteConcepto
+                    {
+                        Cantidad=1,
+                        ClaveProdServ="01010101",
+                        ClaveUnidad ="ACT",
+                        Unidad="NO IDENTIFICADO",
+                        Descripcion ="COMISION POR EMISION DE EDO DE CUENTA",
+                        ValorUnitario = 1.00M,
+                        Importe=1.00M,
+                        Impuestos= new ComprobanteConceptoImpuestos
+                        {
+                            Traslados= new List<ComprobanteConceptoImpuestosTraslado>
+                            {
+                                new ComprobanteConceptoImpuestosTraslado
+                                {
+                                    Base =1.00M,
+                                    Impuesto="002",
+                                    TipoFactor ="Tasa",
+                                    TasaOCuotaSpecified=true,
+                                    TasaOCuota=0.160000M,
+                                    ImporteSpecified=true,
+                                    Importe=0.16M
+                                }
+                            }
+                        }
+                    }
+                },
+                Impuestos = new ComprobanteImpuestos
+                {
+                    TotalImpuestosTrasladados = 0.16M,
+                    TotalImpuestosTrasladadosSpecified = true,
+                    Traslados = new List<ComprobanteImpuestosTraslado>
+                    {
+                        new ComprobanteImpuestosTraslado
+                        {
+                            Impuesto="002",
+                            TipoFactor ="Tasa",
+                            TasaOCuota = 0.160000M,
+                            Importe = 0.16M
+                        }
+                    }
+                }
+            };
+
+            var urlBase = "https://localhost:44368/Api/Billing/CreateCfdiPdf";
+
+            var header = new Dictionary<string, string>()
+                {
+                    { "Authorization","Basic VmFsZGV6QjpBQUJCY2MyMisr" },// + ConfigurationManager.AppSettings["Auth"] } ,
+                    { "Content-Type","application/json" }
+                };
+
+            var serializacion = new SerializationOperation();
+            var xml = serializacion.Serializar<Comprobante>(comprobante);
+            BillingDto billingDto = new BillingDto { XmlRequest = xml.ToString(), Usr = "Juan", Pwd = "AABBcc22++", RfcCompany = "EKU9003173C9" };
+            var json = JsonConvert.SerializeObject(billingDto);
+
+            var data = RestClient.SendToService(urlBase, json, header, Encoding.UTF8);
+            var answer = JsonConvert.DeserializeObject<byte[]>(data);
+            File.WriteAllBytes(@"D:\Eliminar\pdfApiPrueba.pdf", answer);
+            MessageBox.Show("Termino");
+        }
     }
 }

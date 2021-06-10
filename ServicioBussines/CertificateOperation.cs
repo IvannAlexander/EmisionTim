@@ -167,9 +167,8 @@ namespace Bussines
                     var operacionesSerializacion = new EmisionOperation();
                     var xmlTim = XDocument.Parse(timbre);
                     var timbreFiscal = operacionesSerializacion.Deserializar<TimbreFiscalDigital>(xmlTim.ToString());
-
                     var fecha = string.Format("{0:yyyy-MM-dd}", Convert.ToDateTime(cfdi.Fecha));
-                    var path = Path.Combine(ConfigurationManager.AppSettings["Invoice"], cfdi.Emisor.Rfc, fecha);
+                    var path = Path.Combine(ConfigurationManager.AppSettings["Invoice"], fecha, cfdi.Emisor.Rfc);
                     if (!Directory.Exists(path))
                     {
                         Directory.CreateDirectory(path);
@@ -248,21 +247,29 @@ namespace Bussines
         }
 
 
-        //public int CertificadosPorRfc(string rfc)
-        //{
-        //    try
-        //    {
-        //        using (var db = new Entities())
-        //        {
-        //            return db.Sys_Certificado.Where(p => p.Sys_Rfc == rfc).Count();
-        //        }
-        //    }
-        //    catch (Exception ee)
-        //    {
-        //        Logger.Error(ee);
-        //        throw new Exception("Error al obtener los certificados.");
-        //    }
-        //}
-
+        public byte[] CreateCfdiPdf(string xml, long idCompany)
+        {
+            try
+            {
+                var cfdi = CreateCfdi(xml, idCompany);
+                if (!cfdi.StartsWith("Error"))
+                {
+                    PdfOperation pdfOperation = new PdfOperation();
+                    var pdf = pdfOperation.GenerarPdfFactura(cfdi);
+                    return pdf;
+                }
+                return null;
+            }
+            catch (Exception ee)
+            {
+                Logger.Error(ee);
+                Logger.Error(ee.StackTrace);
+                if (ee.InnerException != null)
+                {
+                    Logger.Error(ee.InnerException.Message);
+                }
+                return null;
+            }
+        }
     }
 }

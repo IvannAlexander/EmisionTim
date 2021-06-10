@@ -99,7 +99,7 @@ namespace TestConsola
                 {
                     item.Impuestos.Retenciones = null;
                 }
-                var cfdi = operacionesEmision.GeneraCfdi33(comprobante, noCertificado, certificado, key, passCert);
+                //var cfdi = operacionesEmision.GeneraCfdi33(comprobante, noCertificado, certificado, key, passCert);
 
              
 

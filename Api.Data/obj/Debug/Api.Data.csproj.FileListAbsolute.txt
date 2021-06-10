@@ -571,3 +571,6 @@ D:\work\Emision\Api.Data\obj\Debug\Api.Data.csproj.CoreCompileInputs.cache
 D:\work\Emision\Api.Data\obj\Debug\Api.Data.csproj.CopyComplete
 D:\work\Emision\Api.Data\obj\Debug\Api.Data.dll
 D:\work\Emision\Api.Data\obj\Debug\Api.Data.pdb
+D:\Alexander\Emision\Api.Data\bin\Web.config
+D:\Alexander\Emision\Api.Data\bin\Web.Debug.config
+D:\Alexander\Emision\Api.Data\bin\Web.Release.config
