@@ -38,5 +38,20 @@ namespace Api.Data.Controllers
             var answer = certificateOperation.CreateCfdi(cfdi.XmlRequest, user.Sys_IdCompany);
             return Json(answer);
         }
+
+        [System.Web.Http.Route("Api/Billing/CreateCfdiPdf")]
+        [System.Web.Http.HttpPost]
+        public IHttpActionResult CreateCfdiPdf([System.Web.Http.FromBody] BillingDto cfdi)
+        {
+            var userOperation = new UserOperation();
+            var user = userOperation.ValidateUser(cfdi.Usr, cfdi.Pwd, cfdi.RfcCompany);
+            if (user == null)
+            {
+                return Json("Usuario invalido");
+            }
+            var certificateOperation = new CertificateOperation();
+            var answer = certificateOperation.CreateCfdiPdf(cfdi.XmlRequest, user.Sys_IdCompany);
+            return Json(answer);
+        }
     }
 }

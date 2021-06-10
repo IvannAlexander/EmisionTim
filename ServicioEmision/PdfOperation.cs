@@ -75,7 +75,19 @@ namespace EmisionService
                 var ultimosCaracteres = comprobante.Sello.Substring(comprobante.Sello.Length - 8);
                 var qr = "https://verificacfdi.facturaelectronica.sat.gob.mx/default.aspx?&id=" + timbreFiscal.UUID + "&re=" + comprobante.Emisor.Rfc + "&rr=" + comprobante.Receptor.Rfc + "&tt=" + comprobante.Total + "&fe=" + ultimosCaracteres;
                 comprobante.Qr = Convert.ToBase64String(GetQrCode(qr));
-                return GenerarPdfConObjeto(comprobante, timbreFiscal);//, estadoDeCuentaCombustible);
+                var pdf = GenerarPdfConObjeto(comprobante, timbreFiscal);//, estadoDeCuentaCombustible);
+
+                var fecha = string.Format("{0:yyyy-MM-dd}", Convert.ToDateTime(comprobante.Fecha));
+                var path = Path.Combine(ConfigurationManager.AppSettings["Invoice"], fecha, comprobante.Emisor.Rfc);
+                if (!Directory.Exists(path))
+                {
+                    Directory.CreateDirectory(path);
+                }
+
+                var fileName = Path.Combine(path, $"{comprobante.Emisor.Rfc}_{comprobante.Receptor.Rfc}_{timbreFiscal.UUID}.pdf");
+                File.WriteAllBytes(fileName, pdf);
+
+                return pdf;
             }
             catch (Exception ee)
             {

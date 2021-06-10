@@ -40,6 +40,7 @@
             this.btnObtenerPerfiles = new System.Windows.Forms.Button();
             this.btnCfdi = new System.Windows.Forms.Button();
             this.btnPdf = new System.Windows.Forms.Button();
+            this.btnFactura = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnAgregarUsuario
@@ -66,7 +67,7 @@
             // 
             // btnObtenEmpresa
             // 
-            this.btnObtenEmpresa.Location = new System.Drawing.Point(198, 348);
+            this.btnObtenEmpresa.Location = new System.Drawing.Point(198, 386);
             this.btnObtenEmpresa.Margin = new System.Windows.Forms.Padding(4);
             this.btnObtenEmpresa.Name = "btnObtenEmpresa";
             this.btnObtenEmpresa.Size = new System.Drawing.Size(159, 28);
@@ -99,7 +100,7 @@
             // 
             // btnConvertir
             // 
-            this.btnConvertir.Location = new System.Drawing.Point(16, 348);
+            this.btnConvertir.Location = new System.Drawing.Point(16, 386);
             this.btnConvertir.Margin = new System.Windows.Forms.Padding(4);
             this.btnConvertir.Name = "btnConvertir";
             this.btnConvertir.Size = new System.Drawing.Size(159, 28);
@@ -174,11 +175,23 @@
             this.btnPdf.UseVisualStyleBackColor = true;
             this.btnPdf.Click += new System.EventHandler(this.btnPdf_Click);
             // 
+            // btnFactura
+            // 
+            this.btnFactura.Location = new System.Drawing.Point(16, 354);
+            this.btnFactura.Margin = new System.Windows.Forms.Padding(4);
+            this.btnFactura.Name = "btnFactura";
+            this.btnFactura.Size = new System.Drawing.Size(159, 28);
+            this.btnFactura.TabIndex = 12;
+            this.btnFactura.Text = "10.- Crear Factura";
+            this.btnFactura.UseVisualStyleBackColor = true;
+            this.btnFactura.Click += new System.EventHandler(this.btnFactura_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(379, 448);
+            this.Controls.Add(this.btnFactura);
             this.Controls.Add(this.btnPdf);
             this.Controls.Add(this.btnCfdi);
             this.Controls.Add(this.btnObtenerPerfiles);
@@ -212,6 +225,7 @@
         private System.Windows.Forms.Button btnObtenerPerfiles;
         private System.Windows.Forms.Button btnCfdi;
         private System.Windows.Forms.Button btnPdf;
+        private System.Windows.Forms.Button btnFactura;
     }
 }
 
