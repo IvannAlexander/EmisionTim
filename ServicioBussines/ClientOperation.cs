@@ -1,4 +1,6 @@
-﻿using log4net;
+﻿using Contract;
+using log4net;
+using Model;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,106 +11,101 @@ namespace Bussines
 {
     public class ClientOperation
     {
-        //protected static ILog Logger = LogManager.GetLogger(typeof(MenuOperation));
+        protected static ILog Logger = LogManager.GetLogger(typeof(ClientOperation));
 
-        //public List<Sys_Cliente> ObtenerClientePorRfcNombre(string rfc, string razonSocial, string rfcEmpresa)
-        //{
-        //    try
-        //    {
-        //        using (var db = new Entities())
-        //        {
-        //            var listaCliente = db.Sys_Cliente.Where(p => p.Sys_Empresa_Rfc == rfcEmpresa && (p.Sys_RFC.Contains(rfc) || (p.Sys_Razon_Social.Contains(razonSocial)))).ToList();
-        //            return listaCliente;
-        //        }
-        //    }
-        //    catch (Exception ee)
-        //    {
-        //        Logger.Error(ee);
-        //        throw new Exception("No se recupero la información del cliente correctamente.");
-        //    }
-        //}
+        public List<ClientDto> GetClientByRfcOrName(long idCompany, string rfcCompany, string name, string rfcFind)
+        {
+            try
+            {
+                using (var context = new Db_EmisionEntities())
+                {
+                    var lst = context.Sys_Client.Where(p => p.Sys_IdCompany == idCompany && p.Sys_RfcCompany == rfcCompany && (p.Sys_Rfc.Contains(rfcFind) || (p.Sys_Tradename.Contains(name)))).ToList();
+                    var clients = new List<ClientDto>();
+                    lst.ForEach(p => clients.Add(Common.Map<Sys_Client, ClientDto>(p)));
+                    return clients;
+                }
+            }
+            catch (Exception ee)
+            {
+                Logger.Error(ee);
+                throw new Exception("No se recupero la información del cliente por RFC o Razón Social.");
+            }
+        }
 
-        //public List<Sys_Cliente> ObtenerClientePorRfcEmpresa(string rfcEmpresa)
-        //{
-        //    try
-        //    {
-        //        using (var db = new Entities())
-        //        {
-        //            var listaCliente = db.Sys_Cliente.Where(p => p.Sys_Empresa_Rfc == rfcEmpresa).ToList();
-        //            return listaCliente;
-        //        }
-        //    }
-        //    catch (Exception ee)
-        //    {
-        //        Logger.Error(ee);
-        //        throw new Exception("No se recupero la información del cliente correctamente.");
-        //    }
-        //}
+        public List<ClientDto> GetClientsByCompany(long idCompany, string rfcCompany)
+        {
+            try
+            {
+                using (var context = new Db_EmisionEntities())
+                {
+                    var lst = context.Sys_Client.Where(p => p.Sys_IdCompany == idCompany && p.Sys_RfcCompany == rfcCompany).ToList();
+                    var clients = new List<ClientDto>();
+                    lst.ForEach(p => clients.Add(Common.Map<Sys_Client, ClientDto>(p)));
+                    return clients;
+                }
+            }
+            catch (Exception ee)
+            {
+                Logger.Error(ee);
+                throw new Exception($"No se recupero la información del clientes para {rfcCompany}.");
+            }
+        }
 
-        //public int ObtenerTotalClientePorRfcEmpresa(string rfcEmpresa)
-        //{
-        //    try
-        //    {
-        //        using (var db = new Entities())
-        //        {
-        //            return db.Sys_Cliente.Where(p => p.Sys_Empresa_Rfc == rfcEmpresa).Count();
-        //        }
-        //    }
-        //    catch (Exception ee)
-        //    {
-        //        Logger.Error(ee);
-        //        throw new Exception("No se recupero la información del cliente correctamente.");
-        //    }
-        //}
+        public int GetTotalClientByCompany(long idCompany, string rfcCompany)
+        {
+            try
+            {
+                using (var context = new Db_EmisionEntities())
+                {
+                    return context.Sys_Client.Where(p => p.Sys_IdCompany == idCompany && p.Sys_RfcCompany == rfcCompany).Count();
+                }
+            }
+            catch (Exception ee)
+            {
+                Logger.Error(ee);
+                throw new Exception("No se recupero la información del cliente correctamente.");
+            }
+        }
 
-        //public void GuardarClienteNuevo(Sys_Cliente cliente)
-        //{
-        //    try
-        //    {
-        //        using (var db = new Entities())
-        //        {
-        //            db.Sys_Cliente.Add(cliente);
-        //            db.SaveChanges();
-        //        }
-        //    }
-        //    catch (Exception ee)
-        //    {
-        //        Logger.Error(ee);
-        //        throw new Exception("Error al guardar nuevo cliente.");
-        //    }
-        //}
 
-        //public void GuardarModificacionesDelCliente(Sys_Cliente cliente)
-        //{
-        //    try
-        //    {
-        //        using (var db = new Entities())
-        //        {
-        //            var clienteActual = db.Sys_Cliente.FirstOrDefault(p => p.Sys_Empresa_Rfc == cliente.Sys_Empresa_Rfc && p.Sys_RFC == cliente.Sys_RFC);
+        public string SaveClient(ClientDto client)
+        {
+            var answer = string.Empty;
+            try
+            {
+                using (var context = new Db_EmisionEntities())
+                {
+                    var currentClient = context.Sys_Client.FirstOrDefault(p => p.Sys_IdCompany == client.Sys_IdCompany && p.Sys_RfcCompany == client.Sys_RfcCompany && p.Sys_Rfc == client.Sys_Rfc);
 
-        //            if (clienteActual != null)
-        //            {
-        //                clienteActual.Sys_Razon_Social = cliente.Sys_Razon_Social;
-        //                clienteActual.Sys_Nombre_Comercial = cliente.Sys_Nombre_Comercial;
-        //                clienteActual.Sys_Correo = cliente.Sys_Correo;
-        //                clienteActual.Sys_Calle = cliente.Sys_Calle;
-        //                clienteActual.Sys_CP = cliente.Sys_CP;
-        //                clienteActual.Sys_Municipio = cliente.Sys_Municipio;
-        //                clienteActual.Sys_Estado = cliente.Sys_Estado;
-        //                clienteActual.Sys_Colonia = cliente.Sys_Colonia;
-        //                clienteActual.Sys_Pais = cliente.Sys_Pais;
-        //                clienteActual.Sys_Fecha_Modificacion = DateTime.Now;
-        //                clienteActual.Sys_Usuario_Id = cliente.Sys_Usuario_Id;
-        //                db.SaveChanges();
-        //            }
-        //        }
-        //    }
-        //    catch (Exception ee)
-        //    {
-        //        Logger.Error(ee);
-        //        throw new Exception("Error al guardar nuevo cliente.");
-        //    }
-        //}
+                    if (currentClient != null)
+                    {
+                        currentClient.Sys_BusinessName = client.Sys_BusinessName;
+                        currentClient.Sys_Tradename = client.Sys_Tradename;
+                        currentClient.Sys_Email = client.Sys_Email;
+                        currentClient.Sys_Street = client.Sys_Street;
+                        currentClient.Sys_ZipCode = client.Sys_ZipCode;
+                        currentClient.Sys_Municipality = client.Sys_Municipality;
+                        currentClient.Sys_State = client.Sys_State;
+                        currentClient.Sys_Cologne = client.Sys_Cologne;
+                        currentClient.Sys_Country = client.Sys_Country;
+                        currentClient.Sys_ModificationDate = DateTime.Now;
+                        currentClient.Sys_UserId = client.Sys_UserId;
+                    }
+                    else
+                    {
+                        var newClient = Common.Map<ClientDto, Sys_Client>(client);
+                        context.Sys_Client.Add(newClient);
+                    }
+                    context.SaveChanges();
+                }
+            }
+            catch (Exception ee)
+            {
+                Logger.Error(ee);
+                answer = "Error al guardar cliente.";
+            }
+            return answer;
+        }
 
     }
 }

@@ -67,12 +67,12 @@
             // 
             // btnObtenEmpresa
             // 
-            this.btnObtenEmpresa.Location = new System.Drawing.Point(198, 386);
+            this.btnObtenEmpresa.Location = new System.Drawing.Point(312, 13);
             this.btnObtenEmpresa.Margin = new System.Windows.Forms.Padding(4);
             this.btnObtenEmpresa.Name = "btnObtenEmpresa";
             this.btnObtenEmpresa.Size = new System.Drawing.Size(159, 28);
             this.btnObtenEmpresa.TabIndex = 2;
-            this.btnObtenEmpresa.Text = "Obtener Empresa";
+            this.btnObtenEmpresa.Text = "12.- Modificar Cliente";
             this.btnObtenEmpresa.UseVisualStyleBackColor = true;
             this.btnObtenEmpresa.Click += new System.EventHandler(this.btnObtenEmpresa_Click);
             // 
@@ -105,7 +105,7 @@
             this.btnConvertir.Name = "btnConvertir";
             this.btnConvertir.Size = new System.Drawing.Size(159, 28);
             this.btnConvertir.TabIndex = 5;
-            this.btnConvertir.Text = "Convertir TXT";
+            this.btnConvertir.Text = "11. - Guardar Cliente";
             this.btnConvertir.UseVisualStyleBackColor = true;
             this.btnConvertir.Click += new System.EventHandler(this.btnConvertir_Click);
             // 
@@ -190,7 +190,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(379, 448);
+            this.ClientSize = new System.Drawing.Size(649, 448);
             this.Controls.Add(this.btnFactura);
             this.Controls.Add(this.btnPdf);
             this.Controls.Add(this.btnCfdi);

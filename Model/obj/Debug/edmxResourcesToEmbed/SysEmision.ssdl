@@ -20,7 +20,7 @@
     <Key>
       <PropertyRef Name="Sys_Id" />
     </Key>
-    <Property Name="Sys_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Sys_Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Sys_IdCompany" Type="bigint" Nullable="false" />
     <Property Name="Sys_Rfc" Type="varchar" MaxLength="13" Nullable="false" />
     <Property Name="Sys_BusinessName" Type="varchar" MaxLength="255" />
@@ -34,7 +34,7 @@
     <Property Name="Sys_Country" Type="varchar" MaxLength="50" />
     <Property Name="Sys_RegistrationDate" Type="datetime" Nullable="false" />
     <Property Name="Sys_ModificationDate" Type="datetime" Nullable="false" />
-    <Property Name="Sys_UserId" Type="int" Nullable="false" />
+    <Property Name="Sys_UserId" Type="bigint" Nullable="false" />
     <Property Name="Sys_RfcCompany" Type="varchar" MaxLength="13" Nullable="false" />
   </EntityType>
   <EntityType Name="Sys_Company">

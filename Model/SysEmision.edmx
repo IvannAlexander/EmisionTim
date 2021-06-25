@@ -25,7 +25,7 @@
           <Key>
             <PropertyRef Name="Sys_Id" />
           </Key>
-          <Property Name="Sys_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Sys_Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Sys_IdCompany" Type="bigint" Nullable="false" />
           <Property Name="Sys_Rfc" Type="varchar" MaxLength="13" Nullable="false" />
           <Property Name="Sys_BusinessName" Type="varchar" MaxLength="255" />
@@ -39,7 +39,7 @@
           <Property Name="Sys_Country" Type="varchar" MaxLength="50" />
           <Property Name="Sys_RegistrationDate" Type="datetime" Nullable="false" />
           <Property Name="Sys_ModificationDate" Type="datetime" Nullable="false" />
-          <Property Name="Sys_UserId" Type="int" Nullable="false" />
+          <Property Name="Sys_UserId" Type="bigint" Nullable="false" />
           <Property Name="Sys_RfcCompany" Type="varchar" MaxLength="13" Nullable="false" />
         </EntityType>
         <EntityType Name="Sys_Company">
@@ -180,7 +180,6 @@
       <Schema Namespace="Db_EmisionModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityContainer Name="Db_EmisionEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Sys_Certificate" EntityType="Db_EmisionModel.Sys_Certificate" />
-          <EntitySet Name="Sys_Client" EntityType="Db_EmisionModel.Sys_Client" />
           <EntitySet Name="Sys_CompanyAddress" EntityType="Db_EmisionModel.Sys_CompanyAddress" />
           <EntitySet Name="Sys_Complements" EntityType="Db_EmisionModel.Sys_Complements" />
           <EntitySet Name="Sys_Menu" EntityType="Db_EmisionModel.Sys_Menu" />
@@ -189,6 +188,7 @@
           <EntitySet Name="Sys_User" EntityType="Db_EmisionModel.Sys_User" />
           <EntitySet Name="Sys_Company" EntityType="Db_EmisionModel.Sys_Company" />
           <EntitySet Name="Sys_Invoice" EntityType="Db_EmisionModel.Sys_Invoice" />
+          <EntitySet Name="Sys_Client" EntityType="Db_EmisionModel.Sys_Client" />
         </EntityContainer>
         <EntityType Name="Sys_Certificate">
           <Key>
@@ -205,27 +205,6 @@
           <Property Name="Sys_RegistrationDate" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="Sys_RegistrationDateCert" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="Sys_ExpirationDateCert" Type="DateTime" Nullable="false" Precision="3" />
-        </EntityType>
-        <EntityType Name="Sys_Client">
-          <Key>
-            <PropertyRef Name="Sys_Id" />
-          </Key>
-          <Property Name="Sys_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Sys_IdCompany" Type="Int64" Nullable="false" />
-          <Property Name="Sys_Rfc" Type="String" Nullable="false" MaxLength="13" FixedLength="false" Unicode="false" />
-          <Property Name="Sys_BusinessName" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
-          <Property Name="Sys_Tradename" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
-          <Property Name="Sys_Email" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
-          <Property Name="Sys_Street" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
-          <Property Name="Sys_ZipCode" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
-          <Property Name="Sys_Municipality" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
-          <Property Name="Sys_State" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
-          <Property Name="Sys_Cologne" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
-          <Property Name="Sys_Country" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="Sys_RegistrationDate" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="Sys_ModificationDate" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="Sys_UserId" Type="Int32" Nullable="false" />
-          <Property Name="Sys_RfcCompany" Type="String" Nullable="false" MaxLength="13" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="Sys_CompanyAddress">
           <Key>
@@ -347,6 +326,27 @@
           <Property Name="Sys_TipoCambio" Type="Decimal" Precision="18" Scale="2" />
           <Property Name="Sys_Descuento" Type="Decimal" Precision="18" Scale="2" />
         </EntityType>
+        <EntityType Name="Sys_Client">
+          <Key>
+            <PropertyRef Name="Sys_Id" />
+          </Key>
+          <Property Name="Sys_Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Sys_IdCompany" Type="Int64" Nullable="false" />
+          <Property Name="Sys_Rfc" Type="String" Nullable="false" MaxLength="13" FixedLength="false" Unicode="false" />
+          <Property Name="Sys_BusinessName" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Sys_Tradename" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Sys_Email" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Sys_Street" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Sys_ZipCode" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="Sys_Municipality" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Sys_State" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Sys_Cologne" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Sys_Country" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Sys_RegistrationDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Sys_ModificationDate" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Sys_UserId" Type="Int64" Nullable="false" />
+          <Property Name="Sys_RfcCompany" Type="String" Nullable="false" MaxLength="13" FixedLength="false" Unicode="false" />
+        </EntityType>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -364,28 +364,6 @@
                 <ScalarProperty Name="Sys_Certificate1" ColumnName="Sys_Certificate1" />
                 <ScalarProperty Name="Sys_Name" ColumnName="Sys_Name" />
                 <ScalarProperty Name="Sys_Number" ColumnName="Sys_Number" />
-                <ScalarProperty Name="Sys_Rfc" ColumnName="Sys_Rfc" />
-                <ScalarProperty Name="Sys_IdCompany" ColumnName="Sys_IdCompany" />
-                <ScalarProperty Name="Sys_Id" ColumnName="Sys_Id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Sys_Client">
-            <EntityTypeMapping TypeName="Db_EmisionModel.Sys_Client">
-              <MappingFragment StoreEntitySet="Sys_Client">
-                <ScalarProperty Name="Sys_RfcCompany" ColumnName="Sys_RfcCompany" />
-                <ScalarProperty Name="Sys_UserId" ColumnName="Sys_UserId" />
-                <ScalarProperty Name="Sys_ModificationDate" ColumnName="Sys_ModificationDate" />
-                <ScalarProperty Name="Sys_RegistrationDate" ColumnName="Sys_RegistrationDate" />
-                <ScalarProperty Name="Sys_Country" ColumnName="Sys_Country" />
-                <ScalarProperty Name="Sys_Cologne" ColumnName="Sys_Cologne" />
-                <ScalarProperty Name="Sys_State" ColumnName="Sys_State" />
-                <ScalarProperty Name="Sys_Municipality" ColumnName="Sys_Municipality" />
-                <ScalarProperty Name="Sys_ZipCode" ColumnName="Sys_ZipCode" />
-                <ScalarProperty Name="Sys_Street" ColumnName="Sys_Street" />
-                <ScalarProperty Name="Sys_Email" ColumnName="Sys_Email" />
-                <ScalarProperty Name="Sys_Tradename" ColumnName="Sys_Tradename" />
-                <ScalarProperty Name="Sys_BusinessName" ColumnName="Sys_BusinessName" />
                 <ScalarProperty Name="Sys_Rfc" ColumnName="Sys_Rfc" />
                 <ScalarProperty Name="Sys_IdCompany" ColumnName="Sys_IdCompany" />
                 <ScalarProperty Name="Sys_Id" ColumnName="Sys_Id" />
@@ -515,6 +493,28 @@
                 <ScalarProperty Name="Sys_NombreEmisor" ColumnName="Sys_NombreEmisor" />
                 <ScalarProperty Name="Sys_RfcEmisor" ColumnName="Sys_RfcEmisor" />
                 <ScalarProperty Name="Sys_FechaRegistro" ColumnName="Sys_FechaRegistro" />
+                <ScalarProperty Name="Sys_IdCompany" ColumnName="Sys_IdCompany" />
+                <ScalarProperty Name="Sys_Id" ColumnName="Sys_Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Sys_Client">
+            <EntityTypeMapping TypeName="Db_EmisionModel.Sys_Client">
+              <MappingFragment StoreEntitySet="Sys_Client">
+                <ScalarProperty Name="Sys_RfcCompany" ColumnName="Sys_RfcCompany" />
+                <ScalarProperty Name="Sys_UserId" ColumnName="Sys_UserId" />
+                <ScalarProperty Name="Sys_ModificationDate" ColumnName="Sys_ModificationDate" />
+                <ScalarProperty Name="Sys_RegistrationDate" ColumnName="Sys_RegistrationDate" />
+                <ScalarProperty Name="Sys_Country" ColumnName="Sys_Country" />
+                <ScalarProperty Name="Sys_Cologne" ColumnName="Sys_Cologne" />
+                <ScalarProperty Name="Sys_State" ColumnName="Sys_State" />
+                <ScalarProperty Name="Sys_Municipality" ColumnName="Sys_Municipality" />
+                <ScalarProperty Name="Sys_ZipCode" ColumnName="Sys_ZipCode" />
+                <ScalarProperty Name="Sys_Street" ColumnName="Sys_Street" />
+                <ScalarProperty Name="Sys_Email" ColumnName="Sys_Email" />
+                <ScalarProperty Name="Sys_Tradename" ColumnName="Sys_Tradename" />
+                <ScalarProperty Name="Sys_BusinessName" ColumnName="Sys_BusinessName" />
+                <ScalarProperty Name="Sys_Rfc" ColumnName="Sys_Rfc" />
                 <ScalarProperty Name="Sys_IdCompany" ColumnName="Sys_IdCompany" />
                 <ScalarProperty Name="Sys_Id" ColumnName="Sys_Id" />
               </MappingFragment>

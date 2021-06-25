@@ -18,28 +18,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="Sys_Client">
-      <EntityTypeMapping TypeName="Db_EmisionModel.Sys_Client">
-        <MappingFragment StoreEntitySet="Sys_Client">
-          <ScalarProperty Name="Sys_RfcCompany" ColumnName="Sys_RfcCompany" />
-          <ScalarProperty Name="Sys_UserId" ColumnName="Sys_UserId" />
-          <ScalarProperty Name="Sys_ModificationDate" ColumnName="Sys_ModificationDate" />
-          <ScalarProperty Name="Sys_RegistrationDate" ColumnName="Sys_RegistrationDate" />
-          <ScalarProperty Name="Sys_Country" ColumnName="Sys_Country" />
-          <ScalarProperty Name="Sys_Cologne" ColumnName="Sys_Cologne" />
-          <ScalarProperty Name="Sys_State" ColumnName="Sys_State" />
-          <ScalarProperty Name="Sys_Municipality" ColumnName="Sys_Municipality" />
-          <ScalarProperty Name="Sys_ZipCode" ColumnName="Sys_ZipCode" />
-          <ScalarProperty Name="Sys_Street" ColumnName="Sys_Street" />
-          <ScalarProperty Name="Sys_Email" ColumnName="Sys_Email" />
-          <ScalarProperty Name="Sys_Tradename" ColumnName="Sys_Tradename" />
-          <ScalarProperty Name="Sys_BusinessName" ColumnName="Sys_BusinessName" />
-          <ScalarProperty Name="Sys_Rfc" ColumnName="Sys_Rfc" />
-          <ScalarProperty Name="Sys_IdCompany" ColumnName="Sys_IdCompany" />
-          <ScalarProperty Name="Sys_Id" ColumnName="Sys_Id" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="Sys_CompanyAddress">
       <EntityTypeMapping TypeName="Db_EmisionModel.Sys_CompanyAddress">
         <MappingFragment StoreEntitySet="Sys_CompanyAddress">
@@ -163,6 +141,28 @@
           <ScalarProperty Name="Sys_NombreEmisor" ColumnName="Sys_NombreEmisor" />
           <ScalarProperty Name="Sys_RfcEmisor" ColumnName="Sys_RfcEmisor" />
           <ScalarProperty Name="Sys_FechaRegistro" ColumnName="Sys_FechaRegistro" />
+          <ScalarProperty Name="Sys_IdCompany" ColumnName="Sys_IdCompany" />
+          <ScalarProperty Name="Sys_Id" ColumnName="Sys_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sys_Client">
+      <EntityTypeMapping TypeName="Db_EmisionModel.Sys_Client">
+        <MappingFragment StoreEntitySet="Sys_Client">
+          <ScalarProperty Name="Sys_RfcCompany" ColumnName="Sys_RfcCompany" />
+          <ScalarProperty Name="Sys_UserId" ColumnName="Sys_UserId" />
+          <ScalarProperty Name="Sys_ModificationDate" ColumnName="Sys_ModificationDate" />
+          <ScalarProperty Name="Sys_RegistrationDate" ColumnName="Sys_RegistrationDate" />
+          <ScalarProperty Name="Sys_Country" ColumnName="Sys_Country" />
+          <ScalarProperty Name="Sys_Cologne" ColumnName="Sys_Cologne" />
+          <ScalarProperty Name="Sys_State" ColumnName="Sys_State" />
+          <ScalarProperty Name="Sys_Municipality" ColumnName="Sys_Municipality" />
+          <ScalarProperty Name="Sys_ZipCode" ColumnName="Sys_ZipCode" />
+          <ScalarProperty Name="Sys_Street" ColumnName="Sys_Street" />
+          <ScalarProperty Name="Sys_Email" ColumnName="Sys_Email" />
+          <ScalarProperty Name="Sys_Tradename" ColumnName="Sys_Tradename" />
+          <ScalarProperty Name="Sys_BusinessName" ColumnName="Sys_BusinessName" />
+          <ScalarProperty Name="Sys_Rfc" ColumnName="Sys_Rfc" />
           <ScalarProperty Name="Sys_IdCompany" ColumnName="Sys_IdCompany" />
           <ScalarProperty Name="Sys_Id" ColumnName="Sys_Id" />
         </MappingFragment>

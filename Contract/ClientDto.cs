@@ -8,7 +8,8 @@ namespace Contract
 {
     public class ClientDto
     {
-        public int Sys_Id { get; set; }
+        public long Sys_Id { get; set; }
+        public long Sys_IdCompany { get; set; }
         public string Sys_Rfc { get; set; }
         public string Sys_BusinessName { get; set; }
         public string Sys_Tradename { get; set; }
@@ -21,7 +22,9 @@ namespace Contract
         public string Sys_Country { get; set; }
         public System.DateTime Sys_RegistrationDate { get; set; }
         public System.DateTime Sys_ModificationDate { get; set; }
-        public int Sys_UserId { get; set; }
+        public long Sys_UserId { get; set; }
         public string Sys_RfcCompany { get; set; }
+        public string User { get; set; }
+        public string Pwd { get; set; }
     }
 }

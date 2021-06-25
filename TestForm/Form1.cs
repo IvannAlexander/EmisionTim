@@ -129,13 +129,38 @@ namespace TestForm
         {
             try
             {
+                ClientDto client = new ClientDto
+                {
+                    Sys_Id = 1,
+                    Sys_Rfc = "PJM391026PK5",//El RFC del cliente
+                    Sys_RegistrationDate = DateTime.Now,
+                    Sys_ZipCode = "51000",
+                    Sys_BusinessName = "Nombre comercial1",
+                    Sys_Cologne = "Colonia1",
+                    Sys_Country = "México1",
+                    Sys_Email = "a@a1.com",
+                    Sys_ModificationDate = DateTime.Now,
+                    Sys_Municipality = "Municipio1",
+                    Sys_RfcCompany = "EKU9003173C9",//Este es el que esta logueado
+                    Sys_State = "Estado1",
+                    Sys_Street = "Calle1",
+                    Sys_Tradename = "Razón Social1",
+                    User = "Juan",
+                    Pwd = "AABBcc22++"
+                };
+                var urlBase = "https://localhost:44368/Api/Client/SaveClient";
 
-                //var db = ClientFactory.GetCliente();
-                //using (db as IDisposable)
-                //{
-                //    var empresa = db.ObtenerEmpresaPorRfc("MUFI880608267");
-                //    empresa.ToString();
-                //}
+                var header = new Dictionary<string, string>()
+                {
+                    { "Authorization","Basic VmFsZGV6QjpBQUJCY2MyMisr" },// + ConfigurationManager.AppSettings["Auth"] } ,
+                    { "Content-Type","application/json" }
+                };
+
+                var json = JsonConvert.SerializeObject(client);
+
+                var data = RestClient.SendToService(urlBase, json, header, Encoding.UTF8);
+                var answer = JsonConvert.DeserializeObject<string>(data);
+                MessageBox.Show(answer);
             }
             catch (Exception ee)
             {
@@ -220,7 +245,37 @@ namespace TestForm
         {
             try
             {
-                
+                ClientDto client = new ClientDto
+                {
+                    Sys_Rfc = "PJM391026PK5",//El RFC del cliente
+                    Sys_RegistrationDate = DateTime.Now,
+                    Sys_ZipCode = "51000",
+                    Sys_BusinessName = "Nombre comercial",
+                    Sys_Cologne = "Colonia",
+                    Sys_Country = "México",
+                    Sys_Email = "a@a.com",
+                    Sys_ModificationDate = DateTime.Now,
+                    Sys_Municipality = "Municipio",
+                    Sys_RfcCompany = "EKU9003173C9",//Este es el que esta logueado
+                    Sys_State = "Estado",
+                    Sys_Street = "Calle",
+                    Sys_Tradename = "Razón Social",
+                    User = "Juan",
+                    Pwd = "AABBcc22++"
+                };
+                var urlBase = "https://localhost:44368/Api/Client/SaveClient";
+
+                var header = new Dictionary<string, string>()
+                {
+                    { "Authorization","Basic VmFsZGV6QjpBQUJCY2MyMisr" },// + ConfigurationManager.AppSettings["Auth"] } ,
+                    { "Content-Type","application/json" }
+                };
+
+                var json = JsonConvert.SerializeObject(client);
+
+                var data = RestClient.SendToService(urlBase, json, header, Encoding.UTF8);
+                var answer = JsonConvert.DeserializeObject<string>(data);
+                MessageBox.Show(answer);
             }
             catch (FaultException fe)
             {
